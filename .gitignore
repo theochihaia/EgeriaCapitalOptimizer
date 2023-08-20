@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+*.venv
+venv.bak/
+ENV/
+newenv/
+*.newenv
+newenv.bak/
+myenv/
+.DS_Store
+
+# OS-specific
+.DS_Store  # macOS
+._*        # macOS
+*.swp      # Linux - vim swap files
+*.swo      # Linux - vim swap files
+*.swn      # Linux - vim swap files
+*.lock     # Linux - common lock file name pattern
+Thumbs.db  # Windows
+ehthumbs.db  # Windows
+Desktop.ini # Windows
+$RECYCLE.BIN/ # Windows
+
+# IDE-specific
+# PyCharm/IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Database
+*.db
+*.sqlite
+
+# Log files
+*.log
+
+# Other
+*.bak
+*.cache/
+*.egg-info/
+dist/
+build/
+*.egg
+yfinance.cache

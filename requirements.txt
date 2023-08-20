@@ -1,0 +1,6 @@
+yfinance
+requests_cache
+requests
+pyrate_limiter
+pandas_datareader
+requests_ratelimiter
