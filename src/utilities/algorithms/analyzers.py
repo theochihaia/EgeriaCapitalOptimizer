@@ -5,6 +5,7 @@ from typing import Optional
 import yfinance as yf
 from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
+from src.utilities.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
 
 # Constants
 PE_THRESHOLD_HIGH = 25
@@ -39,52 +40,25 @@ def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResul
 def analyze_price_to_earnings(
     symbol: str, ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
-    pe = ticker.info.get("trailingPE") or ticker.info.get("forwardPE")
-
-    if not pe:
-        return None
-
-    if pe > PE_THRESHOLD_HIGH:
-        message = f"{symbol} has a high P/E ratio of {pe}"
-        return AnalysisResult(
-            symbol, Metric.PRICE_TO_EARNINGS, message, MetricResult.NEGATIVE
-        )
-    elif pe < PE_THRESHOLD_LOW:
-        message = f"{symbol} has a low P/E ratio of {pe}"
-        return AnalysisResult(
-            symbol, Metric.PRICE_TO_EARNINGS, message, MetricResult.POSITIVE
-        )
-    else:
-        message = f"{symbol} has a neutral P/E ratio of {pe}"
-        return AnalysisResult(
-            symbol, Metric.PRICE_TO_EARNINGS, message, MetricResult.NEUTRAL
-        )
+    config = RangeAnalysisConfig(
+        metric=Metric.PRICE_TO_EARNINGS,
+        threshold_high=PE_THRESHOLD_HIGH,
+        threshold_low=PE_THRESHOLD_LOW,
+        fetch_data=lambda ticker: ticker.info.get("trailingPE") or ticker.info.get("forwardPE")
+    )
+    return range_analyzer(symbol, ticker, config)
 
 
 def analyze_price_to_book(    
         symbol: str, ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
-    pb = ticker.info.get("priceToBook")
-
-    if not pb:
-        return None
-
-    if pb > PB_THRESHOLD_HIGH:
-        message = f"{symbol} has a high P/B ratio of {pb}"
-        return AnalysisResult(
-            symbol, Metric.PRICE_TO_BOOK, message, MetricResult.NEGATIVE
-        )
-    elif pb < PB_THRESHOLD_LOW:
-        message = f"{symbol} has a low P/B ratio of {pb}"
-        return AnalysisResult(
-            symbol, Metric.PRICE_TO_BOOK, message, MetricResult.POSITIVE
-        )
-    else:
-        message = f"{symbol} has a neutral P/B ratio of {pb}"
-        return AnalysisResult(
-            symbol, Metric.PRICE_TO_BOOK, message, MetricResult.NEUTRAL
-        )
-
+    config = RangeAnalysisConfig(
+        metric=Metric.PRICE_TO_BOOK,
+        threshold_high=PB_THRESHOLD_HIGH,
+        threshold_low=PB_THRESHOLD_LOW,
+        fetch_data=lambda ticker: ticker.info.get("priceToBook")
+    )
+    return range_analyzer(symbol, ticker, config)
 
 
 def analyze_price_to_sales(    
