@@ -1,9 +1,13 @@
+from typing import List
+
 from src.common.enums.symbols import get_symbols, SymbolSet
+from src.common.models.AnalysisResult import AnalysisResult
 from src.utilities.third_party.yahoo_finance import pull_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
-from src.common.enums.metric import Metric
+from src.common.enums.metric import Metric, MetricResult
 from src.utilities.algorithms.analyzer import analyze
+
 
 
 '''
@@ -27,6 +31,7 @@ data_categories = [
 
 metrics = [
      Metric.PRICE_TO_EARNINGS,
+     Metric.PRICE_TO_BOOK,
      #Metric.STANDARD_DEVIATION
 ]
 #------------------------------------------------------------#
@@ -45,9 +50,9 @@ if is_save_data_active:
           save_data_parallel(symbol, data_for_symbol, data_categories, directory)
 
 # Generate Analysis
-analysis = []
+analysis: List[AnalysisResult] = []
 for symbol, data_for_symbol in data.items():
-     analysis = analyze(symbol, data_for_symbol, metrics)
+     analysis.extend(analyze(symbol, data_for_symbol, metrics))
 
 for result in analysis:
      print(result)
