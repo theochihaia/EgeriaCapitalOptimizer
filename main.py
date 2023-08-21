@@ -6,7 +6,7 @@ from src.utilities.third_party.yahoo_finance import pull_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric, MetricResult
-from src.utilities.algorithms.analyzer import analyze
+from src.utilities.algorithms.analyzers import analyze
 
 
 
