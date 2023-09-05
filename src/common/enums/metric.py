@@ -10,6 +10,7 @@ class Metric(Enum):
     BETA = "Beta"
     BOLLINGER_BANDS = "Bollinger Bands"
     EBIDTA_GROWTH = "EBIDTA Growth"
+    EBIDTA_DEVIATION = "EBIDTA Deviation"
     REVENUE_GROWTH = "Revenue Growth"
     TEN_YEAR_RETURN = "10 Year Return"
     FIVE_YEAR_RETURN = "5 Year Return"

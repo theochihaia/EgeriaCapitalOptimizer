@@ -25,6 +25,7 @@ symbols = get_symbols(SymbolSet.ROBINHOOD)
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
+is_get_monthly_active = False
 metric_result_filter = MetricResult.NEGATIVE
 
 data_categories = [
@@ -36,8 +37,9 @@ data_categories = [
 metrics = [
      Metric.PRICE_TO_EARNINGS,
      Metric.PRICE_TO_BOOK,
-     #Metric.PRICE_TO_SALES,
-     #Metric.BETA,
+     Metric.PRICE_TO_SALES,
+     Metric.BETA,
+     #Metric.EBIDTA_DEVIATION,
      #Metric.EGERIA_SCORE,
      #Metric.STANDARD_DEVIATION
 ]
@@ -76,8 +78,9 @@ def generate_analysis(data: dict):
 print("Pulling data from Yahoo Finance")
 
 #Get Monthly Returns
-#monthly = get_monthly("2000-01-01", "2023-09-04")
-#print(monthly)
+if(is_get_monthly_active):
+     monthly = get_monthly("2000-01-01", "2023-09-04")
+     print(monthly)
 
 data = pull_data(symbols)
 

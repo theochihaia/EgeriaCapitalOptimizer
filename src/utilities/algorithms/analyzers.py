@@ -12,6 +12,10 @@ PE_THRESHOLD_HIGH = 30
 PE_THRESHOLD_LOW = 10
 PB_THRESHOLD_HIGH = 9
 PB_THRESHOLD_LOW = 1
+PS_THRESHOLD_HIGH = 15
+PS_THRESHOLD_LOW = 1
+BETA_THRESHOLD_HIGH = 1.2
+BETA_THRESHOLD_LOW = 0.5
 
 def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
     analyzers = {
@@ -21,6 +25,7 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
         Metric.PRICE_TO_CASHFLOW: analyze_price_to_cashflow,
         Metric.STANDARD_DEVIATION: analyze_standard_deviation,
         Metric.BETA: analyze_beta,
+        Metric.EBIDTA_DEVIATION: analyze_ebita_deviation,
         Metric.BOLLINGER_BANDS: analyze_bollinger_bands,
     }
 
@@ -69,7 +74,13 @@ def analyze_price_to_book(
 def analyze_price_to_sales(    
     ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
-    raise NotImplementedError("analyze_price_to_sales not implemented")
+    config = RangeAnalysisConfig(
+        metric=Metric.PRICE_TO_SALES,
+        threshold_high=PS_THRESHOLD_HIGH,
+        threshold_low=PS_THRESHOLD_LOW,
+        fetch_data=lambda ticker: ticker.info.get("priceToSalesTrailing12Months")
+    )
+    return range_analyzer(ticker, config)
 
 
 def analyze_price_to_cashflow(    
@@ -87,8 +98,18 @@ def analyze_standard_deviation(
 def analyze_beta(    
     ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
-    raise NotImplementedError("analyze_beta not implemented")
+    config = RangeAnalysisConfig(
+        metric=Metric.BETA,
+        threshold_high=BETA_THRESHOLD_HIGH,
+        threshold_low=BETA_THRESHOLD_LOW,
+        fetch_data=lambda ticker: ticker.info.get("beta")
+    )
+    return range_analyzer(ticker, config)
 
+def analyze_ebita_deviation(
+    ticker: yf.Ticker
+) -> Optional[AnalysisResult]:
+    raise NotImplementedError("analyze_ebita_deviation not implemented")
 
 def analyze_bollinger_bands(    
         ticker: yf.Ticker
