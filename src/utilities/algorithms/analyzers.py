@@ -8,12 +8,12 @@ from src.common.models.AnalysisResult import AnalysisResult
 from src.utilities.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
 
 # Constants
-PE_THRESHOLD_HIGH = 25
+PE_THRESHOLD_HIGH = 30
 PE_THRESHOLD_LOW = 10
-PB_THRESHOLD_HIGH = 5
+PB_THRESHOLD_HIGH = 9
 PB_THRESHOLD_LOW = 1
 
-def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
+def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
     analyzers = {
         Metric.PRICE_TO_EARNINGS: analyze_price_to_earnings,
         Metric.PRICE_TO_BOOK: analyze_price_to_book,
@@ -30,15 +30,20 @@ def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResul
         if not analysis_function:
             raise ValueError(f"No Analyzer for metric: {metric}")
 
-        analysis = analysis_function(symbol, ticker)
+        analysis = analysis_function(ticker)
         if analysis and analysis.metric_result != MetricResult.NEUTRAL:
             results.append(analysis)
 
     return results
 
+def analyze_egeria_score(
+    ticker: yf.Ticker
+) -> Optional[AnalysisResult]:
+    raise NotImplementedError("analyze_egeria_score not implemented")
+
 
 def analyze_price_to_earnings(
-    symbol: str, ticker: yf.Ticker
+    ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     config = RangeAnalysisConfig(
         metric=Metric.PRICE_TO_EARNINGS,
@@ -46,11 +51,11 @@ def analyze_price_to_earnings(
         threshold_low=PE_THRESHOLD_LOW,
         fetch_data=lambda ticker: ticker.info.get("trailingPE") or ticker.info.get("forwardPE")
     )
-    return range_analyzer(symbol, ticker, config)
+    return range_analyzer(ticker, config)
 
 
 def analyze_price_to_book(    
-        symbol: str, ticker: yf.Ticker
+    ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     config = RangeAnalysisConfig(
         metric=Metric.PRICE_TO_BOOK,
@@ -58,34 +63,34 @@ def analyze_price_to_book(
         threshold_low=PB_THRESHOLD_LOW,
         fetch_data=lambda ticker: ticker.info.get("priceToBook")
     )
-    return range_analyzer(symbol, ticker, config)
+    return range_analyzer(ticker, config)
 
 
 def analyze_price_to_sales(    
-        symbol: str, ticker: yf.Ticker
+    ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_price_to_sales not implemented")
 
 
 def analyze_price_to_cashflow(    
-        symbol: str, ticker: yf.Ticker
+    ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_price_to_cashflow not implemented")
 
 
 def analyze_standard_deviation(    
-        symbol: str, ticker: yf.Ticker
+    ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     return "standard_deviation"
 
 
 def analyze_beta(    
-        symbol: str, ticker: yf.Ticker
+    ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_beta not implemented")
 
 
 def analyze_bollinger_bands(    
-        symbol: str, ticker: yf.Ticker
+        ticker: yf.Ticker
 ) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_bollinger_bands not implemented")

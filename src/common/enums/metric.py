@@ -9,6 +9,11 @@ class Metric(Enum):
     STANDARD_DEVIATION = "Standard Deviation"
     BETA = "Beta"
     BOLLINGER_BANDS = "Bollinger Bands"
+    EBIDTA_GROWTH = "EBIDTA Growth"
+    REVENUE_GROWTH = "Revenue Growth"
+    TEN_YEAR_RETURN = "10 Year Return"
+    FIVE_YEAR_RETURN = "5 Year Return"
+    EGERIA_SCORE = "Egeria Score"
 
 
 class MetricResult(Enum):

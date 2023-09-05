@@ -7,7 +7,8 @@ from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric, MetricResult
 from src.utilities.algorithms.analyzers import analyze
-
+from src.utilities.algorithms.generate_egeria_score import EgeriaScore
+from src.utilities.algorithms.monthly_returns import get_monthly
 
 
 '''
@@ -18,10 +19,13 @@ pip install -r requirements.txt
 
 #------------------------------------------------------------#
 # Parameters
+#------------------------------------------------------------#
+
 symbols = get_symbols(SymbolSet.ROBINHOOD)
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
+metric_result_filter = MetricResult.NEGATIVE
 
 data_categories = [
      EquityDataCategory.INFO,
@@ -32,29 +36,63 @@ data_categories = [
 metrics = [
      Metric.PRICE_TO_EARNINGS,
      Metric.PRICE_TO_BOOK,
+     #Metric.PRICE_TO_SALES,
+     #Metric.BETA,
+     #Metric.EGERIA_SCORE,
      #Metric.STANDARD_DEVIATION
 ]
+#------------------------------------------------------------#
+# Helpers
+#------------------------------------------------------------#
+
+#Clear Directory
+def clear_directory():
+     if is_clear_history_active:
+          clear_directory(directory)
+
+# Save Data
+def save_data(data: dict):
+     if is_save_data_active:
+          for symbol, ticker in data.items():
+               save_data_parallel(symbol, ticker, data_categories, directory)
+
+# Generate Analysis
+def generate_analysis(data: dict):
+     analysis: List[AnalysisResult] = []
+     for symbol, ticker in data.items():
+          analysis.extend(analyze(ticker, metrics))
+     for result in analysis:
+          if(metric_result_filter is not None):
+               if(result.metric_result == metric_result_filter):
+                    print(result)
+          else:
+               print(result)
+
+#------------------------------------------------------------#
+# Main
 #------------------------------------------------------------#
 
 # Pull data from Yahoo Finance
 print("Pulling data from Yahoo Finance")
+
+#Get Monthly Returns
+#monthly = get_monthly("2000-01-01", "2023-09-04")
+#print(monthly)
+
 data = pull_data(symbols)
 
-# Clear Directory
-if is_clear_history_active:
-     clear_directory(directory)
+clear_directory()
 
-# Save Data
-if is_save_data_active:
-     for symbol, data_for_symbol in data.items():
-          save_data_parallel(symbol, data_for_symbol, data_categories, directory)
+save_data(data)
 
-# Generate Analysis
-analysis: List[AnalysisResult] = []
-for symbol, data_for_symbol in data.items():
-     analysis.extend(analyze(symbol, data_for_symbol, metrics))
+generate_analysis(data)
 
-for result in analysis:
-     print(result)
+'''
+egeriaScores = []
+for symbol, ticker in data.items():
+     eg_score = EgeriaScore(ticker, metrics)
+     egeriaScores.append(eg_score)
+     print(eg_score)
+'''
 
 print("Processing Complete")

@@ -10,7 +10,4 @@ class AnalysisResult:
     metric_result: MetricResult
 
     def __str__(self) -> str:
-        return f"{self.symbol} - {self.metric.value} ({self.metric_result.value}): {self.message})"
-
-    def get_data(self):
-        return  f"{self.symbol} - {self.metric.value} ({self.metric_result.value}): {self.message})"
+        return f"{self.symbol} - {self.metric.value} ({self.metric_result.value}): {self.message}"
