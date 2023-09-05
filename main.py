@@ -21,7 +21,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbols = get_symbols(SymbolSet.ROBINHOOD)
+symbols = get_symbols(SymbolSet.FID_FOLIO)
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
