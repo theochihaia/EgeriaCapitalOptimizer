@@ -5,21 +5,14 @@ from datetime import datetime
 
 
 import yfinance as yf
+from src.common.sector_weights import SECTOR_METRIC_THRESHOLDS
 from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
 from src.utilities.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
 
 # Constants
-PE_THRESHOLD_HIGH = 30
-PE_THRESHOLD_LOW = 10
-PB_THRESHOLD_HIGH = 9
-PB_THRESHOLD_LOW = 1
-PS_THRESHOLD_HIGH = 15
-PS_THRESHOLD_LOW = 1
-BETA_THRESHOLD_HIGH = 1.2
-BETA_THRESHOLD_LOW = 0.5
-TEN_YR_RETURN_HIGH = 200
-TEN_YR_RETURN_LOW = 100
+TEN_YEAR_RETURN = (100, 200)
+
 
 def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
     analyzers = {
@@ -48,78 +41,76 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
 
     return results
 
-def analyze_egeria_score(
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+
+def analyze_egeria_score(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_egeria_score not implemented")
 
 
-def analyze_price_to_earnings(
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def get_threshold(ticker: yf.Ticker, metric_key):
+    sector = ticker.info.get("sector", "Default")
+    return SECTOR_METRIC_THRESHOLDS.get(sector, {}).get(metric_key, (None, None))
+
+
+def analyze_price_to_earnings(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    threshold_low, threshold_high = get_threshold(ticker, "PE")
+
     config = RangeAnalysisConfig(
         metric=Metric.PRICE_TO_EARNINGS,
-        threshold_high=PE_THRESHOLD_HIGH,
-        threshold_low=PE_THRESHOLD_LOW,
-        fetch_data=lambda ticker: ticker.info.get("trailingPE") or ticker.info.get("forwardPE")
+        threshold_high=threshold_high,
+        threshold_low=threshold_low,
+        fetch_data=lambda t: t.info.get("forwardPE") or t.info.get("trailingPE"),
     )
     return range_analyzer(ticker, config)
 
 
-def analyze_price_to_book(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_price_to_book(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    threshold_low, threshold_high = get_threshold(ticker, "PB")
+
     config = RangeAnalysisConfig(
         metric=Metric.PRICE_TO_BOOK,
-        threshold_high=PB_THRESHOLD_HIGH,
-        threshold_low=PB_THRESHOLD_LOW,
-        fetch_data=lambda ticker: ticker.info.get("priceToBook")
+        threshold_high=threshold_high,
+        threshold_low=threshold_low,
+        fetch_data=lambda t: t.info.get("priceToBook"),
     )
     return range_analyzer(ticker, config)
 
 
-def analyze_price_to_sales(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_price_to_sales(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    threshold_low, threshold_high = get_threshold(ticker, "PS")
+
     config = RangeAnalysisConfig(
         metric=Metric.PRICE_TO_SALES,
-        threshold_high=PS_THRESHOLD_HIGH,
-        threshold_low=PS_THRESHOLD_LOW,
-        fetch_data=lambda ticker: ticker.info.get("priceToSalesTrailing12Months")
+        threshold_high=threshold_high,
+        threshold_low=threshold_low,
+        fetch_data=lambda t: t.info.get("priceToSalesTrailing12Months"),
     )
     return range_analyzer(ticker, config)
 
 
-def analyze_price_to_cashflow(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_price_to_cashflow(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_price_to_cashflow not implemented")
 
 
-def analyze_standard_deviation(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_standard_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     return "standard_deviation"
 
 
-def analyze_beta(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_beta(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    threshold_low, threshold_high = get_threshold(ticker, "BETA")
+
     config = RangeAnalysisConfig(
         metric=Metric.BETA,
-        threshold_high=BETA_THRESHOLD_HIGH,
-        threshold_low=BETA_THRESHOLD_LOW,
-        fetch_data=lambda ticker: ticker.info.get("beta")
+        threshold_high=threshold_high,
+        threshold_low=threshold_low,
+        fetch_data=lambda t: t.info.get("beta"),
     )
     return range_analyzer(ticker, config)
 
-def analyze_revenue_deviation(
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
-    
+
+def analyze_revenue_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     # Get Revenue list for ticker
     total_revenue = []
-    for(key, value) in ticker.get_income_stmt().items():
+    for key, value in ticker.get_income_stmt().items():
         total_revenue.append(value.get("TotalRevenue"))
 
     # Get latest Revenue
@@ -128,23 +119,20 @@ def analyze_revenue_deviation(
     # Determine avg and standard deviation of Revenue
     revenue_avg = pd.Series(total_revenue).mean()
     revenue_std = pd.Series(total_revenue).std()
-    
+
     config = RangeAnalysisConfig(
         metric=Metric.TOTAL_REVENUE_DEVIATION,
         threshold_high=revenue_avg + revenue_std,
         threshold_low=revenue_avg - revenue_std,
-        fetch_data=lambda ticker: latest_revenue
+        fetch_data=lambda ticker: latest_revenue,
     )
     return range_analyzer(ticker, config, invert=True)
 
 
-def analyze_ebidta_deviation(
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
-    
+def analyze_ebidta_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     # Get Revenue list for ticker
     ebidta = []
-    for(key, value) in ticker.get_income_stmt().items():
+    for key, value in ticker.get_income_stmt().items():
         ebidta.append(value.get("NormalizedEBITDA"))
 
     # Get latest Revenue
@@ -153,19 +141,18 @@ def analyze_ebidta_deviation(
     # Determine avg and standard deviation of Revenue
     ebidta_avg = pd.Series(ebidta).mean()
     ebidta_std = pd.Series(ebidta).std()
-    
+
     config = RangeAnalysisConfig(
         metric=Metric.NORMALIZED_EBIDTA_DEVIATION,
         threshold_high=ebidta_avg + ebidta_std,
         threshold_low=ebidta_avg - ebidta_std,
-        fetch_data=lambda ticker: latest_ebidta
+        fetch_data=lambda ticker: latest_ebidta,
     )
     return range_analyzer(ticker, config, invert=True)
 
 
-def analyze_ten_year_return(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_ten_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    return_low, return_high = TEN_YEAR_RETURN
     data = ticker.history(period="10y")
 
     latest_price = data["Close"].iloc[-1]
@@ -174,19 +161,16 @@ def analyze_ten_year_return(
 
     config = RangeAnalysisConfig(
         metric=Metric.TEN_YEAR_RETURN,
-        threshold_high=TEN_YR_RETURN_HIGH,
-        threshold_low=TEN_YR_RETURN_LOW,
-        fetch_data=lambda ticker: ten_year_return
+        threshold_high=return_high,
+        threshold_low=return_low,
+        fetch_data=lambda ticker: ten_year_return,
     )
     return range_analyzer(ticker, config, invert=True)
 
 
-def analyze_fifty_day_avg(    
-    ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+def analyze_fifty_day_avg(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_bollinger_bands not implemented")
 
-def analyze_bollinger_bands(    
-        ticker: yf.Ticker
-) -> Optional[AnalysisResult]:
+
+def analyze_bollinger_bands(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_bollinger_bands not implemented")
