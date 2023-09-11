@@ -1,4 +1,5 @@
 from typing import List
+import concurrent.futures
 
 from src.common.enums.symbols import get_symbols, SymbolSet
 from src.common.models.AnalysisResult import AnalysisResult
@@ -63,15 +64,24 @@ def save_data(data: dict):
 
 # Generate Analysis
 def generate_analysis(data: dict):
-     analysis: List[AnalysisResult] = []
-     for symbol, ticker in data.items():
-          analysis.extend(analyze(ticker, metrics))
-     for result in analysis:
-          if(metric_result_filter is not None):
-               if(result.metric_result == metric_result_filter):
-                    print(result)
-          else:
-               print(result)
+    analysis: List[AnalysisResult] = []
+
+    # Parallelize the analysis using ThreadPoolExecutor
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = list(executor.map(parallel_analysis, data.values()))
+        
+    for result_set in results:
+        analysis.extend(result_set)
+
+    for result in analysis:
+        if(metric_result_filter is not None):
+            if(result.metric_result == metric_result_filter):
+                print(result)
+        else:
+            print(result)
+
+def parallel_analysis(ticker):
+    return analyze(ticker, metrics)
 
 #------------------------------------------------------------#
 # Main
