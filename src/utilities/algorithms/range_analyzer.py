@@ -23,14 +23,15 @@ def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool 
     if not value:
         return None
 
+    message = ""
     if value > config.threshold_high:
-        message = f"{symbol} [HIGH] {config.metric.value} : {value}"
+        message = f"{value} 🔺"
         result = high_result_value
     elif value < config.threshold_low:
-        message = f"{symbol} [LOW] {config.metric.value} : {value}"
+        message = f"{value} 🔻"
         result = low_result_value
     else:
-        message = f"{symbol} [NEUTRAL] {config.metric.value} : {value}"
+        message = f"{value} ◼"
         result = MetricResult.NEUTRAL
 
     return AnalysisResult(symbol, config.metric, message, result)

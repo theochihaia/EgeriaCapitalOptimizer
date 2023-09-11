@@ -35,9 +35,8 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
         if not analysis_function:
             raise ValueError(f"No Analyzer for metric: {metric}")
 
-        analysis = analysis_function(ticker)
-        if analysis and analysis.metric_result != MetricResult.NEUTRAL:
-            results.append(analysis)
+        results.append(analysis_function(ticker))
+
 
     return results
 

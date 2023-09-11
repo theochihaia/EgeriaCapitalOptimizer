@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import List
 import concurrent.futures
 
@@ -27,7 +28,7 @@ directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
 is_get_monthly_active = False
-metric_result_filter = MetricResult.NEGATIVE
+metric_result_filter = None #MetricResult.NEGATIVE
 
 data_categories = [
      EquityDataCategory.INFO,
@@ -62,26 +63,30 @@ def save_data(data: dict):
           for symbol, ticker in data.items():
                save_data_parallel(symbol, ticker, data_categories, directory)
 
-# Generate Analysis
 def generate_analysis(data: dict):
     analysis: List[AnalysisResult] = []
 
-    # Parallelize the analysis using ThreadPoolExecutor
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        results = list(executor.map(parallel_analysis, data.values()))
-        
-    for result_set in results:
-        analysis.extend(result_set)
+    for ticker in data.values():
+        results = analyze(ticker, metrics)
+        analysis.extend(filter(None, results))  # Ensure we don't include None results
 
+    # Group results by symbol
+    grouped_results = defaultdict(list)
     for result in analysis:
-        if(metric_result_filter is not None):
-            if(result.metric_result == metric_result_filter):
-                print(result)
-        else:
-            print(result)
+        grouped_results[result.symbol].append(result)
 
-def parallel_analysis(ticker):
-    return analyze(ticker, metrics)
+    # Display results
+    for symbol, results in grouped_results.items():
+        # Filter out results based on metric_result_filter
+        if metric_result_filter:
+            results = [res for res in results if res.metric_result == metric_result_filter]
+        
+        # Only display symbols with non-empty analysis
+        if results:
+            print(symbol)
+            for res in results:
+                print(f"  {res.metric_result.value} {res.metric.value}: {res.message}")
+
 
 #------------------------------------------------------------#
 # Main
