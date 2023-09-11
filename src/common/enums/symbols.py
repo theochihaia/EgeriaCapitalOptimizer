@@ -85,6 +85,10 @@ def get_symbols(symbol_set: SymbolSet):
             "ABT",
             "SYY",
             "AMGN",
+            "HWKN",
+            "AAON",
+            "FDS",
+            "VMC",
         ]
     elif symbol_set == SymbolSet.CHASE:
         return ["BLV", "EFG", "FHLC", "FSKAX", "FTEC", "PDI", "PTY", "VCR", "XSD"]

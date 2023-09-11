@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 symbols = get_symbols(SymbolSet.FID_FOLIO)
 directory = "src/storage/data"
-is_save_data_active = False
+is_save_data_active = True
 is_clear_history_active = True and is_save_data_active
 is_get_monthly_active = False
 metric_result_filter = MetricResult.NEGATIVE
@@ -51,7 +51,7 @@ metrics = [
 #------------------------------------------------------------#
 
 #Clear Directory
-def clear_directory():
+def clear_directorires():
      if is_clear_history_active:
           clear_directory(directory)
 
@@ -88,7 +88,7 @@ if(is_get_monthly_active):
 data_general = pull_general_data(symbols)
 #data_prices = pull_pricing_data(symbols, "1yr")
 
-clear_directory()
+clear_directorires()
 
 save_data(data_general)
 
