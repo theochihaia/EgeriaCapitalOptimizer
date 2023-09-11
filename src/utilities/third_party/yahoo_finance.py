@@ -51,10 +51,13 @@ yf.pdr_override()
 
 
 # Pull data from Yahoo Finance given a symbol
-def pull_data(symbol: str, period: str = "1yr"):
+def pull_general_data(symbol: str, period: str = "1yr"):
     return pdr.get_data_yahoo(symbol, period=period, session=session)
 
 
 # Pull data from Yahoo Finance given a list of symbols
-def pull_data(symbol_list: list):
+def pull_general_data(symbol_list: list):
     return {symbol: yf.Ticker(symbol) for symbol in symbol_list}
+
+def pull_pricing_data(symbol_list: list, period: str = "1yr"):
+    return {symbol: pdr.get_data_yahoo(symbol, period=period, session=session) for symbol in symbol_list}

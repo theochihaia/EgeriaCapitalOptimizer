@@ -2,7 +2,7 @@ from typing import List
 
 from src.common.enums.symbols import get_symbols, SymbolSet
 from src.common.models.AnalysisResult import AnalysisResult
-from src.utilities.third_party.yahoo_finance import pull_data
+from src.utilities.third_party.yahoo_finance import pull_general_data, pull_pricing_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric, MetricResult
@@ -39,9 +39,12 @@ metrics = [
      Metric.PRICE_TO_BOOK,
      Metric.PRICE_TO_SALES,
      Metric.BETA,
-     #Metric.EBIDTA_DEVIATION,
-     #Metric.EGERIA_SCORE,
+     Metric.NORMALIZED_EBIDTA_DEVIATION,
+     Metric.TOTAL_REVENUE_DEVIATION,
+     Metric.TEN_YEAR_RETURN,
      #Metric.STANDARD_DEVIATION
+     #Metric.EGERIA_SCORE,
+
 ]
 #------------------------------------------------------------#
 # Helpers
@@ -82,13 +85,14 @@ if(is_get_monthly_active):
      monthly = get_monthly("2000-01-01", "2023-09-04")
      print(monthly)
 
-data = pull_data(symbols)
+data_general = pull_general_data(symbols)
+#data_prices = pull_pricing_data(symbols, "1yr")
 
 clear_directory()
 
-save_data(data)
+save_data(data_general)
 
-generate_analysis(data)
+generate_analysis(data_general)
 
 '''
 egeriaScores = []

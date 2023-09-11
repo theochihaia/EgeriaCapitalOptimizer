@@ -13,21 +13,24 @@ class RangeAnalysisConfig:
     threshold_low: float
     fetch_data: Callable[[yf.Ticker], Union[float, None]]
 
-def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig) -> Optional[AnalysisResult]:
+def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool = False) -> Optional[AnalysisResult]:
     value = config.fetch_data(ticker)
     symbol = ticker.get_info().get("symbol")
+
+    high_result_value = MetricResult.NEGATIVE if not invert else MetricResult.POSITIVE
+    low_result_value = MetricResult.POSITIVE if not invert else MetricResult.NEGATIVE
 
     if not value:
         return None
 
     if value > config.threshold_high:
-        message = f"{symbol} has a high {config.metric.value} ratio of {value}"
-        result = MetricResult.NEGATIVE
+        message = f"{symbol} [HIGH] {config.metric.value} : {value}"
+        result = high_result_value
     elif value < config.threshold_low:
-        message = f"{symbol} has a low {config.metric.value} ratio of {value}"
-        result = MetricResult.POSITIVE
+        message = f"{symbol} [LOW] {config.metric.value} : {value}"
+        result = low_result_value
     else:
-        message = f"{symbol} has a neutral {config.metric.value} ratio of {value}"
+        message = f"{symbol} [NEUTRAL] {config.metric.value} : {value}"
         result = MetricResult.NEUTRAL
 
     return AnalysisResult(symbol, config.metric, message, result)

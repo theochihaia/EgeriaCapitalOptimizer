@@ -8,12 +8,14 @@ class Metric(Enum):
     PRICE_TO_CASHFLOW = "Price/Cashflow"
     STANDARD_DEVIATION = "Standard Deviation"
     BETA = "Beta"
-    BOLLINGER_BANDS = "Bollinger Bands"
-    EBIDTA_GROWTH = "EBIDTA Growth"
-    EBIDTA_DEVIATION = "EBIDTA Deviation"
-    REVENUE_GROWTH = "Revenue Growth"
+    TOTAL_REVENUE_DEVIATION = "Total Revenue Deviation"
+    NORMALIZED_EBIDTA_DEVIATION = "EBIDTA Deviation"
     TEN_YEAR_RETURN = "10 Year Return"
     FIVE_YEAR_RETURN = "5 Year Return"
+    FIFTY_DAY_AVG = "50 Day Average"
+    BOLLINGER_BANDS = "Bollinger Bands"
+    EBIDTA_GROWTH = "EBIDTA Growth"
+    REVENUE_GROWTH = "Revenue Growth"
     EGERIA_SCORE = "Egeria Score"
 
 

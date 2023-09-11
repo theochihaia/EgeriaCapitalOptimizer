@@ -21,13 +21,13 @@ def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig) -> Optional[A
         return None
 
     if value > config.threshold_high:
-        message = f"{symbol} has a high {config.metric.value} ratio of {value}"
+        message = f"{symbol} HIGH {config.metric.value} : {value}"
         result = MetricResult.NEGATIVE
     elif value < config.threshold_low:
-        message = f"{symbol} has a low {config.metric.value} ratio of {value}"
+        message = f"{symbol} LOW {config.metric.value} : {value}"
         result = MetricResult.POSITIVE
     else:
-        message = f"{symbol} has a neutral {config.metric.value} ratio of {value}"
+        message = f"{symbol} NEUTRAL {config.metric.value} : {value}"
         result = MetricResult.NEUTRAL
 
     return AnalysisResult(symbol, config.metric, message, result)
