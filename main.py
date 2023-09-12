@@ -43,6 +43,7 @@ metrics = [
      Metric.BETA,
      Metric.NORMALIZED_EBIDTA_DEVIATION,
      Metric.TOTAL_REVENUE_DEVIATION,
+     Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
      #Metric.STANDARD_DEVIATION
      #Metric.EGERIA_SCORE,

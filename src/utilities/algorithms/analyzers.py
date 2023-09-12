@@ -11,7 +11,8 @@ from src.common.models.AnalysisResult import AnalysisResult
 from src.utilities.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
 
 # Constants
-TEN_YEAR_RETURN = (100, 200)
+FIVE_YEAR_RETURN = (60, 120)
+TEN_YEAR_RETURN = (150, 250)
 
 
 def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
@@ -24,6 +25,7 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
         Metric.BETA: analyze_beta,
         Metric.NORMALIZED_EBIDTA_DEVIATION: analyze_ebidta_deviation,
         Metric.TOTAL_REVENUE_DEVIATION: analyze_revenue_deviation,
+        Metric.FIVE_YEAR_RETURN: analyze_five_year_return,
         Metric.TEN_YEAR_RETURN: analyze_ten_year_return,
         Metric.FIFTY_DAY_AVG: analyze_fifty_day_avg,
         Metric.BOLLINGER_BANDS: analyze_bollinger_bands,
@@ -146,6 +148,23 @@ def analyze_ebidta_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
         threshold_high=ebidta_avg + ebidta_std,
         threshold_low=ebidta_avg - ebidta_std,
         fetch_data=lambda ticker: latest_ebidta,
+    )
+    return range_analyzer(ticker, config, invert=True)
+
+
+def analyze_five_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    return_low, return_high = FIVE_YEAR_RETURN
+    data = ticker.history(period="5y")
+
+    latest_price = data["Close"].iloc[-1]
+    initial_price = data["Close"].iloc[0]
+    five_year_return = (latest_price - initial_price) / initial_price * 100
+
+    config = RangeAnalysisConfig(
+        metric=Metric.FIVE_YEAR_RETURN,
+        threshold_high=return_high,
+        threshold_low=return_low,
+        fetch_data=lambda ticker: five_year_return,
     )
     return range_analyzer(ticker, config, invert=True)
 
