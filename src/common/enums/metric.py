@@ -14,6 +14,8 @@ class Metric(Enum):
     FIVE_YEAR_RETURN = "5 Year Return"
     FIFTY_DAY_AVG = "50 Day Average"
     BOLLINGER_BANDS = "Bollinger Bands"
+    QUICK_RATIO = "Quick Ratio"
+    DEBT_TO_EQUITY = "Debt/Equity"
     EBIDTA_GROWTH = "EBIDTA Growth"
     REVENUE_GROWTH = "Revenue Growth"
     EGERIA_SCORE = "Egeria Score"

@@ -23,15 +23,18 @@ def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool 
     if not value:
         return None
 
+    # Convert the value to float and format it with commas and two decimal places
+    display_value = "{:,.2f}".format(round(float(value), 2))
+
     message = ""
     if value > config.threshold_high:
-        message = f"{value} 🔺"
+        message = display_value
         result = high_result_value
     elif value < config.threshold_low:
-        message = f"{value} 🔻"
+        message = f"{display_value}"
         result = low_result_value
     else:
-        message = f"{value} ◼"
+        message = f"{display_value}"
         result = MetricResult.NEUTRAL
 
     return AnalysisResult(symbol, config.metric, message, result)

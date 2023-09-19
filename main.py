@@ -43,6 +43,8 @@ metrics = [
      Metric.BETA,
      Metric.NORMALIZED_EBIDTA_DEVIATION,
      Metric.TOTAL_REVENUE_DEVIATION,
+     Metric.QUICK_RATIO,
+     Metric.DEBT_TO_EQUITY,
      Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
      #Metric.STANDARD_DEVIATION
@@ -84,10 +86,12 @@ def generate_analysis(data: dict):
         
         # Only display symbols with non-empty analysis
         if results:
-            print(symbol)
+            print("{symbol} - {name} ({sector})"
+                  .format(symbol=symbol, name=data[symbol].info["longName"], sector=data[symbol].info["sector"]))
             for res in results:
                 print(f"  {res.metric_result.value} {res.metric.value}: {res.message}")
-
+            
+            print("\n\r")
 
 #------------------------------------------------------------#
 # Main

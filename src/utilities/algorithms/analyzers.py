@@ -29,6 +29,8 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
         Metric.TEN_YEAR_RETURN: analyze_ten_year_return,
         Metric.FIFTY_DAY_AVG: analyze_fifty_day_avg,
         Metric.BOLLINGER_BANDS: analyze_bollinger_bands,
+        Metric.QUICK_RATIO: analyze_quick_ratios,
+        Metric.DEBT_TO_EQUITY: analyze_debt_to_equity,
     }
 
     results: List[AnalysisResult] = []
@@ -185,6 +187,27 @@ def analyze_ten_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     )
     return range_analyzer(ticker, config, invert=True)
 
+def analyze_quick_ratios(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    threshold_low, threshold_high = get_threshold(ticker, "QUICK_RATIO")
+
+    config = RangeAnalysisConfig(
+        metric=Metric.QUICK_RATIO,
+        threshold_high=threshold_high,
+        threshold_low=threshold_low,
+        fetch_data=lambda t: t.info.get("quickRatio"),
+    )
+    return range_analyzer(ticker, config)
+
+def analyze_debt_to_equity(ticker: yf.Ticker) -> Optional[AnalysisResult]:
+    threshold_low, threshold_high = get_threshold(ticker, "DEBT_TO_EQUITY")
+
+    config = RangeAnalysisConfig(
+        metric=Metric.DEBT_TO_EQUITY,
+        threshold_high=threshold_high,
+        threshold_low=threshold_low,
+        fetch_data=lambda t: t.info.get("debtToEquity"),
+    )
+    return range_analyzer(ticker, config)
 
 def analyze_fifty_day_avg(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     raise NotImplementedError("analyze_bollinger_bands not implemented")
