@@ -22,6 +22,6 @@ class Metric(Enum):
 
 
 class MetricResult(Enum):
-    POSITIVE = "🟢"
-    NEGATIVE = "🔴"
+    POSITIVE = "✅"
+    NEGATIVE = "❌"
     NEUTRAL = "🟡"
