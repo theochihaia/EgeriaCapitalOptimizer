@@ -37,4 +37,4 @@ def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool 
         message = f"{display_value}"
         result = MetricResult.NEUTRAL
 
-    return AnalysisResult(symbol, config.metric, message, result)
+    return AnalysisResult(symbol, config.metric, message, result, invert)

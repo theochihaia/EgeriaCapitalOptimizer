@@ -4,6 +4,7 @@ import concurrent.futures
 
 from src.common.enums.symbols import get_symbols, SymbolSet
 from src.common.models.AnalysisResult import AnalysisResult
+from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.utilities.third_party.yahoo_finance import pull_general_data, pull_pricing_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
@@ -28,7 +29,7 @@ directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
 is_get_monthly_active = False
-metric_result_filter = None #MetricResult.NEGATIVE
+metric_result_filter = MetricResult.NEGATIVE
 
 data_categories = [
      EquityDataCategory.INFO,
@@ -67,31 +68,18 @@ def save_data(data: dict):
                save_data_parallel(symbol, ticker, data_categories, directory)
 
 def generate_analysis(data: dict):
-    analysis: List[AnalysisResult] = []
+    analysis: List[AnalysisResultGroup] = []
 
     for ticker in data.values():
         results = analyze(ticker, metrics)
-        analysis.extend(filter(None, results))  # Ensure we don't include None results
+        analysis.append(results)  # Ensure we don't include None results
 
-    # Group results by symbol
-    grouped_results = defaultdict(list)
-    for result in analysis:
-        grouped_results[result.symbol].append(result)
+     # Sort the analysis list by the egeria_score attribute in descending order
+    sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
 
-    # Display results
-    for symbol, results in grouped_results.items():
-        # Filter out results based on metric_result_filter
-        if metric_result_filter:
-            results = [res for res in results if res.metric_result == metric_result_filter]
-        
-        # Only display symbols with non-empty analysis
-        if results:
-            print("{symbol} - {name} ({sector})"
-                  .format(symbol=symbol, name=data[symbol].info["longName"], sector=data[symbol].info["sector"]))
-            for res in results:
-                print(f"  {res.metric_result.value} {res.metric.value}: {res.message}")
-            
-            print("\n\r")
+     # Display the sorted results
+    for analysis_result in sorted_analysis:
+        print(analysis_result)
 
 #------------------------------------------------------------#
 # Main

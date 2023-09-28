@@ -8,6 +8,7 @@ class AnalysisResult:
     metric: Metric
     message: str
     metric_result: MetricResult
+    is_inverted: bool = False
 
     def __str__(self) -> str:
         return f"{self.symbol} - {self.metric.value} {self.metric_result.value}: {self.message}"

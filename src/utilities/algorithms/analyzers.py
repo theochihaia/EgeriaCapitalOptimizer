@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import List
 from typing import Optional
 import pandas as pd
@@ -8,11 +9,31 @@ import yfinance as yf
 from src.common.sector_weights import SECTOR_METRIC_THRESHOLDS
 from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
+from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.utilities.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
 
 # Constants
 FIVE_YEAR_RETURN = (60, 120)
 TEN_YEAR_RETURN = (150, 250)
+
+metric_weights = {
+    Metric.PRICE_TO_EARNINGS: 1,
+    Metric.PRICE_TO_BOOK: 1,
+    Metric.PRICE_TO_SALES: 1,
+    Metric.PRICE_TO_CASHFLOW: 1,
+    Metric.STANDARD_DEVIATION: 1,
+    Metric.BETA: 2,
+    Metric.NORMALIZED_EBIDTA_DEVIATION: 3,
+    Metric.TOTAL_REVENUE_DEVIATION: 3,
+    Metric.FIVE_YEAR_RETURN: 5,
+    Metric.TEN_YEAR_RETURN: 5,
+    Metric.FIFTY_DAY_AVG: 3,
+    Metric.BOLLINGER_BANDS: 1,
+    Metric.QUICK_RATIO: 3,
+    Metric.DEBT_TO_EQUITY: 3,
+}
+
+metric_weights_total = sum(metric_weights.values())
 
 
 def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
@@ -33,6 +54,7 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
         Metric.DEBT_TO_EQUITY: analyze_debt_to_equity,
     }
 
+
     results: List[AnalysisResult] = []
     for metric in metrics:
         analysis_function = analyzers.get(metric)
@@ -40,13 +62,29 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
             raise ValueError(f"No Analyzer for metric: {metric}")
 
         results.append(analysis_function(ticker))
+    
+    # Generate grouped results
+    egeria_score = analyze_egeria_score(results)
+    grouped_results = AnalysisResultGroup(ticker.info["symbol"], results, egeria_score, ticker)
+
+    return grouped_results
 
 
-    return results
+def analyze_egeria_score(results: [AnalysisResult]) -> float:
+    if(results is None or len(results) == 0):
+        return 0.0
 
-
-def analyze_egeria_score(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    raise NotImplementedError("analyze_egeria_score not implemented")
+    sum = 0.0
+    for result in results:
+        value = 0
+        if result is None:
+            continue
+        elif result.metric_result == MetricResult.NEGATIVE:
+            value = -1
+        elif result.metric_result == MetricResult.POSITIVE:
+            value = 1
+        sum += metric_weights.get(result.metric, 1) * value
+    return round(sum/metric_weights_total * 100, 2)
 
 
 def get_threshold(ticker: yf.Ticker, metric_key):
