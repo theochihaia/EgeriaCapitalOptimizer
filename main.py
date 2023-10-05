@@ -24,7 +24,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbols = get_symbols(SymbolSet.SP500)
+symbol_set = SymbolSet.FID_FOLIO
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -85,7 +85,7 @@ def generate_analysis(data: dict):
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
 
     # Write the sorted results to a file
-    result_file_path = 'src/storage/output/results.txt'
+    result_file_path = f"src/storage/output/results_{symbol_set.value}.txt"
     with open(result_file_path, 'w') as file:
         for analysis_result in sorted_analysis:
             file.write(str(analysis_result) + '')
@@ -96,6 +96,8 @@ def generate_analysis(data: dict):
 #------------------------------------------------------------#
 # Main
 #------------------------------------------------------------#
+# Get Symbols
+symbols = get_symbols(symbol_set)
 
 # Pull data from Yahoo Finance
 print("Pulling data from Yahoo Finance")

@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 import yfinance as yf
-from src.common.sector_weights import SECTOR_METRIC_THRESHOLDS
+from src.common.configuration.sector_weights import SECTOR_METRIC_THRESHOLDS
 from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup

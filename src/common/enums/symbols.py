@@ -5,6 +5,7 @@ class SymbolSet(Enum):
     FID_FOLIO = "fid_folio"
     TESTING = "testing"
     SP500 = "sp500"
+    NOBL = "nobl"
 
 def get_symbols(symbol_set: SymbolSet):
     dir = f"src/common/portfolios/{symbol_set.value}.txt"
