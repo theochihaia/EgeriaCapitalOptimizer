@@ -38,6 +38,7 @@ $RECYCLE.BIN/ # Windows
 *.db
 *.sqlite
 src/storage/data/
+src/storage/output/
 
 # Log files
 *.log

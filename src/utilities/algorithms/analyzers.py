@@ -22,7 +22,7 @@ metric_weights = {
     Metric.PRICE_TO_SALES: 1,
     Metric.PRICE_TO_CASHFLOW: 1,
     Metric.STANDARD_DEVIATION: 2,
-    Metric.BETA: 3,
+    Metric.BETA: 4,
     Metric.NORMALIZED_EBIDTA_DEVIATION: 3,
     Metric.TOTAL_REVENUE_DEVIATION: 3,
     Metric.FIVE_YEAR_RETURN: 5,
@@ -57,14 +57,25 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
 
     results: List[AnalysisResult] = []
     for metric in metrics:
-        analysis_function = analyzers.get(metric)
-        if not analysis_function:
-            raise ValueError(f"No Analyzer for metric: {metric}")
+        try:
+            analysis_function = analyzers.get(metric)
+            if not analysis_function:
+                raise ValueError(f"No Analyzer for metric: {metric}")
+            
+            results.append(analysis_function(ticker))
+        except ValueError as e:
+            # Handle the exception here
+            print(f"Error for symbol  {ticker.info['symbol']} :", e)
 
-        results.append(analysis_function(ticker))
-    
+
     # Generate grouped results
-    egeria_score = analyze_egeria_score(results)
+    try:
+        egeria_score = analyze_egeria_score(results)
+    except ValueError as e:
+        # Handle the exception here
+        print(f"Error for symbol  {ticker.info['symbol']} :", e)
+
+    
     grouped_results = AnalysisResultGroup(ticker.info["symbol"], results, egeria_score, ticker)
 
     return grouped_results
@@ -155,7 +166,7 @@ def analyze_revenue_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
         total_revenue.append(value.get("TotalRevenue"))
 
     # Get latest Revenue
-    latest_revenue = total_revenue[0]
+    latest_revenue = total_revenue[0] if len(total_revenue) > 0 else 0
 
     # Determine avg and standard deviation of Revenue
     revenue_avg = pd.Series(total_revenue).mean()
@@ -177,7 +188,7 @@ def analyze_ebidta_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
         ebidta.append(value.get("NormalizedEBITDA"))
 
     # Get latest Revenue
-    latest_ebidta = ebidta[0]
+    latest_ebidta = ebidta[0] if len(ebidta) > 0 else 0
 
     # Determine avg and standard deviation of Revenue
     ebidta_avg = pd.Series(ebidta).mean()
@@ -196,6 +207,9 @@ def analyze_five_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     return_low, return_high = FIVE_YEAR_RETURN
     data = ticker.history(period="5y")
 
+    if data.empty:
+        return
+
     latest_price = data["Close"].iloc[-1]
     initial_price = data["Close"].iloc[0]
     five_year_return = (latest_price - initial_price) / initial_price * 100
@@ -212,6 +226,9 @@ def analyze_five_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
 def analyze_ten_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
     return_low, return_high = TEN_YEAR_RETURN
     data = ticker.history(period="10y")
+
+    if data.empty:
+        return
 
     latest_price = data["Close"].iloc[-1]
     initial_price = data["Close"].iloc[0]

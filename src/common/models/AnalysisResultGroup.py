@@ -16,10 +16,10 @@ class AnalysisResultGroup:
         # Only display symbols with non-empty analysis
         output = ""
         if self.results:
-            output += "{symbol} - {name} ({sector})\n\r".format(symbol=self.symbol, name=self.ticker.get_info().get("longName"), sector=self.ticker.get_info().get("sector"))
-            output += f"Egeria Score: {self.egeria_score}\n\r"
+            output += "{symbol} - {name} ({sector})\n".format(symbol=self.symbol, name=self.ticker.get_info().get("longName"), sector=self.ticker.get_info().get("sector"))
+            output += f"Egeria Score: {self.egeria_score}\n"
             for res in self.results:
                 if res is not None:
-                    output += f"  {res.metric_result.value} {res.metric.value}: {res.message}\n\r"
-            output += "\n\r"
+                    output += f"  {res.metric_result.value} {res.metric.value}: {res.message}\n"
+            output += "\n"
         return output

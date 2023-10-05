@@ -24,9 +24,9 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbols = get_symbols(SymbolSet.FID_FOLIO)
+symbols = get_symbols(SymbolSet.SP500)
 directory = "src/storage/data"
-is_save_data_active = True
+is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
 is_get_monthly_active = False
 
@@ -48,7 +48,7 @@ metrics = [
      Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
      #Metric.STANDARD_DEVIATION
-     #Metric.EGERIA_SCORE,
+
 
 ]
 #------------------------------------------------------------#
@@ -66,20 +66,33 @@ def save_data(data: dict):
           for symbol, ticker in data.items():
                save_data_parallel(symbol, ticker, data_categories, directory)
 
+
 def generate_analysis(data: dict):
     analysis: List[AnalysisResultGroup] = []
+    
+    # Define a helper function for parallel execution
+    def analyze_ticker(ticker):
+        return analyze(ticker, metrics)
 
-    for ticker in data.values():
-        results = analyze(ticker, metrics)
-        analysis.append(results)  # Ensure we don't include None results
+    # Use ThreadPoolExecutor to parallelize the analysis
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        analysis.extend(executor.map(analyze_ticker, data.values()))
 
-     # Sort the analysis list by the egeria_score attribute in descending order
+    # Filter out None results if any
+    analysis = [result for result in analysis if result]
+
+    # Sort the analysis list by the egeria_score attribute in descending order
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
 
-     # Display the sorted results
-    for analysis_result in sorted_analysis:
-        print(analysis_result)
+    # Write the sorted results to a file
+    result_file_path = 'src/storage/output/results.txt'
+    with open(result_file_path, 'w') as file:
+        for analysis_result in sorted_analysis:
+            file.write(str(analysis_result) + '')
 
+    # Print the results to the console
+    with open(result_file_path, 'r') as file:
+        print(file.read())
 #------------------------------------------------------------#
 # Main
 #------------------------------------------------------------#
