@@ -8,6 +8,7 @@ class AnalysisResult:
     metric: Metric
     message: str
     metric_result: MetricResult
+    normalized_value: float = 0.0
     is_inverted: bool = False
 
     def __str__(self) -> str:

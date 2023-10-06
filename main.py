@@ -9,6 +9,7 @@ from src.utilities.third_party.yahoo_finance import pull_general_data, pull_pric
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric, MetricResult
+from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
 from src.utilities.algorithms.analyzers import analyze
 from src.utilities.algorithms.generate_egeria_score import EgeriaScore
 from src.utilities.algorithms.monthly_returns import get_monthly
@@ -41,12 +42,14 @@ metrics = [
      Metric.PRICE_TO_BOOK,
      Metric.PRICE_TO_SALES,
      Metric.BETA,
+     Metric.YIELD,
      Metric.NORMALIZED_EBIDTA_DEVIATION,
      Metric.TOTAL_REVENUE_DEVIATION,
      Metric.QUICK_RATIO,
      Metric.DEBT_TO_EQUITY,
      Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
+
      #Metric.STANDARD_DEVIATION
 
 
@@ -84,11 +87,34 @@ def generate_analysis(data: dict):
     # Sort the analysis list by the egeria_score attribute in descending order
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
 
-    # Write the sorted results to a file
     result_file_path = f"src/storage/output/results_{symbol_set.value}.txt"
+
+    # Now, write to the file
     with open(result_file_path, 'w') as file:
+        file.write("-----------------------------------------------------\n")
+        file.write("                        Stats                        \n")
+        file.write("-----------------------------------------------------\n")
+        
+        file.write(SECTOR_METRIC_STATISTICS_STR + "\n")
+
+        file.write("-----------------------------------------------------\n")
+        file.write("                       Ranking                       \n")
+        file.write("-----------------------------------------------------\n")
+        file.write("\n")
+
+        ix = 0
         for analysis_result in sorted_analysis:
-            file.write(str(analysis_result) + '')
+            ix += 1
+            file.write(f"{ix:02}|{analysis_result.symbol}" + '\n')
+
+        file.write("\n")
+        file.write("-----------------------------------------------------\n")
+        file.write("                       Details                       \n")
+        file.write("-----------------------------------------------------\n")
+        file.write("\n")
+
+        for analysis_result in sorted_analysis:
+            file.write(str(analysis_result) + '\n')
 
     # Print the results to the console
     with open(result_file_path, 'r') as file:
@@ -115,13 +141,5 @@ clear_directorires()
 save_data(data_general)
 
 generate_analysis(data_general)
-
-'''
-egeriaScores = []
-for symbol, ticker in data.items():
-     eg_score = EgeriaScore(ticker, metrics)
-     egeriaScores.append(eg_score)
-     print(eg_score)
-'''
 
 print("Processing Complete")

@@ -1,0 +1,34 @@
+import yfinance as yf
+import pandas as pd
+
+def generate_egeria_configuration(symbols: list):
+    sectors = get_sectors(symbols)
+    list_of_metrics = [
+        "trailingPE", "priceToBook", "priceToSalesTrailing12Months", "beta", "forwardPE"
+    ]
+    for sector, tickers in sectors.items():
+        get_metric_stats(tickers, list_of_metrics)
+
+# Given a list of symbols, convert it to a dictionary of sectors to ticker[]
+def get_sectors(symbols: list) -> dict:
+    sectors = {}
+    for symbol in symbols:
+        ticker = yf.Ticker(symbol)
+        sector = ticker.info.get("sector")
+        if sector in sectors:
+            sectors[sector].append(symbol)
+        else:
+            sectors[sector] = [symbol]
+    return sectors
+
+# Given a list of tickers calculate avg and std for each metric
+def get_metric_stats(tickers: list, metrics: list) -> tuple:
+    metrics_avg = {}
+    metrics_std = {}
+    for metric in metrics:
+        metric_values = []
+        for ticker in tickers:
+            metric_values.append(ticker.info.get(metric))
+        metrics_avg[metric] = pd.Series(metric_values).mean()
+        metrics_std[metric] = pd.Series(metric_values).std()
+    return metrics_avg, metrics_std

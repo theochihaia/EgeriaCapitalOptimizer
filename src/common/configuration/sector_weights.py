@@ -1,3 +1,4 @@
+# Depricated: 10/05/2023
 SECTOR_METRIC_THRESHOLDS = {
     "Default": {
         "PE": (14, 30),

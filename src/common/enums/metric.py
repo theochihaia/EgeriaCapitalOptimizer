@@ -18,6 +18,7 @@ class Metric(Enum):
     DEBT_TO_EQUITY = "Debt/Equity"
     EBIDTA_GROWTH = "EBIDTA Growth"
     REVENUE_GROWTH = "Revenue Growth"
+    YIELD = "Yield"
     EGERIA_SCORE = "Egeria Score"
 
 
