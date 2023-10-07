@@ -13,7 +13,7 @@ class RangeAnalysisConfig:
     std: float
     fetch_data: Callable[[yf.Ticker], Union[float, None]]
 
-def range_analyzer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool = False) -> Optional[AnalysisResult]:
+def range_normalizer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool = False) -> Optional[AnalysisResult]:
     value = config.fetch_data(ticker)
     symbol = ticker.get_info().get("symbol")
 

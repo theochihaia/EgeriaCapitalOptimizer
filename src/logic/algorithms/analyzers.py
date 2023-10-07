@@ -1,70 +1,30 @@
+import yfinance as yf
 from collections import defaultdict
 from typing import List
 from typing import Optional
 import pandas as pd
 from datetime import datetime
 
-
-import yfinance as yf
+from src.common.models.MetricConfig import MetricConfig
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
+from src.common.configuration.metric_config import METRIC_CONFIG
 from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
-from src.logic.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
-
-# Constants
-FIVE_YEAR_RETURN = (60, 120)
-TEN_YEAR_RETURN = (150, 250)
-
-metric_weights = {
-    Metric.PRICE_TO_EARNINGS: 1,
-    Metric.PRICE_TO_BOOK: 1,
-    Metric.PRICE_TO_SALES: 1,
-    Metric.PRICE_TO_CASHFLOW: 1,
-    Metric.STANDARD_DEVIATION: 2,
-    Metric.BETA: 4,
-    Metric.NORMALIZED_EBIDTA_DEVIATION: 3,
-    Metric.TOTAL_REVENUE_DEVIATION: 3,
-    Metric.FIVE_YEAR_RETURN: 5,
-    Metric.TEN_YEAR_RETURN: 5,
-    Metric.FIFTY_DAY_AVG: 3,
-    Metric.BOLLINGER_BANDS: 1,
-    Metric.QUICK_RATIO: 3,
-    Metric.DEBT_TO_EQUITY: 3,
-    Metric.YIELD: 1,
-}
-
-metric_weights_total = sum(metric_weights.values())
-
+from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
 def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
-    analyzers = {
-        Metric.PRICE_TO_EARNINGS: analyze_price_to_earnings,
-        Metric.PRICE_TO_BOOK: analyze_price_to_book,
-        Metric.PRICE_TO_SALES: analyze_price_to_sales,
-        Metric.PRICE_TO_CASHFLOW: analyze_price_to_cashflow,
-        Metric.STANDARD_DEVIATION: analyze_standard_deviation,
-        Metric.BETA: analyze_beta,
-        Metric.NORMALIZED_EBIDTA_DEVIATION: analyze_ebidta_deviation,
-        Metric.TOTAL_REVENUE_DEVIATION: analyze_revenue_deviation,
-        Metric.FIVE_YEAR_RETURN: analyze_five_year_return,
-        Metric.TEN_YEAR_RETURN: analyze_ten_year_return,
-        Metric.FIFTY_DAY_AVG: analyze_fifty_day_avg,
-        Metric.BOLLINGER_BANDS: analyze_bollinger_bands,
-        Metric.QUICK_RATIO: analyze_quick_ratios,
-        Metric.DEBT_TO_EQUITY: analyze_debt_to_equity,
-        Metric.YIELD: analyze_yield,
-    }
 
-
+    
     results: List[AnalysisResult] = []
     for metric in metrics:
         try:
-            analysis_function = analyzers.get(metric)
-            if not analysis_function:
-                raise ValueError(f"No Analyzer for metric: {metric}")
-            
-            results.append(analysis_function(ticker))
+            # Check if configuration exists for metric
+            metric_config = METRIC_CONFIG.get(metric)
+            if not metric_config:
+                raise ValueError(f"No configuration for metric: {metric}")
+
+            results.append(analyze_metric(metric, metric_config, ticker))
         except ValueError as e:
             # Handle the exception here
             print(f"Error for symbol  {ticker.info['symbol']} :", e)
@@ -82,10 +42,7 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
 
     return grouped_results
 
-# Egeria Score pulls sector statistics SECTOR_METRIC_STATISTICS
-# and scales the results to a 0-100 scale
-# using IX 0 as the average and IX 1 as the standard deviation
-# current version uses default only
+
 def analyze_egeria_score(results: [AnalysisResult]) -> float:
     if(results is None or len(results) == 0):
         return 0.0
@@ -97,11 +54,13 @@ def analyze_egeria_score(results: [AnalysisResult]) -> float:
     # Get Sector Statistics
     sector_statistics = SECTOR_METRIC_STATISTICS.get(sector, {})
     
-    # calculate
+    # Calculate Egeria Score
     sum = 0.0
     for result in results:
         if result is not None:
-            sum += result.normalized_value * metric_weights.get(result.metric, 1)
+            metric_config = METRIC_CONFIG.get(result.metric)
+            weight = metric_config.metric_weight if metric_config else 1
+            sum += result.normalized_value * weight
     return round(sum,3);
 
 
@@ -111,181 +70,18 @@ def get_sector_statistics(ticker: yf.Ticker, metric_key):
     return SECTOR_METRIC_STATISTICS.get(sector, {}).get(metric_key, (None, None))
 
 
-def analyze_price_to_earnings(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "PE")
+def analyze_metric(metric: Metric, metric_config: MetricConfig, ticker: yf.Ticker):
+    avg, std = get_sector_statistics(ticker, metric_config.stat_key)
+
+    if avg is None or std is None:
+        print(f"Could not find sector statistics for metric: {metric} for ticker: {ticker.info['symbol']}")
+        return None
 
     config = RangeAnalysisConfig(
-        metric=Metric.PRICE_TO_EARNINGS,
+        metric=metric,
         avg=avg,
         std=std,
-        fetch_data=lambda t: t.info.get("forwardPE") or t.info.get("trailingPE"),
+        fetch_data=metric_config.data_fetcher,
     )
-    return range_analyzer(ticker, config, invert=True)
 
-
-def analyze_price_to_book(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "PB")
-
-    config = RangeAnalysisConfig(
-        metric=Metric.PRICE_TO_BOOK,
-        avg=avg,
-        std=std,
-        fetch_data=lambda t: t.info.get("priceToBook"),
-    )
-    return range_analyzer(ticker, config, invert=True)
-
-
-def analyze_price_to_sales(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "PS")
-
-    config = RangeAnalysisConfig(
-        metric=Metric.PRICE_TO_SALES,
-        avg=avg,
-        std=std,
-        fetch_data=lambda t: t.info.get("priceToSalesTrailing12Months"),
-    )
-    return range_analyzer(ticker, config, invert=True)
-
-
-def analyze_price_to_cashflow(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    raise NotImplementedError("analyze_price_to_cashflow not implemented")
-
-
-def analyze_standard_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    return "standard_deviation"
-
-
-def analyze_beta(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "BETA")
-
-    config = RangeAnalysisConfig(
-        metric=Metric.BETA,
-        avg=avg,
-        std=std,
-        fetch_data=lambda t: t.info.get("beta"),
-    )
-    return range_analyzer(ticker, config, invert=True)
-
-
-def analyze_revenue_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    # Get Revenue list for ticker
-    total_revenue = []
-    for key, value in ticker.get_income_stmt().items():
-        total_revenue.append(value.get("TotalRevenue"))
-
-    # Get latest Revenue
-    latest_revenue = total_revenue[0] if len(total_revenue) > 0 else 0
-
-    # Determine avg and standard deviation of Revenue
-    revenue_avg = pd.Series(total_revenue).mean()
-    revenue_std = pd.Series(total_revenue).std()
-
-    config = RangeAnalysisConfig(
-        metric=Metric.TOTAL_REVENUE_DEVIATION,
-        avg=revenue_avg,
-        std=revenue_std,
-        fetch_data=lambda ticker: latest_revenue,
-    )
-    return range_analyzer(ticker, config, invert=False)
-
-
-def analyze_ebidta_deviation(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    # Get Revenue list for ticker
-    ebidta = []
-    for key, value in ticker.get_income_stmt().items():
-        ebidta.append(value.get("NormalizedEBITDA"))
-
-    # Get latest Revenue
-    latest_ebidta = ebidta[0] if len(ebidta) > 0 else 0
-
-    # Determine avg and standard deviation of Revenue
-    ebidta_avg = pd.Series(ebidta).mean()
-    ebidta_std = pd.Series(ebidta).std()
-
-    config = RangeAnalysisConfig(
-        metric=Metric.NORMALIZED_EBIDTA_DEVIATION,
-        avg=ebidta_avg,
-        std=ebidta_std,
-        fetch_data=lambda ticker: latest_ebidta,
-    )
-    return range_analyzer(ticker, config, invert=False)
-
-
-def analyze_five_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "RETURN_5_YR")
-    data = ticker.history(period="5y")
-
-    if data.empty:
-        return
-
-    latest_price = data["Close"].iloc[-1]
-    initial_price = data["Close"].iloc[0]
-    five_year_return = (latest_price - initial_price) / initial_price * 100
-
-    config = RangeAnalysisConfig(
-        metric=Metric.FIVE_YEAR_RETURN,
-        avg=avg,
-        std=std,
-        fetch_data=lambda ticker: five_year_return,
-    )
-    return range_analyzer(ticker, config, invert=False)
-
-
-def analyze_ten_year_return(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "RETURN_10_YR")
-    data = ticker.history(period="10y")
-
-    if data.empty:
-        return
-
-    latest_price = data["Close"].iloc[-1]
-    initial_price = data["Close"].iloc[0]
-    ten_year_return = (latest_price - initial_price) / initial_price * 100
-
-    config = RangeAnalysisConfig(
-        metric=Metric.TEN_YEAR_RETURN,
-        avg=avg,
-        std=std,
-        fetch_data=lambda ticker: ten_year_return,
-    )
-    return range_analyzer(ticker, config, invert=False)
-
-def analyze_quick_ratios(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "QUICK_RATIO")
-
-    config = RangeAnalysisConfig(
-        metric=Metric.QUICK_RATIO,
-        avg=avg,
-        std=std,
-        fetch_data=lambda t: t.info.get("quickRatio"),
-    )
-    return range_analyzer(ticker, config)
-
-def analyze_debt_to_equity(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    avg, std = get_sector_statistics(ticker, "DEBT_TO_EQUITY")
-
-    config = RangeAnalysisConfig(
-        metric=Metric.DEBT_TO_EQUITY,
-        avg=avg,
-        std=std,
-        fetch_data=lambda t: t.info.get("debtToEquity"),
-    )
-    return range_analyzer(ticker, config, invert=True)
-
-def analyze_yield(ticker) -> AnalysisResult:
-    avg, std = get_sector_statistics(ticker, "YIELD")
-
-    config = RangeAnalysisConfig(
-        metric=Metric.YIELD,
-        avg=avg,
-        std=std,
-        fetch_data=lambda t: t.info.get("fiveYearAvgDividendYield"),
-    )
-    return range_analyzer(ticker, config, invert=False)
-
-def analyze_fifty_day_avg(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    raise NotImplementedError("analyze_bollinger_bands not implemented")
-
-
-def analyze_bollinger_bands(ticker: yf.Ticker) -> Optional[AnalysisResult]:
-    raise NotImplementedError("analyze_bollinger_bands not implemented")
+    return range_normalizer(ticker, config, invert=metric_config.is_inverted)

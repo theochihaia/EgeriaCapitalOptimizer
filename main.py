@@ -43,16 +43,10 @@ metrics = [
      Metric.PRICE_TO_SALES,
      Metric.BETA,
      Metric.YIELD,
-     Metric.NORMALIZED_EBIDTA_DEVIATION,
-     Metric.TOTAL_REVENUE_DEVIATION,
      Metric.QUICK_RATIO,
      Metric.DEBT_TO_EQUITY,
      Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
-
-     #Metric.STANDARD_DEVIATION
-
-
 ]
 #------------------------------------------------------------#
 # Helpers
