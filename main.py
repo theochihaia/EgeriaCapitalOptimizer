@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import List
 import concurrent.futures
+import os
 
 from src.common.enums.symbols import get_symbols, SymbolSet
 from src.common.models.AnalysisResult import AnalysisResult
@@ -77,9 +78,9 @@ def generate_analysis(data: dict):
     def analyze_ticker(ticker):
         return analyze(ticker, metrics)
 
-    # Use ThreadPoolExecutor to parallelize the analysis
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        analysis.extend(executor.map(analyze_ticker, data.values()))
+         futures = [executor.submit(analyze_ticker, ticker) for ticker in data.values()]
+         analysis = [future.result() for future in concurrent.futures.as_completed(futures) if future.result()]
 
     # Filter out None results if any
     analysis = [result for result in analysis if result]
@@ -88,6 +89,11 @@ def generate_analysis(data: dict):
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
 
     result_file_path = f"src/storage/output/results_{symbol_set.value}.txt"
+
+    # Ensure the directory exists
+    directory = os.path.dirname(result_file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
     # Now, write to the file
     with open(result_file_path, 'w') as file:
