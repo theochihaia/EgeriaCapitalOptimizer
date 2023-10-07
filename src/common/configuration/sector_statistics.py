@@ -21,14 +21,14 @@ P/E         24.2        15.8
 P/B         2.92        0.68
 P/S         1.76        0.54
 Beta        1.0         0.2
-Yield	    0.00        1.00
+Yield       0.00        1.00
 Q/R         1           0.5
 D/E         100         50
 5 YR        50          25
 10 YR	    150         75
 EBTAMRGN    0.2         0.1
-EBTAGROW    15          10
-REVGROW     15          10
+EBTAGROW    15          5
+REVGROW     15          5
 
 """
 
@@ -44,8 +44,8 @@ SECTOR_METRIC_STATISTICS = {
         "RETURN_10_YR": (150, 75),
         "YIELD": (0, 1),
         "EBIDTA_MARGIN": (.2, .1),
-        "EBIDTA_GROWTH_RATE": (15, 10),
-        "REVENUE_GROWTH_RATE": (15, 10)
+        "EBIDTA_GROWTH_RATE": (15, 5),
+        "REVENUE_GROWTH_RATE": (15, 5)
     },
     "Healthcare": {
 

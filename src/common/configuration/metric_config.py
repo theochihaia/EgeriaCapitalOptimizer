@@ -73,13 +73,13 @@ METRIC_CONFIG = {
     Metric.EBIDTA_AVG_GROWTH_RATE: MetricConfig(
         stat_key="EBIDTA_GROWTH_RATE",
         data_fetcher=lambda t: get_income_growth(t, "NormalizedEBITDA"),
-        metric_weight=4,
+        metric_weight=3,
         is_inverted=False
     ),
     Metric.REVENUE_AVG_GROWTH_RATE: MetricConfig(
         stat_key="REVENUE_GROWTH_RATE",
         data_fetcher=lambda t: get_income_growth(t, "TotalRevenue"),
-        metric_weight=4,
+        metric_weight=3,
         is_inverted=False
     ),
 }
