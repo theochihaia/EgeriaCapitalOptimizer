@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.IJH_MID_CAP
+symbol_set = SymbolSet.TESTING
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -94,27 +94,17 @@ def generate_analysis(data: dict):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    # Now, write to the file
+    # Generate File
     with open(result_file_path, 'w') as file:
-        file.write("-----------------------------------------------------\n")
-        file.write("                        Stats                        \n")
-        file.write("-----------------------------------------------------\n")
+        file.write(get_header("Stats"))
         
         file.write(SECTOR_METRIC_STATISTICS_STR + "\n")
-
-        file.write("\n")
-        file.write("-----------------------------------------------------\n")
-        file.write("                       Details                       \n")
-        file.write("-----------------------------------------------------\n")
-        file.write("\n")
+        file.write(get_header("Details"))
 
         for analysis_result in sorted_analysis:
             file.write(str(analysis_result) + '\n')
 
-        file.write("-----------------------------------------------------\n")
-        file.write("                       Ranking                       \n")
-        file.write("-----------------------------------------------------\n")
-        file.write("\n")
+        file.write(get_header("Ranking"))
 
         ix = 0
         for analysis_result in sorted_analysis:
@@ -122,6 +112,15 @@ def generate_analysis(data: dict):
             file.write(f"{ix:02}|{analysis_result.symbol}" + '\n')
 
         print("Results written to " + result_file_path)
+
+
+def get_header(header_label: str):
+     return f"""
+-----------------------------------------------------
+                    {header_label}                       
+-----------------------------------------------------
+"""
+
 #------------------------------------------------------------#
 # Main
 #------------------------------------------------------------#
