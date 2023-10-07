@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.FID_FOLIO
+symbol_set = SymbolSet.IJR_SMALL_CAP
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -73,7 +73,7 @@ def generate_analysis(data: dict):
         if ticker is None:
                print(f"Could not find ticker info for symbol: {symbol}")
                return None
-        return analyze(ticker, metrics)
+        return analyze(symbol, ticker, metrics)
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
          futures = [executor.submit(analyze_ticker, symbol, ticker) for symbol, ticker in data.items()]

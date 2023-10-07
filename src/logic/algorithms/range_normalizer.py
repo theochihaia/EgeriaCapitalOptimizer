@@ -13,19 +13,30 @@ class RangeAnalysisConfig:
     std: float
     fetch_data: Callable[[yf.Ticker], Union[float, None]]
 
-def range_normalizer(ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool = False) -> Optional[AnalysisResult]:
-    value = config.fetch_data(ticker)
+def range_normalizer(symbol: str, ticker: yf.Ticker, config: RangeAnalysisConfig, invert: bool = False) -> Optional[AnalysisResult]:
+    value = None
+    try:
+        value = config.fetch_data(ticker)
+    except Exception as e:
+        print(f"Error fetching {config.metric} for {symbol}: {e}")
+        return None
+    
+    if value is None:
+        return None
+    
     symbol = ticker.get_info().get("symbol")
 
     positive_result = MetricResult.POSITIVE if not invert else MetricResult.NEGATIVE
     negative_result = MetricResult.NEGATIVE if not invert else MetricResult.POSITIVE
     multiplier = (-1 if invert else 1)
 
-    if value is None:
-        return None
-
     # Convert the value to float and format it with commas and two decimal places
-    display_value = "{:,.2f}".format(round(float(value), 2))
+    display_value = ""
+    try:
+        display_value = "{:,.2f}".format(round(float(value), 2))
+    except Exception as e:
+        print(f"Error formatting {config.metric} for {symbol}. Value {value}")
+        return None
 
     message = ""
     if value > config.avg + config.std:

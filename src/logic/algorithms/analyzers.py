@@ -13,26 +13,22 @@ from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
-def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
+def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
     results: List[AnalysisResult] = []
     for metric in metrics:
-        try:
-            # Check if configuration exists for metric
-            metric_config = METRIC_CONFIG.get(metric)
-            if not metric_config:
-                raise ValueError(f"No configuration for metric: {metric}")
+        # Check if configuration exists for metric
+        metric_config = METRIC_CONFIG.get(metric)
+        if not metric_config:
+            raise ValueError(f"No configuration for metric: {metric}")
 
-            results.append(analyze_metric(metric, metric_config, ticker))
-        except ValueError as e:
-            # Handle the exception here
-            print(f"Error for symbol:", e)
+        results.append(analyze_metric(symbol, metric, metric_config, ticker))
 
     # Generate grouped results
     try:
         egeria_score = generate_egeria_score(results)
     except ValueError as e:
         # Handle the exception here
-        print(f"Error for symbol  {ticker.info['symbol']} :", e)
+        print(f"Error for symbol {symbol} :", e)
 
     
     grouped_results = AnalysisResultGroup(ticker.info["symbol"], results, egeria_score, ticker)
@@ -47,7 +43,7 @@ def get_sector_statistics(ticker: yf.Ticker, metric_key):
     return SECTOR_METRIC_STATISTICS.get(sector, {}).get(metric_key, (None, None))
 
 
-def analyze_metric(metric: Metric, metric_config: MetricConfig, ticker: yf.Ticker):
+def analyze_metric(symbol: str, metric: Metric, metric_config: MetricConfig, ticker: yf.Ticker):
     avg, std = get_sector_statistics(ticker, metric_config.stat_key)
 
     if avg is None or std is None:
@@ -61,7 +57,7 @@ def analyze_metric(metric: Metric, metric_config: MetricConfig, ticker: yf.Ticke
         fetch_data=metric_config.data_fetcher,
     )
 
-    return range_normalizer(ticker, config, invert=metric_config.is_inverted)
+    return range_normalizer(symbol, ticker, config, invert=metric_config.is_inverted)
 
 
 def generate_egeria_score(results: [AnalysisResult]) -> float:
