@@ -12,7 +12,6 @@ from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric, MetricResult
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
 from src.utilities.algorithms.analyzers import analyze
-from src.utilities.algorithms.generate_egeria_score import EgeriaScore
 from src.utilities.algorithms.monthly_returns import get_monthly
 
 
