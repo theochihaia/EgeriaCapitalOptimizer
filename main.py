@@ -47,6 +47,7 @@ metrics = [
      Metric.DEBT_TO_EQUITY,
      Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
+     Metric.EBIDTA_MARGIN,
 ]
 #------------------------------------------------------------#
 # Helpers

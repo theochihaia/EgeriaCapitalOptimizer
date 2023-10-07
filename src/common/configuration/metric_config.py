@@ -63,6 +63,12 @@ METRIC_CONFIG = {
         data_fetcher=lambda t: t.info.get("fiveYearAvgDividendYield"),
         metric_weight=1,
         is_inverted=False
+    ),
+    Metric.EBIDTA_MARGIN: MetricConfig(
+        stat_key="EBIDTA_MARGIN",
+        data_fetcher=lambda t: t.info.get("ebitdaMargins"),
+        metric_weight=3,
+        is_inverted=False
     )
 }
 

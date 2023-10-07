@@ -40,6 +40,7 @@ SECTOR_METRIC_STATISTICS = {
         "RETURN_5_YR": (50, 25),
         "RETURN_10_YR": (150, 75),
         "YIELD": (0, 1),
+        "EBIDTA_MARGIN": (.2, .1),
     },
     "Healthcare": {
 
