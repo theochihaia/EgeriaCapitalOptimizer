@@ -6,13 +6,13 @@ import os
 from src.common.enums.symbols import get_symbols, SymbolSet
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
-from src.utilities.third_party.yahoo_finance import pull_general_data, pull_pricing_data
+from src.third_party.yahoo_finance import pull_general_data, pull_pricing_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric, MetricResult
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
-from src.utilities.algorithms.analyzers import analyze
-from src.utilities.algorithms.monthly_returns import get_monthly
+from src.logic.algorithms.analyzers import analyze
+from src.logic.algorithms.monthly_returns import get_monthly
 
 
 '''

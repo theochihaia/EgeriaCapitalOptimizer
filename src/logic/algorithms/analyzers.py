@@ -10,7 +10,7 @@ from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
 from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
-from src.utilities.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
+from src.logic.algorithms.range_analyzer import RangeAnalysisConfig, range_analyzer
 
 # Constants
 FIVE_YEAR_RETURN = (60, 120)
