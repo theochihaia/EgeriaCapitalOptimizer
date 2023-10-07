@@ -16,16 +16,17 @@ Yield	1.19    1.11
 '''
 
 SECTOR_METRIC_STATISTICS_STR = """
-Metric  Avg     Deviation
-P/E     24.2    15.8
-P/B     2.92    0.68
-P/S     1.76    0.54
-Beta    0.8     0.4
-Yield	1.19    1.11
-Q/R     1       0.5
-D/E     100     50
-5 YR    50      25
-10 YR	150     75
+Metric      Avg         Deviation
+P/E         24.2        15.8
+P/B         2.92        0.68
+P/S         1.76        0.54
+Beta        1.0         0.2
+Yield	    0.00        1.00
+Q/R         1           0.5
+D/E         100         50
+5 YR        50          25
+10 YR	    150         75
+EBTAMRGN    0.2         0.1
 
 """
 
