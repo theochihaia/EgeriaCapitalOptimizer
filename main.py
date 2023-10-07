@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.IJR_SMALL_CAP
+symbol_set = SymbolSet.FID_FOLIO
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -48,6 +48,8 @@ metrics = [
      Metric.FIVE_YEAR_RETURN,
      Metric.TEN_YEAR_RETURN,
      Metric.EBIDTA_MARGIN,
+     Metric.EBIDTA_AVG_GROWTH_RATE,
+     Metric.REVENUE_AVG_GROWTH_RATE
 ]
 #------------------------------------------------------------#
 # Helpers
@@ -100,6 +102,15 @@ def generate_analysis(data: dict):
         
         file.write(SECTOR_METRIC_STATISTICS_STR + "\n")
 
+        file.write("\n")
+        file.write("-----------------------------------------------------\n")
+        file.write("                       Details                       \n")
+        file.write("-----------------------------------------------------\n")
+        file.write("\n")
+
+        for analysis_result in sorted_analysis:
+            file.write(str(analysis_result) + '\n')
+
         file.write("-----------------------------------------------------\n")
         file.write("                       Ranking                       \n")
         file.write("-----------------------------------------------------\n")
@@ -110,18 +121,7 @@ def generate_analysis(data: dict):
             ix += 1
             file.write(f"{ix:02}|{analysis_result.symbol}" + '\n')
 
-        file.write("\n")
-        file.write("-----------------------------------------------------\n")
-        file.write("                       Details                       \n")
-        file.write("-----------------------------------------------------\n")
-        file.write("\n")
-
-        for analysis_result in sorted_analysis:
-            file.write(str(analysis_result) + '\n')
-
-    # Print the results to the console
-    # with open(result_file_path, 'r') as file:
-    #   print(file.read())
+        print("Results written to " + result_file_path)
 #------------------------------------------------------------#
 # Main
 #------------------------------------------------------------#

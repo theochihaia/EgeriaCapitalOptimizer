@@ -69,7 +69,19 @@ METRIC_CONFIG = {
         data_fetcher=lambda t: t.info.get("ebitdaMargins"),
         metric_weight=3,
         is_inverted=False
-    )
+    ),
+    Metric.EBIDTA_AVG_GROWTH_RATE: MetricConfig(
+        stat_key="EBIDTA_GROWTH_RATE",
+        data_fetcher=lambda t: get_income_growth(t, "NormalizedEBITDA"),
+        metric_weight=4,
+        is_inverted=False
+    ),
+    Metric.REVENUE_AVG_GROWTH_RATE: MetricConfig(
+        stat_key="REVENUE_GROWTH_RATE",
+        data_fetcher=lambda t: get_income_growth(t, "TotalRevenue"),
+        metric_weight=4,
+        is_inverted=False
+    ),
 }
 
 
@@ -82,3 +94,21 @@ def get_return(ticker: yf.Ticker, period: str):
     initial_price = data["Close"].iloc[0]
     return (latest_price - initial_price) / initial_price * 100
 
+
+def get_income_growth(ticker: yf.Ticker, data_point: str):
+
+    data = []
+    for key, value in ticker.get_income_stmt().items():
+        data.append(value.get(data_point))
+
+    if len(data) < 2:
+        return None
+
+    avgGrowthRate = 0
+    for i in range(len(data) - 1):
+        if data[i + 1] is None or data[i] is None:
+            continue
+        avgGrowthRate += (data[i] - data[i + 1]) / data[i + 1]
+        
+    avgGrowthRate /= len(data) - 1
+    return avgGrowthRate * 100

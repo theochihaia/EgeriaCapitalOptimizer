@@ -17,7 +17,8 @@ class Metric(Enum):
     EBIDTA_MARGIN = "EBIDTA Margin"
     YIELD = "Yield"
     EGERIA_SCORE = "Egeria Score"
-
+    EBIDTA_AVG_GROWTH_RATE = "EBIDTA Avg Growth Rate"
+    REVENUE_AVG_GROWTH_RATE = "Revenue Avg Growth Rate"
 
 class MetricResult(Enum):
     POSITIVE = "✅"

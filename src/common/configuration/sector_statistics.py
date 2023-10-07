@@ -27,6 +27,8 @@ D/E         100         50
 5 YR        50          25
 10 YR	    150         75
 EBTAMRGN    0.2         0.1
+EBTAGROW    15          10
+REVGROW     15          10
 
 """
 
@@ -42,6 +44,8 @@ SECTOR_METRIC_STATISTICS = {
         "RETURN_10_YR": (150, 75),
         "YIELD": (0, 1),
         "EBIDTA_MARGIN": (.2, .1),
+        "EBIDTA_GROWTH_RATE": (15, 10),
+        "REVENUE_GROWTH_RATE": (15, 10)
     },
     "Healthcare": {
 

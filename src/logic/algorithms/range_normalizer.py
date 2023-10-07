@@ -38,7 +38,6 @@ def range_normalizer(symbol: str, ticker: yf.Ticker, config: RangeAnalysisConfig
         print(f"Error formatting {config.metric} for {symbol}. Value {value}")
         return None
 
-    message = ""
     if value > config.avg + config.std:
         message = display_value
         result = positive_result
