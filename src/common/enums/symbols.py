@@ -7,6 +7,7 @@ class SymbolSet(Enum):
     SP500 = "sp500"
     NOBL = "nobl"
     IJR_SMALL_CAP = "ijr_small_cap"
+    IJH_MID_CAP = "ijh_mid_cap"
     ALEX = "alex"
 
 def get_symbols(symbol_set: SymbolSet):

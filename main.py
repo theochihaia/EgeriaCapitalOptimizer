@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.FID_FOLIO
+symbol_set = SymbolSet.IJH_MID_CAP
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active

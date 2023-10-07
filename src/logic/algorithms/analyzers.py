@@ -31,7 +31,7 @@ def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResul
         print(f"Error for symbol {symbol} :", e)
 
     
-    grouped_results = AnalysisResultGroup(ticker.info["symbol"], results, egeria_score, ticker)
+    grouped_results = AnalysisResultGroup(symbol, results, egeria_score, ticker)
 
     return grouped_results
 
