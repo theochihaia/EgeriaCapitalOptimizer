@@ -25,7 +25,7 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
             results.append(analyze_metric(metric, metric_config, ticker))
         except ValueError as e:
             # Handle the exception here
-            print(f"Error for symbol  {ticker.info['symbol']} :", e)
+            print(f"Error for symbol:", e)
 
     # Generate grouped results
     try:
@@ -41,8 +41,9 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
 
 
 def get_sector_statistics(ticker: yf.Ticker, metric_key):
-    sector = ticker.info.get("sector", "Default")
-    sector = "Default" # override sector for testing
+    sector = "Default"
+    
+    #sector = ticker.info.get("sector", "Default")
     return SECTOR_METRIC_STATISTICS.get(sector, {}).get(metric_key, (None, None))
 
 

@@ -34,12 +34,12 @@ SECTOR_METRIC_STATISTICS = {
         "PE": (24.2, 15.8),
         "PB": (2.92, .68),
         "PS": (1.76, .54),
-        "BETA": (.8, .4),
+        "BETA": (1, .2),
         "QUICK_RATIO": (1, .5),
         "DEBT_TO_EQUITY": (100, 50),
         "RETURN_5_YR": (50, 25),
         "RETURN_10_YR": (150, 75),
-        "YIELD": (1.19, 1.1),
+        "YIELD": (0, 1),
     },
     "Healthcare": {
 

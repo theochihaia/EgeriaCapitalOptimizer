@@ -68,11 +68,14 @@ def generate_analysis(data: dict):
     analysis: List[AnalysisResultGroup] = []
     
     # Define a helper function for parallel execution
-    def analyze_ticker(ticker):
+    def analyze_ticker(symbol, ticker):
+        if ticker is None:
+               print(f"Could not find ticker info for symbol: {symbol}")
+               return None
         return analyze(ticker, metrics)
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-         futures = [executor.submit(analyze_ticker, ticker) for ticker in data.values()]
+         futures = [executor.submit(analyze_ticker, symbol, ticker) for symbol, ticker in data.items()]
          analysis = [future.result() for future in concurrent.futures.as_completed(futures) if future.result()]
 
     # Filter out None results if any
@@ -116,8 +119,8 @@ def generate_analysis(data: dict):
             file.write(str(analysis_result) + '\n')
 
     # Print the results to the console
-    with open(result_file_path, 'r') as file:
-        print(file.read())
+    # with open(result_file_path, 'r') as file:
+    #   print(file.read())
 #------------------------------------------------------------#
 # Main
 #------------------------------------------------------------#
@@ -133,7 +136,6 @@ if(is_get_monthly_active):
      print(monthly)
 
 data_general = pull_general_data(symbols)
-#data_prices = pull_pricing_data(symbols, "1yr")
 
 clear_directorires()
 

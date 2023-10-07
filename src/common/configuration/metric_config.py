@@ -7,7 +7,7 @@ METRIC_CONFIG = {
     Metric.PRICE_TO_EARNINGS: MetricConfig(
         stat_key="PE",
         data_fetcher=lambda t: t.info.get("forwardPE") or t.info.get("trailingPE"),
-        metric_weight=1,
+        metric_weight=2,
         is_inverted=True
     ),
     Metric.PRICE_TO_BOOK: MetricConfig(
@@ -25,20 +25,8 @@ METRIC_CONFIG = {
     Metric.BETA: MetricConfig(
         stat_key="BETA",
         data_fetcher=lambda t: t.info.get("beta"),
-        metric_weight=4,
+        metric_weight=5,
         is_inverted=True
-    ),
-    Metric.NORMALIZED_EBIDTA_DEVIATION: MetricConfig(
-        stat_key="NORMALIZED_EBIDTA_DEVIATION",
-        data_fetcher=lambda t: t.info.get("ebitda"),
-        metric_weight=3,
-        is_inverted=False
-    ),
-    Metric.TOTAL_REVENUE_DEVIATION: MetricConfig(
-        stat_key="TOTAL_REVENUE_DEVIATION",
-        data_fetcher=lambda t: t.info.get("totalRevenue"),
-        metric_weight=3,
-        is_inverted=False
     ),
     Metric.FIVE_YEAR_RETURN: MetricConfig(
         stat_key="RETURN_5_YR",
@@ -67,7 +55,7 @@ METRIC_CONFIG = {
     Metric.DEBT_TO_EQUITY: MetricConfig(
         stat_key="DEBT_TO_EQUITY",
         data_fetcher=lambda t: t.info.get("debtToEquity"),
-        metric_weight=3,
+        metric_weight=2,
         is_inverted=True
     ),
     Metric.YIELD: MetricConfig(

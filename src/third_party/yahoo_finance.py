@@ -57,7 +57,14 @@ def pull_general_data(symbol: str, period: str = "1yr"):
 
 # Pull data from Yahoo Finance given a list of symbols
 def pull_general_data(symbol_list: list):
-    return {symbol: yf.Ticker(symbol) for symbol in symbol_list}
+    data = {}
+    for symbol in symbol_list:
+        try:
+            ticker = yf.Ticker(symbol)
+            data[symbol] = ticker
+        except Exception as e:
+            print(f"Failed to pull data for {symbol}. Reason: {e}")
+    return data
 
 def pull_pricing_data(symbol_list: list, period: str = "1yr"):
     return {symbol: pdr.get_data_yahoo(symbol, period=period, session=session) for symbol in symbol_list}

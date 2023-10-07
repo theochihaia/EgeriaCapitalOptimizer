@@ -6,6 +6,7 @@ class SymbolSet(Enum):
     TESTING = "testing"
     SP500 = "sp500"
     NOBL = "nobl"
+    IJR_SMALL_CAP = "ijr_small_cap"
 
 def get_symbols(symbol_set: SymbolSet):
     dir = f"src/common/portfolios/{symbol_set.value}.txt"
