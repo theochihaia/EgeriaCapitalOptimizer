@@ -14,8 +14,6 @@ from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
 def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
-
-    
     results: List[AnalysisResult] = []
     for metric in metrics:
         try:
@@ -29,10 +27,9 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
             # Handle the exception here
             print(f"Error for symbol  {ticker.info['symbol']} :", e)
 
-
     # Generate grouped results
     try:
-        egeria_score = analyze_egeria_score(results)
+        egeria_score = generate_egeria_score(results)
     except ValueError as e:
         # Handle the exception here
         print(f"Error for symbol  {ticker.info['symbol']} :", e)
@@ -41,27 +38,6 @@ def analyze(ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
     grouped_results = AnalysisResultGroup(ticker.info["symbol"], results, egeria_score, ticker)
 
     return grouped_results
-
-
-def analyze_egeria_score(results: [AnalysisResult]) -> float:
-    if(results is None or len(results) == 0):
-        return 0.0
-    
-    # Get Sector
-    #sector = results[0].ticker.info.get("sector", "Default")
-    sector = "Default"
-
-    # Get Sector Statistics
-    sector_statistics = SECTOR_METRIC_STATISTICS.get(sector, {})
-    
-    # Calculate Egeria Score
-    sum = 0.0
-    for result in results:
-        if result is not None:
-            metric_config = METRIC_CONFIG.get(result.metric)
-            weight = metric_config.metric_weight if metric_config else 1
-            sum += result.normalized_value * weight
-    return round(sum,3);
 
 
 def get_sector_statistics(ticker: yf.Ticker, metric_key):
@@ -85,3 +61,24 @@ def analyze_metric(metric: Metric, metric_config: MetricConfig, ticker: yf.Ticke
     )
 
     return range_normalizer(ticker, config, invert=metric_config.is_inverted)
+
+
+def generate_egeria_score(results: [AnalysisResult]) -> float:
+    if(results is None or len(results) == 0):
+        return 0.0
+    
+    # Get Sector
+    #sector = results[0].ticker.info.get("sector", "Default")
+    sector = "Default"
+
+    # Get Sector Statistics
+    sector_statistics = SECTOR_METRIC_STATISTICS.get(sector, {})
+    
+    # Calculate Egeria Score
+    sum = 0.0
+    for result in results:
+        if result is not None:
+            metric_config = METRIC_CONFIG.get(result.metric)
+            weight = metric_config.metric_weight if metric_config else 1
+            sum += result.normalized_value * weight
+    return round(sum,3);
