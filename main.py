@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.TESTING
+symbol_set = SymbolSet.FID_FOLIO
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -45,11 +45,13 @@ metrics = [
      Metric.YIELD,
      Metric.QUICK_RATIO,
      Metric.DEBT_TO_EQUITY,
-     Metric.FIVE_YEAR_RETURN,
-     Metric.TEN_YEAR_RETURN,
+     Metric.FIVE_YEAR_VARIANCE,
+     Metric.TEN_YEAR_VARIANCE,
      Metric.EBIDTA_MARGIN,
      Metric.EBIDTA_AVG_GROWTH_RATE,
-     Metric.REVENUE_AVG_GROWTH_RATE
+     Metric.REVENUE_AVG_GROWTH_RATE,
+     Metric.FIVE_YEAR_RETURN,
+     Metric.TEN_YEAR_RETURN,
 ]
 #------------------------------------------------------------#
 # Helpers

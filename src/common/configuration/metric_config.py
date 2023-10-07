@@ -1,4 +1,5 @@
 import yfinance as yf
+import numpy as np
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
@@ -40,11 +41,17 @@ METRIC_CONFIG = {
         metric_weight=5,
         is_inverted=False
     ),
-    Metric.FIFTY_DAY_AVG: MetricConfig(
-        stat_key="50_DAY_AVG",
-        data_fetcher=lambda t: t.info.get("fiftyDayAverage"),
-        metric_weight=3,
-        is_inverted=False
+    Metric.FIVE_YEAR_VARIANCE: MetricConfig(
+        stat_key="VARIANCE_5_YR",
+        data_fetcher=lambda t: get_variance(t, "5y"),
+        metric_weight=4,
+        is_inverted=True
+    ),
+    Metric.TEN_YEAR_VARIANCE: MetricConfig(
+        stat_key="VARIANCE_10_YR",
+        data_fetcher=lambda t: get_variance(t, "10y"),
+        metric_weight=4,
+        is_inverted=True
     ),
     Metric.QUICK_RATIO: MetricConfig(
         stat_key="QUICK_RATIO",
@@ -112,3 +119,25 @@ def get_income_growth(ticker: yf.Ticker, data_point: str):
         
     avgGrowthRate /= len(data) - 1
     return avgGrowthRate * 100
+
+def get_n_day_returns(data_close, days):
+    five_day_returns = []
+    for i in range(0, len(data_close) - days, days):
+        if data_close[i + days] is None or data_close[i] is None or data_close[i] == 0:
+            continue
+        five_day_returns.append((data_close[i + days] - data_close[i]) / data_close[i])
+    return five_day_returns
+
+def get_variance(ticker: yf.Ticker, period: str):
+    data = ticker.history(period=period)
+    day_period = 10
+    data_close = data["Close"]
+    if data.empty:
+        return
+
+    n_day_returns = get_n_day_returns(data_close, day_period)
+    if len(n_day_returns) == 0:
+        return None
+    
+    variance = np.var(n_day_returns)
+    return variance * 100

@@ -24,11 +24,13 @@ Beta        1.0         0.2
 Yield       0.00        1.00
 Q/R         1           0.5
 D/E         100         50
-5 YR        50          25
-10 YR	    150         75
+Var 5 YR    0.7         0.3
+var 10 YR   0.7         0.3
 EBTAMRGN    0.2         0.1
 EBTAGROW    15          5
 REVGROW     15          5
+5 YR        50          25
+10 YR	    150         75
 
 """
 
@@ -42,6 +44,8 @@ SECTOR_METRIC_STATISTICS = {
         "DEBT_TO_EQUITY": (100, 50),
         "RETURN_5_YR": (50, 25),
         "RETURN_10_YR": (150, 75),
+        "VARIANCE_5_YR": (.7, .3),
+        "VARIANCE_10_YR": (.7, .3),
         "YIELD": (0, 1),
         "EBIDTA_MARGIN": (.2, .1),
         "EBIDTA_GROWTH_RATE": (15, 5),

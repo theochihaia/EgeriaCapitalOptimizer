@@ -10,6 +10,8 @@ class Metric(Enum):
     BETA = "Beta"
     TEN_YEAR_RETURN = "10 Year Return"
     FIVE_YEAR_RETURN = "5 Year Return"
+    FIVE_YEAR_VARIANCE = "5 Year Variance"
+    TEN_YEAR_VARIANCE = "10 Year Variance"
     FIFTY_DAY_AVG = "50 Day Average"
     BOLLINGER_BANDS = "Bollinger Bands"
     QUICK_RATIO = "Quick Ratio"
