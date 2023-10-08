@@ -111,7 +111,7 @@ def generate_analysis(data: dict):
         ix = 0
         for analysis_result in sorted_analysis:
             ix += 1
-            file.write(f"{ix:02}|{analysis_result.symbol}" + '\n')
+            file.write(f"{ix:02},{analysis_result.symbol},{analysis_result.egeria_score}" + '\n')
 
         print("Results written to " + result_file_path)
 

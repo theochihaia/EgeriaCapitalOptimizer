@@ -1,6 +1,13 @@
 yfinance
 requests_cache
 requests
+numpy
+python-dateutil
+pytz
+pandas
 pyrate_limiter
 pandas_datareader
 requests_ratelimiter
+scikit-learn
+tensorflow
+charset_normalizer

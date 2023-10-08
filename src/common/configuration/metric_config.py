@@ -123,9 +123,9 @@ def get_income_growth(ticker: yf.Ticker, data_point: str):
 def get_n_day_returns(data_close, days):
     five_day_returns = []
     for i in range(0, len(data_close) - days, days):
-        if data_close[i + days] is None or data_close[i] is None or data_close[i] == 0:
+        if data_close.iloc[i + days] is None or data_close.iloc[i] is None or data_close.iloc[i] == 0:
             continue
-        five_day_returns.append((data_close[i + days] - data_close[i]) / data_close[i])
+        five_day_returns.append((data_close.iloc[i + days] - data_close.iloc[i]) / data_close.iloc[i])
     return five_day_returns
 
 def get_variance(ticker: yf.Ticker, period: str):

@@ -4,6 +4,9 @@ setup:
 install:
 	./venv/bin/pip install -r requirements.txt
 
+uninstall:
+	./venv/bin/pip uninstall -r requirements.txt
+
 test:
 	./venv/bin/python -m unittest discover
 
