@@ -22,6 +22,14 @@ from pandas_datareader import data as pdr
 
 """
     TODO: PUT THIS IN COMMON
+
+    Current Issues:
+    RMSE is too high
+    Target prediction is not what is needed. We want to predict equities that would perform well over 10 years
+    The Egeria rank is used as a sorting mechanism not a target. NN isn't approriate here
+    Likley should create a manual portfolio, rank by manual labels
+    Use this to generate model
+    Need paralelization of pulling data.
 """
 
 class CachedLimiterSession(CacheMixin, LimiterMixin, Session):
@@ -30,7 +38,7 @@ class CachedLimiterSession(CacheMixin, LimiterMixin, Session):
 
 session = CachedLimiterSession(
     limiter=Limiter(
-        RequestRate(2, Duration.SECOND * 10)
+        RequestRate(10, Duration.SECOND * 2)
     ),  # max 2 requests per 5 seconds
     bucket_class=MemoryQueueBucket,
     backend=SQLiteCache("yfinance.cache", expire_after=86400),# 1 day
@@ -42,15 +50,19 @@ session.headers["User-agent"] = "my-program/1.0"
 yf.pdr_override()
 
 
-# Pull data from Yahoo Finance given a symbol
+def get_ticker(symbol: str):
+    return yf.Ticker(symbol, session=session)
+
 def pull_general_data(symbol_list: list):
     data = {}
-    for symbol in symbol_list:
-        try:
-            ticker = yf.Ticker(symbol)
-            data[symbol] = ticker
-        except Exception as e:
-            print(f"Failed to pull data for {symbol}. Reason: {e}")
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = {executor.submit(get_ticker, symbol): symbol for symbol in symbol_list}
+        for future in concurrent.futures.as_completed(futures):
+            symbol = futures[future]
+            try:
+                data[symbol] = future.result()
+            except Exception as e:
+                print(f"Failed to pull data for {symbol}. Reason: {e}")
     return data
 
 
@@ -193,7 +205,7 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # Neural Network Design and Training
-model = MLPRegressor(hidden_layer_sizes=(900, 900), max_iter=7000, activation='relu', solver='adam', alpha=0.0005, random_state=42)
+model = MLPRegressor(hidden_layer_sizes=(500, 500), max_iter=3000, activation='relu', solver='adam', alpha=0.0003, random_state=42)
 model.fit(X_train, y_train)
 
 # Evaluation
@@ -210,7 +222,7 @@ for ticker, pred, actual in zip(symbols, predictions, y_test):
 
 # Generate Predictions for new data
 
-dir = f"src/common/portfolios/nobl.txt"
+dir = f"src/common/portfolios/fid_folio_v2.txt"
 with open(dir) as f:
     new_symbols = f.read().splitlines()
 
