@@ -11,6 +11,7 @@ class SymbolSet(Enum):
     IJH_MID_CAP = "ijh_mid_cap"
     IYK_CONSUMER_STAPLES = "iyk_consumer_staples"
     IYW_TECHNOLOGY = "iyw_technology"
+    IYF_FINANCIAL = "iyf_financial"
     ALEX = "alex"
 
 def get_symbols(symbol_set: SymbolSet):
