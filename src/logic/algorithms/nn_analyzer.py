@@ -127,20 +127,111 @@ def get_data_frame(data: list):
     return pd.DataFrame(
         data,
         columns=[
-            "P/E",
-            "P/S",
-            "Quick Ratio",
-            "Beta",
-            "Dividend Yield",
-            "EBITDA Margin",
-            "Trailing P/E",
-            "P/B",
-            "5 Year Variance",
-            "10 Year Variance",
-            "3 Year EBITDA Growth",
-            "3 Year Revenue Growth",
-            "5 Year Return",
-            "10 Year Return",
+            "auditRisk",
+            "boardRisk",
+            "compensationRisk",
+            "shareHolderRightsRisk",
+            "overallRisk",
+            "governanceEpochDate",
+            "compensationAsOfEpochDate",
+            "maxAge",
+            "priceHint",
+            "previousClose",
+            "open",
+            "dayLow",
+            "dayHigh",
+            "regularMarketPreviousClose",
+            "regularMarketOpen",
+            "regularMarketDayLow",
+            "regularMarketDayHigh",
+            "dividendRate",
+            "dividendYield",
+            "exDividendDate",
+            "payoutRatio",
+            "fiveYearAvgDividendYield",
+            "beta",
+            "trailingPE",
+            "forwardPE",
+            "volume",
+            "regularMarketVolume",
+            "averageVolume",
+            "averageVolume10days",
+            "averageDailyVolume10Day",
+            "bid",
+            "ask",
+            "bidSize",
+            "askSize",
+            "marketCap",
+            "fiftyTwoWeekLow",
+            "fiftyTwoWeekHigh",
+            "priceToSalesTrailing12Months",
+            "fiftyDayAverage",
+            "twoHundredDayAverage",
+            "trailingAnnualDividendRate",
+            "trailingAnnualDividendYield",
+            "enterpriseValue",
+            "profitMargins",
+            "floatShares",
+            "sharesOutstanding",
+            "sharesShort",
+            "sharesShortPriorMonth",
+            "sharesShortPreviousMonthDate",
+            "dateShortInterest",
+            "sharesPercentSharesOut",
+            "heldPercentInsiders",
+            "heldPercentInstitutions",
+            "shortRatio",
+            "shortPercentOfFloat",
+            "impliedSharesOutstanding",
+            "bookValue",
+            "priceToBook",
+            "lastFiscalYearEnd",
+            "nextFiscalYearEnd",
+            "mostRecentQuarter",
+            "earningsQuarterlyGrowth",
+            "netIncomeToCommon",
+            "trailingEps",
+            "forwardEps",
+            "pegRatio",
+            "lastSplitDate",
+            "enterpriseToRevenue",
+            "enterpriseToEbitda",
+            "52WeekChange",
+            "SandP52WeekChange",
+            "lastDividendValue",
+            "lastDividendDate",
+            "firstTradeDateEpochUtc",
+            "currentPrice",
+            "targetHighPrice",
+            "targetLowPrice",
+            "targetMeanPrice",
+            "targetMedianPrice",
+            "recommendationMean",
+            "numberOfAnalystOpinions",
+            "totalCash",
+            "totalCashPerShare",
+            "ebitda",
+            "totalDebt",
+            "quickRatio",
+            "currentRatio",
+            "totalRevenue",
+            "debtToEquity",
+            "revenuePerShare",
+            "returnOnAssets",
+            "returnOnEquity",
+            "grossProfits",
+            "freeCashflow",
+            "operatingCashflow",
+            "earningsGrowth",
+            "revenueGrowth",
+            "grossMargins",
+            "ebitdaMargins",
+            "operatingMargins",
+            "trailingPegRatio",
+            "5yrGrowth",
+            "10yrGrowth",
+            #"NormalizedEBITDA",
+            #"TotalRevenue"
         ])
 
 def fetch_stock_data(tickers: list):
@@ -150,20 +241,111 @@ def fetch_stock_data(tickers: list):
         stock = yf_data
         info = stock.get_info()
         all_stock_data.append([
-            info.get("forwardPE") or None,
-            info.get("priceToSalesTrailing12Months") or None,
-            info.get("quickRatio") or None,
-            info.get("beta") or None,
-            info.get("fiveYearAvgDividendYield") or None,
-            info.get("ebitdaMargins") or None,
-            info.get("trailingPE") or None,
-            info.get("priceToBook") or None,
-            get_variance(stock, "5y") or None,
-            get_variance(stock, "10y") or None,
-            get_income_growth(stock, "NormalizedEBITDA") or None,
-            get_income_growth(stock, "TotalRevenue") or None,
+            info.get("auditRisk", None),
+            info.get("boardRisk", None),
+            info.get("compensationRisk", None),
+            info.get("shareHolderRightsRisk", None),
+            info.get("overallRisk", None),
+            info.get("governanceEpochDate", None),
+            info.get("compensationAsOfEpochDate", None),
+            info.get("maxAge", None),
+            info.get("priceHint", None),
+            info.get("previousClose", None),
+            info.get("open", None),
+            info.get("dayLow", None),
+            info.get("dayHigh", None),
+            info.get("regularMarketPreviousClose", None),
+            info.get("regularMarketOpen", None),
+            info.get("regularMarketDayLow", None),
+            info.get("regularMarketDayHigh", None),
+            info.get("dividendRate", None),
+            info.get("dividendYield", None),
+            info.get("exDividendDate", None),
+            info.get("payoutRatio", None),
+            info.get("fiveYearAvgDividendYield", None),
+            info.get("beta", None),
+            info.get("trailingPE", None),
+            info.get("forwardPE", None),
+            info.get("volume", None),
+            info.get("regularMarketVolume", None),
+            info.get("averageVolume", None),
+            info.get("averageVolume10days", None),
+            info.get("averageDailyVolume10Day", None),
+            info.get("bid", None),
+            info.get("ask", None),
+            info.get("bidSize", None),
+            info.get("askSize", None),
+            info.get("marketCap", None),
+            info.get("fiftyTwoWeekLow", None),
+            info.get("fiftyTwoWeekHigh", None),
+            info.get("priceToSalesTrailing12Months", None),
+            info.get("fiftyDayAverage", None),
+            info.get("twoHundredDayAverage", None),
+            info.get("trailingAnnualDividendRate", None),
+            info.get("trailingAnnualDividendYield", None),
+            info.get("enterpriseValue", None),
+            info.get("profitMargins", None),
+            info.get("floatShares", None),
+            info.get("sharesOutstanding", None),
+            info.get("sharesShort", None),
+            info.get("sharesShortPriorMonth", None),
+            info.get("sharesShortPreviousMonthDate", None),
+            info.get("dateShortInterest", None),
+            info.get("sharesPercentSharesOut", None),
+            info.get("heldPercentInsiders", None),
+            info.get("heldPercentInstitutions", None),
+            info.get("shortRatio", None),
+            info.get("shortPercentOfFloat", None),
+            info.get("impliedSharesOutstanding", None),
+            info.get("bookValue", None),
+            info.get("priceToBook", None),
+            info.get("lastFiscalYearEnd", None),
+            info.get("nextFiscalYearEnd", None),
+            info.get("mostRecentQuarter", None),
+            info.get("earningsQuarterlyGrowth", None),
+            info.get("netIncomeToCommon", None),
+            info.get("trailingEps", None),
+            info.get("forwardEps", None),
+            info.get("pegRatio", None),
+            info.get("lastSplitDate", None),
+            info.get("enterpriseToRevenue", None),
+            info.get("enterpriseToEbitda", None),
+            info.get("52WeekChange", None),
+            info.get("SandP52WeekChange", None),
+            info.get("lastDividendValue", None),
+            info.get("lastDividendDate", None),
+            info.get("firstTradeDateEpochUtc", None),
+            info.get("currentPrice", None),
+            info.get("targetHighPrice", None),
+            info.get("targetLowPrice", None),
+            info.get("targetMeanPrice", None),
+            info.get("targetMedianPrice", None),
+            info.get("recommendationMean", None),
+            info.get("numberOfAnalystOpinions", None),
+            info.get("totalCash", None),
+            info.get("totalCashPerShare", None),
+            info.get("ebitda", None),
+            info.get("totalDebt", None),
+            info.get("quickRatio", None),
+            info.get("currentRatio", None),
+            info.get("totalRevenue", None),
+            info.get("debtToEquity", None),
+            info.get("revenuePerShare", None),
+            info.get("returnOnAssets", None),
+            info.get("returnOnEquity", None),
+            info.get("grossProfits", None),
+            info.get("freeCashflow", None),
+            info.get("operatingCashflow", None),
+            info.get("earningsGrowth", None),
+            info.get("revenueGrowth", None),
+            info.get("grossMargins", None),
+            info.get("ebitdaMargins", None),
+            info.get("operatingMargins", None),
+            info.get("trailingPegRatio", None),
             get_return(stock, "5y") or None,
             get_return(stock, "10y") or None,
+            #all_stock_data.append(get_income_growth(stock, "NormalizedEBITDA") or None),
+            #all_stock_data.append(get_income_growth(stock, "TotalRevenue") or None)
         ])
 
     return all_stock_data
@@ -172,7 +354,7 @@ def fetch_stock_data(tickers: list):
 dir = f"src/common/portfolios/scores/sp500.txt"
 with open(dir) as f:
     score_input = f.read().splitlines()
-    symbols = [ticker.split(",")[0] for ticker in score_input]
+    symbols = [ticker.split(",")[1] for ticker in score_input]
 
 
 # ['AAPL', 'GOOGL', 'MSFT']  # Add your tickers here
@@ -181,7 +363,7 @@ data = fetch_stock_data(symbols)
 df = get_data_frame(data)
 
 # Generate your targets here (the ranks). This is a placeholder:
-df["Target"] = [ticker.split(",")[1] for ticker in score_input]  # Or however you want to rank them
+df["Target"] = [ticker.split(",")[2] for ticker in score_input]  # Or however you want to rank them
 df.dropna(inplace=True)
 
 # Data Preprocessing
@@ -197,7 +379,7 @@ imputer = SimpleImputer(strategy='mean')
 X_imputed = imputer.fit_transform(X)
 
 # Split the data
-X_train, X_test, y_train, y_test = train_test_split(X_imputed, y, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_imputed, y, test_size=0.2, random_state=42)
 
 # Scale the data
 scaler = StandardScaler()
@@ -205,13 +387,13 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # Neural Network Design and Training
-model = MLPRegressor(hidden_layer_sizes=(500, 500), max_iter=3000, activation='relu', solver='adam', alpha=0.0003, random_state=42)
+model = MLPRegressor(hidden_layer_sizes=(700, 700), max_iter=4000, activation='relu', solver='adam', alpha=0.03, random_state=42)
 model.fit(X_train, y_train)
 
 # Evaluation
 y_pred = model.predict(X_test)
-mse = mean_squared_error(y_test, y_pred)
-print(f"Mean Squared Error: {mse}")
+#mse = mean_squared_error(y_test, y_pred)
+#print(f"Mean Squared Error: {mse}")
 
 # Predictions for new data (here we're just using X_test as an example)
 predictions = model.predict(X_test)
@@ -222,7 +404,7 @@ for ticker, pred, actual in zip(symbols, predictions, y_test):
 
 # Generate Predictions for new data
 
-dir = f"src/common/portfolios/fid_folio_v2.txt"
+dir = f"src/common/portfolios/ijh_mid_cap.txt"
 with open(dir) as f:
     new_symbols = f.read().splitlines()
 
@@ -240,5 +422,5 @@ new_data_scaled = scaler.transform(new_data_imputed)
 new_predictions = model.predict(new_data_scaled)
 
 for ticker, prediction in zip(new_symbols, new_predictions):
-    print(f"Ticker: {ticker}, Prediction: {prediction}")
+    print(f"Ticker,{ticker},Prediction,{prediction}")
 

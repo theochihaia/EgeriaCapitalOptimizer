@@ -25,7 +25,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.FID_FOLIO
+symbol_set = SymbolSet.FID_FOLIO_V2
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -99,6 +99,10 @@ def generate_analysis(data: dict):
     # Generate File
     with open(result_file_path, 'w') as file:
         file.write(get_header("Stats"))
+
+        file.write(get_header("Metrics"))
+        for metric in metrics:
+            file.write(metric.value + "\n")
         
         file.write(SECTOR_METRIC_STATISTICS_STR + "\n")
         file.write(get_header("Details"))

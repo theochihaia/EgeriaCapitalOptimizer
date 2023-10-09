@@ -8,7 +8,7 @@ METRIC_CONFIG = {
     Metric.PRICE_TO_EARNINGS: MetricConfig(
         stat_key="PE",
         data_fetcher=lambda t: t.info.get("forwardPE") or t.info.get("trailingPE"),
-        metric_weight=2,
+        metric_weight=1,
         is_inverted=True
     ),
     Metric.PRICE_TO_BOOK: MetricConfig(
@@ -80,13 +80,13 @@ METRIC_CONFIG = {
     Metric.EBIDTA_AVG_GROWTH_RATE: MetricConfig(
         stat_key="EBIDTA_GROWTH_RATE",
         data_fetcher=lambda t: get_income_growth(t, "NormalizedEBITDA"),
-        metric_weight=3,
+        metric_weight=1,
         is_inverted=False
     ),
     Metric.REVENUE_AVG_GROWTH_RATE: MetricConfig(
         stat_key="REVENUE_GROWTH_RATE",
         data_fetcher=lambda t: get_income_growth(t, "TotalRevenue"),
-        metric_weight=3,
+        metric_weight=1,
         is_inverted=False
     ),
 }

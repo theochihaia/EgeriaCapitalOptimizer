@@ -39,7 +39,7 @@ SECTOR_METRIC_STATISTICS = {
         "PE": (24.2, 15.8),
         "PB": (2.92, .68),
         "PS": (1.76, .54),
-        "BETA": (1, .2),
+        "BETA": (.8, .2),
         "QUICK_RATIO": (1, .5),
         "DEBT_TO_EQUITY": (100, 50),
         "RETURN_5_YR": (50, 25),
