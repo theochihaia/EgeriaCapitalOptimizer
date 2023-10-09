@@ -9,6 +9,8 @@ class SymbolSet(Enum):
     NOBL = "nobl"
     IJR_SMALL_CAP = "ijr_small_cap"
     IJH_MID_CAP = "ijh_mid_cap"
+    IYK_CONSUMER_STAPLES = "iyk_consumer_staples"
+    IYW_TECHNOLOGY = "iyw_technology"
     ALEX = "alex"
 
 def get_symbols(symbol_set: SymbolSet):

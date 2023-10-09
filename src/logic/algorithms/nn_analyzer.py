@@ -41,7 +41,7 @@ session = CachedLimiterSession(
         RequestRate(10, Duration.SECOND * 2)
     ),  # max 2 requests per 5 seconds
     bucket_class=MemoryQueueBucket,
-    backend=SQLiteCache("yfinance.cache", expire_after=86400),# 1 day
+    backend=SQLiteCache("yfinance.cache", expire_after=432000), # 5 days
 )
 
 session = requests_cache.CachedSession("yfinance.cache")

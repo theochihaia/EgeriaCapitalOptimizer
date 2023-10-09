@@ -16,6 +16,11 @@ from src.logic.algorithms.monthly_returns import get_monthly
 
 
 '''
+TODO: Build Fidelity Folio V2 with Small Cap, Mid Cap and well rouded sectors
+'''
+
+
+'''
 python3 -m venv newenv
 source newenv/bin/activate
 pip install -r requirements.txt
@@ -25,7 +30,7 @@ pip install -r requirements.txt
 # Parameters
 #------------------------------------------------------------#
 
-symbol_set = SymbolSet.FID_FOLIO_V2
+symbol_set = SymbolSet.IYW_TECHNOLOGY
 directory = "src/storage/data"
 is_save_data_active = False
 is_clear_history_active = True and is_save_data_active
@@ -34,7 +39,8 @@ is_get_monthly_active = False
 data_categories = [
      EquityDataCategory.INFO,
      EquityDataCategory.INCOME_STMT,
-     EquityDataCategory.BALANCE_SHEET
+     EquityDataCategory.BALANCE_SHEET,
+     EquityDataCategory.QUARTERLY_INCOME_STMT
 ]
 
 metrics = [
