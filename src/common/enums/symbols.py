@@ -15,6 +15,9 @@ class SymbolSet(Enum):
     ALEX = "alex"
 
 def get_symbols(symbol_set: SymbolSet):
-    dir = f"src/common/portfolios/{symbol_set.value}.txt"
-    with open(dir) as f:
-        return f.read().splitlines()
+    symbols = set()
+    for symbol in symbol_set:
+        dir = f"src/common/portfolios/{symbol.value}.txt"
+        with open(dir) as f:
+            symbols.update(f.read().splitlines())
+    return list(symbols)
