@@ -6,7 +6,7 @@ from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
 
-def generate_file(sorted_analysis: [AnalysisResultGroup], dir: str, is_generate_csv_active: bool, generate_composite: SymbolSet, metrics: [str]):
+def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: SymbolSet, metrics: [str]):
     result_file_path = (
         f"{dir}/results_composite.txt"
         if len(generate_composite) > 1
@@ -25,9 +25,20 @@ def generate_file(sorted_analysis: [AnalysisResultGroup], dir: str, is_generate_
         for metric in metrics:
             file.write(metric.value + "\n")
 
+
+        file.write(get_header("Portfolio Proposal"))
+        file.write("\n")  # New line for spacing
+        file.write(f"{'Symbol':<10} | {'Name':<50} | {'Weight':>7}\n")
+        file.write("-" * 72 + "\n")  # Add a separator line
+        for result in portfolio_proposal:
+            symbol, name, weight = result
+            file.write(f"{symbol:<10} | {name:<50} | {weight:>7.2f}%\n")
+
+
         file.write(get_header("Details"))
         for analysis_result in sorted_analysis:
             file.write(str(analysis_result or None) + "\n")
+
 
         print("Results written to " + result_file_path)
 

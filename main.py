@@ -8,9 +8,9 @@ from src.third_party.yahoo_finance import pull_general_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric
-from src.logic.algorithms.file_generator import generate_file
+from src.logic.algorithms.file_generator import generate_files
 
-from src.logic.algorithms.analyzers import analyze_tickers_concurrent
+from src.logic.algorithms.analyzers import analyze_tickers_concurrent, generate_portfolio
 from src.logic.algorithms.monthly_returns import get_monthly
 
 
@@ -30,8 +30,8 @@ pip install -r requirements.txt
 # ------------------------------------------------------------#
 
 symbol_set = [
-    SymbolSet.TESTING,
-    #SymbolSet.FID_FOLIO,
+    #SymbolSet.TESTING,
+    SymbolSet.FID_FOLIO,
     #SymbolSet.NOBL,
     #SymbolSet.SP500,
     #SymbolSet.IJR_SMALL_CAP,
@@ -47,7 +47,7 @@ IS_SAVE_DATA_ACTIVE = False
 IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
 IS_GET_MONTHLY_ACTIVE = False
 IS_GENERATE_CVS_ACTIVE = True
-
+IS_GENERATIE_PORTFOLIO_ACTIVE = True
 
 
 data_categories = [
@@ -93,8 +93,11 @@ def generate_analysis(data: dict):
     # Analyze Tickers   
     analysis = analyze_tickers_concurrent(data, metrics)
 
+    portfolio_proposal = generate_portfolio(analysis)
+
     # Generate File
-    generate_file(analysis, DIRECTORY + "/output", IS_GENERATE_CVS_ACTIVE, symbol_set, metrics)
+    generate_files(analysis, DIRECTORY + "/output", portfolio_proposal, IS_GENERATE_CVS_ACTIVE, symbol_set, metrics)
+
 
 
 # ------------------------------------------------------------#

@@ -31,6 +31,7 @@ def get_income_growth(ticker: yf.Ticker, data_point: str):
     avgGrowthRate /= len(data) - 1
     return avgGrowthRate * 100
 
+
 def get_n_day_returns(data_close, days):
     five_day_returns = []
     for i in range(0, len(data_close) - days, days):
@@ -38,6 +39,7 @@ def get_n_day_returns(data_close, days):
             continue
         five_day_returns.append((data_close.iloc[i + days] - data_close.iloc[i]) / data_close.iloc[i])
     return five_day_returns
+
 
 def get_variance(ticker: yf.Ticker, period: str):
     data = ticker.history(period=period)
@@ -52,6 +54,7 @@ def get_variance(ticker: yf.Ticker, period: str):
     
     variance = np.var(n_day_returns)
     return variance * 100
+
 
 def get_symbols(symbol_set: SymbolSet):
     symbols = set()
