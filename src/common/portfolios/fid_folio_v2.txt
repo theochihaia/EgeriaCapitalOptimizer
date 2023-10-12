@@ -19,3 +19,4 @@ HWKN
 VMC
 FDS
 ABBV
+amd

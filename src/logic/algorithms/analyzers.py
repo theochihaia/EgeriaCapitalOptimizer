@@ -120,21 +120,32 @@ def generate_portfolio(analysis):
     # Sort the equities by Egeria score in descending order
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
 
-    # Segment the equities
-    top_30_percent = sorted_analysis[:int(0.3 * len(sorted_analysis))]
-    next_30_percent = sorted_analysis[int(0.3 * len(sorted_analysis)):int(0.6 * len(sorted_analysis))]
-    remaining_40_percent = sorted_analysis[int(0.6 * len(sorted_analysis)):]
+    # Define Bands
+    percentile = 25
+    bands = [40, 30, 20, 10]
 
-    # Assign weights
-    for equity in top_30_percent:
-        equity.weight = 50 / len(top_30_percent)
-    for equity in next_30_percent:
-        equity.weight = 30 / len(next_30_percent)
-    for equity in remaining_40_percent:
-        equity.weight = 20 / len(remaining_40_percent)
+    # Throw exception if invalid bad
+    if len(bands) != round(100 / 25):
+        raise ValueError(f"Band error: Band Count {len(bands)} but percentile produces {round(100/percentile)} buckets")
 
+    # Segment Tickers
+    tickers_segmented = {}
+    start_index = 0
+    for band in bands:
+        end_index = start_index + int(percentile/100 * len(sorted_analysis))
+        tickers_segmented[band] = sorted_analysis[start_index:end_index]
+        start_index = end_index 
+
+    # Add last one
+    tickers_segmented[bands[-1]].extend(sorted_analysis[start_index:])
+
+    # Assign Weights
+    for band in bands:
+        for ticker in tickers_segmented[band]:
+            ticker.weight = band / len(tickers_segmented[band])
+        
     # Combine all equities and sort by weight
-    all_equities = top_30_percent + next_30_percent + remaining_40_percent
+    all_equities = [item for sublist in tickers_segmented.values() for item in sublist]
     sorted_by_weight = sorted(all_equities, key=lambda x: x.weight, reverse=True)
 
     # Print the output

@@ -31,7 +31,8 @@ pip install -r requirements.txt
 
 symbol_set = [
     #SymbolSet.TESTING,
-    SymbolSet.FID_FOLIO,
+    #SymbolSet.FID_FOLIO,
+    SymbolSet.FID_FOLIO_V2
     #SymbolSet.NOBL,
     #SymbolSet.SP500,
     #SymbolSet.IJR_SMALL_CAP,

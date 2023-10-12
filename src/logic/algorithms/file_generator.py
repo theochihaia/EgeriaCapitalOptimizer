@@ -47,7 +47,7 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
             print("Unprocessable Tickers: " + ", ".join([result.symbol for result in invalid_tickers]))
 
         if is_generate_csv_active:
-            generate_csv(sorted_analysis, dir, metrics)
+            generate_csv(sorted_analysis, dir, metrics, portfolio_proposal)
 
 
 
@@ -59,13 +59,15 @@ def ensure_dir(dir: str):
 
 
 # Generate CSV
-def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str]):
+def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str], portfolio_proposal: []):
     csv_file_path = f"{dir}/results_composite.csv"
+    portfolio_dict = {entry[0]: {"name": entry[1], "weight": entry[2]} for entry in portfolio_proposal}
+
     print("CSV written to " + csv_file_path)
     with open(csv_file_path, "w") as file:
             column_headers = " Norm,".join(metrics.value for metrics in metrics)
             column_headers += " Norm"
-            file.write(f"Index,Symbol,Name,Egeria_Score,{column_headers}\n")  # Write CSV header
+            file.write(f"Index,Symbol,Name,EgeriaScore,PortfolioWeight,{column_headers}\n")  # Write CSV header
             ix = 0
             for analysis_result in analysis:
                 ix += 1
@@ -73,7 +75,8 @@ def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str]):
                         str(metric_result.normalized_value) if (metric_result is not None and metric_result is not None) else ""
                         for metric_result in analysis_result.results
                     )
-                file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{metric_output}\n")
+                weight = round(portfolio_dict[analysis_result.symbol]["weight"],2)
+                file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{weight},{metric_output}\n")
 
 
 # Get Header
