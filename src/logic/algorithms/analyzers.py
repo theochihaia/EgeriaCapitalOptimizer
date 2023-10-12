@@ -5,6 +5,7 @@ from typing import List
 from typing import Optional
 import pandas as pd
 from datetime import datetime
+import math
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
@@ -31,6 +32,8 @@ def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
             executor.submit(analyze_ticker, symbol, ticker)
             for symbol, ticker in data.items()
         ]
+        
+        # Collect all the results from the futures
         analysis = [
             future.result()
             for future in concurrent.futures.as_completed(futures)
@@ -38,10 +41,10 @@ def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
         ]
 
     # Filter out None results if any
-    analysis = [result for result in analysis if result]
+    filtered_analysis = [result for result in analysis if result and not math.isnan(result.egeria_score)]
 
     # Sort the analysis list by the egeria_score attribute in descending order
-    sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
+    sorted_analysis = sorted(filtered_analysis, key=lambda x: x.egeria_score, reverse=True)
     return sorted_analysis
 
 
@@ -111,6 +114,35 @@ def generate_egeria_score(results: [AnalysisResult]) -> float:
             weight = metric_config.metric_weight if metric_config else 1
             sum += result.normalized_value * weight
     return round(sum,3);
+
+
+def generate_portfolio(analysis):
+    # Sort the equities by Egeria score in descending order
+    sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
+
+    # Segment the equities
+    top_30_percent = sorted_analysis[:int(0.3 * len(sorted_analysis))]
+    next_30_percent = sorted_analysis[int(0.3 * len(sorted_analysis)):int(0.6 * len(sorted_analysis))]
+    remaining_40_percent = sorted_analysis[int(0.6 * len(sorted_analysis)):]
+
+    # Assign weights
+    for equity in top_30_percent:
+        equity.weight = 50 / len(top_30_percent)
+    for equity in next_30_percent:
+        equity.weight = 30 / len(next_30_percent)
+    for equity in remaining_40_percent:
+        equity.weight = 20 / len(remaining_40_percent)
+
+    # Combine all equities and sort by weight
+    all_equities = top_30_percent + next_30_percent + remaining_40_percent
+    sorted_by_weight = sorted(all_equities, key=lambda x: x.weight, reverse=True)
+
+    # Print the output
+    output = []
+    for equity in sorted_by_weight:
+        output.append((equity.symbol, equity.ticker.get_info().get('longName'), equity.weight))
+    
+    return output
 
 
 def valid_ticker(ticker: yf.Ticker) -> bool:
