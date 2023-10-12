@@ -13,11 +13,3 @@ class SymbolSet(Enum):
     IYW_TECHNOLOGY = "iyw_technology"
     IYF_FINANCIAL = "iyf_financial"
     ALEX = "alex"
-
-def get_symbols(symbol_set: SymbolSet):
-    symbols = set()
-    for symbol in symbol_set:
-        dir = f"src/common/portfolios/{symbol.value}.txt"
-        with open(dir) as f:
-            symbols.update(f.read().splitlines())
-    return list(symbols)

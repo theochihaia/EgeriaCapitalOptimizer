@@ -1,17 +1,16 @@
-from collections import defaultdict
 from typing import List
-import concurrent.futures
-import os
+import yfinance as yf
 
-from src.common.enums.symbols import get_symbols, SymbolSet
-from src.common.models.AnalysisResult import AnalysisResult
-from src.common.models.AnalysisResultGroup import AnalysisResultGroup
-from src.third_party.yahoo_finance import pull_general_data, pull_pricing_data
+
+from src.common.enums.symbols import SymbolSet
+from src.common.utils.ticker_util import get_symbols
+from src.third_party.yahoo_finance import pull_general_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
 from src.common.enums.equity_data_category import EquityDataCategory
-from src.common.enums.metric import Metric, MetricResult
-from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
-from src.logic.algorithms.analyzers import analyze
+from src.common.enums.metric import Metric
+from src.logic.algorithms.file_generator import generate_file
+
+from src.logic.algorithms.analyzers import analyze_tickers_concurrent
 from src.logic.algorithms.monthly_returns import get_monthly
 
 
@@ -31,21 +30,25 @@ pip install -r requirements.txt
 # ------------------------------------------------------------#
 
 symbol_set = [
-    SymbolSet.FID_FOLIO,
-    SymbolSet.SP500,
-    SymbolSet.IJR_SMALL_CAP,
-    SymbolSet.IJH_MID_CAP,
-    SymbolSet.IYW_TECHNOLOGY,
-    SymbolSet.IYK_CONSUMER_STAPLES,
-    SymbolSet.IYF_FINANCIAL,
+    SymbolSet.TESTING,
+    #SymbolSet.FID_FOLIO,
+    #SymbolSet.NOBL,
+    #SymbolSet.SP500,
+    #SymbolSet.IJR_SMALL_CAP,
+    #SymbolSet.IJH_MID_CAP,
+    #SymbolSet.IYW_TECHNOLOGY,
+    #SymbolSet.IYK_CONSUMER_STAPLES,
+    #SymbolSet.IYF_FINANCIAL,
 ]
 
 
-directory = "src/storage/data"
-is_save_data_active = False
-is_clear_history_active = True and is_save_data_active
-is_get_monthly_active = False
-is_generate_csv_active = True
+DIRECTORY = "src/storage/data"
+IS_SAVE_DATA_ACTIVE = False
+IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
+IS_GET_MONTHLY_ACTIVE = False
+IS_GENERATE_CVS_ACTIVE = True
+
+
 
 data_categories = [
     EquityDataCategory.INFO,
@@ -73,99 +76,25 @@ metrics = [
 # ------------------------------------------------------------#
 # Helpers
 # ------------------------------------------------------------#
-
-
 # Clear Directory
 def clear_directorires():
-    if is_clear_history_active:
-        clear_directory(directory)
+    if IS_CLEAR_HISTORY_ACTIVE:
+        clear_directory(DIRECTORY)
 
 
 # Save Data
 def save_data(data: dict):
-    if is_save_data_active:
+    if IS_SAVE_DATA_ACTIVE:
         for symbol, ticker in data.items():
-            save_data_parallel(symbol, ticker, data_categories, directory)
+            save_data_parallel(symbol, ticker, data_categories, DIRECTORY)
 
 
 def generate_analysis(data: dict):
-    analysis: List[AnalysisResultGroup] = []
-
-    # Define a helper function for parallel execution
-    def analyze_ticker(symbol, ticker):
-        if ticker is None:
-            print(f"Could not find ticker info for symbol: {symbol}")
-            return None
-        return analyze(symbol, ticker, metrics)
-
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [
-            executor.submit(analyze_ticker, symbol, ticker)
-            for symbol, ticker in data.items()
-        ]
-        analysis = [
-            future.result()
-            for future in concurrent.futures.as_completed(futures)
-            if future.result()
-        ]
-
-    # Filter out None results if any
-    analysis = [result for result in analysis if result]
-
-    # Sort the analysis list by the egeria_score attribute in descending order
-    sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
-
-    result_file_path = (
-        f"src/storage/output/results_composite.txt"
-        if len(symbol_set) > 1
-        else f"src/storage/output/results_{symbol_set[0].value}.txt"
-    )
-
-    # Ensure the directory exists
-    directory = os.path.dirname(result_file_path)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    # Analyze Tickers   
+    analysis = analyze_tickers_concurrent(data, metrics)
 
     # Generate File
-    with open(result_file_path, "w") as file:
-        file.write(get_header("Stats"))
-        file.write(SECTOR_METRIC_STATISTICS_STR + "\n")
-
-        file.write(get_header("Metrics"))
-        for metric in metrics:
-            file.write(metric.value + "\n")
-
-        file.write(get_header("Details"))
-        for analysis_result in sorted_analysis:
-            file.write(str(analysis_result) + "\n")
-
-        print("Results written to " + result_file_path)
-
-        # Generate CSV
-        csv_file_path = "src/storage/output/results_composite.csv"
-        if is_generate_csv_active:
-            with open(csv_file_path, "w") as file:
-                if is_generate_csv_active:
-                    column_headers = " Norm,".join(metrics.value for metrics in metrics)
-                    column_headers += " Norm"
-                    file.write(f"Index,Symbol,Name,Egeria_Score,{column_headers}\n")  # Write CSV header
-                    ix = 0
-                    for analysis_result in sorted_analysis:
-                        ix += 1
-                        if is_generate_csv_active:
-                            metric_output = ",".join(
-                                   str(metric_result.normalized_value) if (metric_result is not None and metric_result is not None) else ""
-                                   for metric_result in analysis_result.results
-                              )
-                            file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{metric_output}\n")
-
-
-def get_header(header_label: str):
-    return f"""
------------------------------------------------------
-                    {header_label}                       
------------------------------------------------------
-"""
+    generate_file(analysis, DIRECTORY + "/output", IS_GENERATE_CVS_ACTIVE, symbol_set, metrics)
 
 
 # ------------------------------------------------------------#
@@ -178,7 +107,7 @@ symbols = get_symbols(symbol_set)
 print("Pulling data from Yahoo Finance")
 
 # Get Monthly Returns
-if is_get_monthly_active:
+if IS_GET_MONTHLY_ACTIVE:
     monthly = get_monthly("2000-01-01", "2023-09-04")
     print(monthly)
 

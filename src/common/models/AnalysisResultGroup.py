@@ -1,6 +1,5 @@
 import yfinance as yf
 from dataclasses import dataclass
-from ..enums.metric import Metric, MetricResult
 from ..models.AnalysisResult import AnalysisResult
 
 
@@ -10,6 +9,7 @@ class AnalysisResultGroup:
     results: list[AnalysisResult]
     egeria_score: float
     ticker: yf.Ticker
+    is_disqualified: bool = False
 
 
     def __str__(self) -> str:

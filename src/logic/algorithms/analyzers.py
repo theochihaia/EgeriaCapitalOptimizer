@@ -1,5 +1,6 @@
 import yfinance as yf
 from collections import defaultdict
+import concurrent.futures
 from typing import List
 from typing import Optional
 import pandas as pd
@@ -12,6 +13,37 @@ from src.common.enums.metric import Metric, MetricResult
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
+
+MIN_TRADING_DAYS = 2500
+
+def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
+    analysis: List[AnalysisResultGroup] = []
+
+    # Define a helper function for parallel execution
+    def analyze_ticker(symbol, ticker):
+        if not valid_ticker(ticker):
+            print(f"Validation Error. Could not process symbol: {symbol}")
+            return AnalysisResultGroup(symbol, [], 0.0, ticker, True)
+        return analyze(symbol, ticker, metrics)
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [
+            executor.submit(analyze_ticker, symbol, ticker)
+            for symbol, ticker in data.items()
+        ]
+        analysis = [
+            future.result()
+            for future in concurrent.futures.as_completed(futures)
+            if future.result()
+        ]
+
+    # Filter out None results if any
+    analysis = [result for result in analysis if result]
+
+    # Sort the analysis list by the egeria_score attribute in descending order
+    sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
+    return sorted_analysis
+
 
 def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
     results: List[AnalysisResult] = []
@@ -79,3 +111,16 @@ def generate_egeria_score(results: [AnalysisResult]) -> float:
             weight = metric_config.metric_weight if metric_config else 1
             sum += result.normalized_value * weight
     return round(sum,3);
+
+
+def valid_ticker(ticker: yf.Ticker) -> bool:
+    history10yr = ticker.history(period="10y").values
+    if ticker is None:
+        return False
+    if ticker.info is None:
+        return False
+    if ticker.info.get("symbol") is None:
+        return False
+    if len(history10yr) < MIN_TRADING_DAYS:
+        return False
+    return True
