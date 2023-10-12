@@ -75,7 +75,7 @@ def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str], port
                         str(metric_result.normalized_value) if (metric_result is not None and metric_result is not None) else ""
                         for metric_result in analysis_result.results
                     )
-                weight = round(portfolio_dict[analysis_result.symbol]["weight"],2)
+                weight = round(portfolio_dict.get(analysis_result.symbol, {}).get("weight",0),2)
                 file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{weight},{metric_output}\n")
 
 

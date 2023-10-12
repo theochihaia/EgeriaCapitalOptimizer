@@ -16,6 +16,7 @@ from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
 MIN_TRADING_DAYS = 2500
+MAX_PORTFOLIO_SIZE = 25
 
 def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
     analysis: List[AnalysisResultGroup] = []
@@ -119,6 +120,7 @@ def generate_egeria_score(results: [AnalysisResult]) -> float:
 def generate_portfolio(analysis):
     # Sort the equities by Egeria score in descending order
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
+    sorted_analysis = sorted_analysis[:MAX_PORTFOLIO_SIZE]
 
     # Define Bands
     percentile = 25
