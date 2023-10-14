@@ -1,12 +1,13 @@
 import yfinance as yf
 from collections import defaultdict
 import concurrent.futures
-from typing import List
+from typing import List, Tuple
 from typing import Optional
 import pandas as pd
 from datetime import datetime
 import math
 
+from src.common.utils.ticker_util import get_return
 from src.common.models.MetricConfig import MetricConfig
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
 from src.common.configuration.metric_config import METRIC_CONFIG
@@ -117,7 +118,7 @@ def generate_egeria_score(results: [AnalysisResult]) -> float:
     return round(sum,3);
 
 
-def generate_portfolio(analysis):
+def generate_portfolio(analysis: [AnalysisResultGroup]):
     # Sort the equities by Egeria score in descending order
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
     sorted_analysis = sorted_analysis[:MAX_PORTFOLIO_SIZE]
@@ -150,12 +151,20 @@ def generate_portfolio(analysis):
     all_equities = [item for sublist in tickers_segmented.values() for item in sublist]
     sorted_by_weight = sorted(all_equities, key=lambda x: x.weight, reverse=True)
 
-    # Print the output
-    output = []
-    for equity in sorted_by_weight:
-        output.append((equity.symbol, equity.ticker.get_info().get('longName'), equity.weight))
-    
-    return output
+    return sorted_by_weight
+
+
+# Calculate portfolio 10yr return
+def calculate_avg_portfolio_returns(portfolio: [AnalysisResultGroup], years: int):
+    if years == 0:
+        raise ValueError("Years cannot be zero.")
+
+    total_returns = 0.0
+    period = f"{years}y"
+    for metric_group in portfolio:
+        total_returns += get_return(metric_group.ticker, period) / years * (metric_group.weight/100.0)
+
+    return total_returns
 
 
 def valid_ticker(ticker: yf.Ticker) -> bool:

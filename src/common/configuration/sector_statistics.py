@@ -42,6 +42,8 @@ SECTOR_METRIC_STATISTICS = {
         "BETA": (.8, .2),
         "QUICK_RATIO": (1, .5),
         "DEBT_TO_EQUITY": (100, 50),
+        "RETURN_ON_EQUITY": (.15, .07),
+        "RETURN_ON_ASSETS": (.05, .03),
         "RETURN_5_YR": (50, 25),
         "RETURN_10_YR": (150, 75),
         "VARIANCE_5_YR": (.7, .3),

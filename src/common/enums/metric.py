@@ -17,6 +17,8 @@ class Metric(Enum):
     QUICK_RATIO = "Quick Ratio"
     DEBT_TO_EQUITY = "Debt/Equity"
     EBIDTA_MARGIN = "EBIDTA Margin"
+    RETURN_ON_EQUITY = "Return on Equity"
+    RETURN_ON_ASSETS = "Return on Assets"
     YIELD = "Yield"
     EGERIA_SCORE = "Egeria Score"
     EBIDTA_AVG_GROWTH_RATE = "EBIDTA Avg Growth Rate"

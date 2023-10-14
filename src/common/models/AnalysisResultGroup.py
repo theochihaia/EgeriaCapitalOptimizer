@@ -9,6 +9,7 @@ class AnalysisResultGroup:
     results: list[AnalysisResult]
     egeria_score: float
     ticker: yf.Ticker
+    weight: float = 0.0
     is_disqualified: bool = False
 
 

@@ -69,6 +69,8 @@ metrics = [
     Metric.FIVE_YEAR_VARIANCE,
     Metric.TEN_YEAR_VARIANCE,
     Metric.EBIDTA_MARGIN,
+    Metric.RETURN_ON_EQUITY,
+    Metric.RETURN_ON_ASSETS,
     Metric.EBIDTA_AVG_GROWTH_RATE,
     Metric.REVENUE_AVG_GROWTH_RATE,
     Metric.FIVE_YEAR_RETURN,

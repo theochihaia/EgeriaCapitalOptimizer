@@ -79,6 +79,18 @@ METRIC_CONFIG = {
         metric_weight=3,
         is_inverted=False
     ),
+    Metric.RETURN_ON_EQUITY: MetricConfig(
+        stat_key="RETURN_ON_EQUITY",
+        data_fetcher=lambda t: t.info.get("returnOnEquity"),
+        metric_weight=2,
+        is_inverted=False
+    ),
+    Metric.RETURN_ON_ASSETS: MetricConfig(
+        stat_key="RETURN_ON_ASSETS",
+        data_fetcher=lambda t: t.info.get("returnOnAssets"),
+        metric_weight=2,
+        is_inverted=False
+    ),
     Metric.EBIDTA_AVG_GROWTH_RATE: MetricConfig(
         stat_key="EBIDTA_GROWTH_RATE",
         data_fetcher=lambda t: get_income_growth(t, "NormalizedEBITDA"),
