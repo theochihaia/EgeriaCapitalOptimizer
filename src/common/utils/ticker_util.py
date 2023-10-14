@@ -1,7 +1,7 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.enums.symbols import SymbolSet
+from src.common.enums.portfolio import Portfolio
 
 def get_return(ticker: yf.Ticker, period: str):
     data = ticker.history(period=period)
@@ -56,7 +56,7 @@ def get_variance(ticker: yf.Ticker, period: str):
     return variance * 100
 
 
-def get_symbols(symbol_set: SymbolSet):
+def get_symbols(symbol_set: Portfolio):
     symbols = set()
     for symbol in symbol_set:
         dir = f"src/common/portfolios/{symbol.value}.txt"

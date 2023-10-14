@@ -1,13 +1,13 @@
 import os
 
-from src.common.enums.symbols import SymbolSet
+from src.common.enums.portfolio import Portfolio
 from src.common.utils.ticker_util import get_return
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
 from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns
 
-def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: SymbolSet, metrics: [str]):
+def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: Portfolio, metrics: [str]):
     result_file_path = (
         f"{dir}/results_composite.txt"
         if len(generate_composite) > 1
@@ -85,6 +85,7 @@ def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str], port
 # Get Header
 def get_header(header_label: str):
     return f"""
+\n
 --------------------------------------------------------------------------
                               {header_label}                       
 --------------------------------------------------------------------------

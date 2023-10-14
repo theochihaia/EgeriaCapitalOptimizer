@@ -7,6 +7,7 @@ import pandas as pd
 from datetime import datetime
 import math
 
+from src.common.configuration.app_config import *
 from src.common.utils.ticker_util import get_return
 from src.common.models.MetricConfig import MetricConfig
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
@@ -16,8 +17,6 @@ from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
-MIN_TRADING_DAYS = 2500
-MAX_PORTFOLIO_SIZE = 30
 
 def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
     analysis: List[AnalysisResultGroup] = []
@@ -124,8 +123,7 @@ def generate_portfolio(analysis: [AnalysisResultGroup]):
     sorted_analysis = sorted_analysis[:MAX_PORTFOLIO_SIZE]
 
     # Use a logarithmic decay function to generate weights
-    base = 4  # Change this for stronger/weaker decay
-    raw_weights = [1 / math.log(base + i) for i in range(len(sorted_analysis))]
+    raw_weights = [1 / math.log(LOG_BASE + i) for i in range(len(sorted_analysis))]
     normalized_weights = [w / sum(raw_weights) for w in raw_weights]
 
     # Assign weights

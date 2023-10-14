@@ -1,6 +1,6 @@
 from enum import Enum
 
-class SymbolSet(Enum):
+class Portfolio(Enum):
     ROBINHOOD = "robinhood"
     FID_FOLIO = "fid_folio"
     FID_FOLIO_V2 = "fid_folio_v2"
