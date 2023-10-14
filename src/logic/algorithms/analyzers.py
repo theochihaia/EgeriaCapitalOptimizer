@@ -124,7 +124,7 @@ def generate_portfolio(analysis: [AnalysisResultGroup]):
     sorted_analysis = sorted_analysis[:MAX_PORTFOLIO_SIZE]
 
     # Use a logarithmic decay function to generate weights
-    base = 5  # Change this for stronger/weaker decay
+    base = 4  # Change this for stronger/weaker decay
     raw_weights = [1 / math.log(base + i) for i in range(len(sorted_analysis))]
     normalized_weights = [w / sum(raw_weights) for w in raw_weights]
 
