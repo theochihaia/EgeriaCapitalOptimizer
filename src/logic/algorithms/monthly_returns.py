@@ -3,18 +3,18 @@ import yfinance as yf
 import pandas as pd
 import calendar
 
-def get_monthly(start_date: datetime, end_date: datetime) -> pd.DataFrame:
+def get_monthly_stats(symbol: str, start_date: datetime, end_date: datetime) -> pd.DataFrame:
     # Download S&P 500 data
-    sp500 = yf.download('^GSPC', start=start_date, end=end_date)
+    ticker = yf.download(symbol, start=start_date, end=end_date)
 
     # Calculate monthly returns
-    sp500['Monthly_Return'] = sp500['Adj Close'].resample('M').ffill().pct_change()
+    ticker['Monthly_Return'] = ticker['Adj Close'].resample('M').ffill().pct_change()
 
     # Create a column for the month
-    sp500['Month'] = sp500.index.month
+    ticker['Month'] = ticker.index.month
 
     # Group by month and calculate statistics
-    grouped = sp500.groupby('Month')['Monthly_Return']
+    grouped = ticker.groupby('Month')['Monthly_Return']
     avg_monthly_returns = grouped.mean()
     std_monthly_returns = grouped.std()
     min_monthly_returns = grouped.min()
@@ -36,5 +36,14 @@ def get_monthly(start_date: datetime, end_date: datetime) -> pd.DataFrame:
 
     # Rename index from numeric to string label for month
     result.index = result.index.map(lambda x: calendar.month_name[x])
+    
+    # Format the numbers for better readability
+    result = result.round(2)  # Round to 2 decimal places
+
+    # Display output
+    print(f"Symbol: {symbol}")
+    print("-" * 50)  # Print separator for better visual distinction
+    print(result)
+    print("-" * 50)
 
     return result

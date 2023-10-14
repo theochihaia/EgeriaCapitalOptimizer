@@ -17,7 +17,7 @@ from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
 MIN_TRADING_DAYS = 2500
-MAX_PORTFOLIO_SIZE = 25
+MAX_PORTFOLIO_SIZE = 30
 
 def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
     analysis: List[AnalysisResultGroup] = []
@@ -154,15 +154,15 @@ def generate_portfolio(analysis: [AnalysisResultGroup]):
     return sorted_by_weight
 
 
-# Calculate portfolio 10yr return
-def calculate_avg_portfolio_returns(portfolio: [AnalysisResultGroup], years: int):
+# Calculate portfolio Nyr return
+def calculate_weighted_portfolio_returns(portfolio: [AnalysisResultGroup], years: int):
     if years == 0:
         raise ValueError("Years cannot be zero.")
 
     total_returns = 0.0
     period = f"{years}y"
     for metric_group in portfolio:
-        total_returns += get_return(metric_group.ticker, period) / years * (metric_group.weight/100.0)
+        total_returns += get_return(metric_group.ticker, period) * (metric_group.weight/100.0)
 
     return total_returns
 

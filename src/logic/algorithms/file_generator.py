@@ -5,7 +5,7 @@ from src.common.utils.ticker_util import get_return
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
-from src.logic.algorithms.analyzers import calculate_avg_portfolio_returns
+from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns
 
 def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: SymbolSet, metrics: [str]):
     result_file_path = (
@@ -36,8 +36,8 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
             if weight > 0:
                 file.write(f"{symbol:<10} | {name:<50} | {weight:>7.2f}%\n")
 
-        five_yr_return = calculate_avg_portfolio_returns(portfolio_proposal,5)
-        file.write(f"\nAvg Yearly Return (5yrs): {round(five_yr_return,2)}\n")
+        five_yr_return = calculate_weighted_portfolio_returns(portfolio_proposal,5)
+        file.write(f"\nWeighted Return (5yrs): {round(five_yr_return,2)}\n")
 
         file.write(get_header("Details"))
         for analysis_result in sorted_analysis:
@@ -70,7 +70,7 @@ def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str], port
     with open(csv_file_path, "w") as file:
             column_headers = " Norm,".join(metrics.value for metrics in metrics)
             column_headers += " Norm"
-            file.write(f"Index,Symbol,Name,EgeriaScore,PortfolioWeight,Avg5YrReturn,{column_headers}\n")  # Write CSV header
+            file.write(f"Index,Symbol,Name,EgeriaScore,PortfolioWeight,5YrReturn,{column_headers}\n")  # Write CSV header
             ix = 0
             for analysis_result in analysis:
                 ix += 1

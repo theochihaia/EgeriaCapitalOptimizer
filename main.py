@@ -1,6 +1,6 @@
 from typing import List
 import yfinance as yf
-
+from datetime import datetime, timedelta
 
 from src.common.enums.symbols import SymbolSet
 from src.common.utils.ticker_util import get_symbols
@@ -11,11 +11,13 @@ from src.common.enums.metric import Metric
 from src.logic.algorithms.file_generator import generate_files
 
 from src.logic.algorithms.analyzers import analyze_tickers_concurrent, generate_portfolio
-from src.logic.algorithms.monthly_returns import get_monthly
+from src.logic.algorithms.monthly_returns import get_monthly_stats
 
 
 """
-TODO: Build Fidelity Folio V2 with Small Cap, Mid Cap and well rouded sectors
+TODO: 
+    Test for 3 year period. For N-3 years, select the companies based on earnings during that time period.
+    Compare that portfolio return for the subsequent 3 years and compare performance.
 """
 
 
@@ -31,8 +33,8 @@ pip install -r requirements.txt
 
 symbol_set = [
     #SymbolSet.TESTING,
-    #SymbolSet.FID_FOLIO,
-    SymbolSet.FID_FOLIO_V2
+    SymbolSet.FID_FOLIO,
+    #SymbolSet.FID_FOLIO_V2,
     #SymbolSet.NOBL,
     #SymbolSet.SP500,
     #SymbolSet.IJR_SMALL_CAP,
@@ -46,7 +48,7 @@ symbol_set = [
 DIRECTORY = "src/storage/data"
 IS_SAVE_DATA_ACTIVE = False
 IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
-IS_GET_MONTHLY_ACTIVE = False
+IS_GET_MONTHLY_ACTIVE = True
 IS_GENERATE_CVS_ACTIVE = True
 IS_GENERATIE_PORTFOLIO_ACTIVE = True
 
@@ -114,8 +116,11 @@ print("Pulling data from Yahoo Finance")
 
 # Get Monthly Returns
 if IS_GET_MONTHLY_ACTIVE:
-    monthly = get_monthly("2000-01-01", "2023-09-04")
-    print(monthly)
+    current_date = datetime.now().date()
+    start_date = current_date - timedelta(days=10*365.25)  # Approximate, considering leap years
+
+    monthly = get_monthly_stats("VOO", start_date, current_date)
+    monthly = get_monthly_stats("BLV", start_date, current_date)
 
 data_general = pull_general_data(symbols)
 
