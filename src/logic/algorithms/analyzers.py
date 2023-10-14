@@ -81,7 +81,7 @@ def get_sector_statistics(ticker: yf.Ticker, metric_key):
 
 
 def analyze_metric(symbol: str, metric: Metric, metric_config: MetricConfig, ticker: yf.Ticker):
-    avg, std = get_sector_statistics(ticker, metric_config.stat_key)
+    avg, std = get_sector_statistics(ticker, metric.name)
 
     if avg is None or std is None:
         print(f"Could not find sector statistics for metric: {metric} for ticker: {ticker.info['symbol']}")
@@ -123,36 +123,19 @@ def generate_portfolio(analysis: [AnalysisResultGroup]):
     sorted_analysis = sorted(analysis, key=lambda x: x.egeria_score, reverse=True)
     sorted_analysis = sorted_analysis[:MAX_PORTFOLIO_SIZE]
 
-    # Define Bands
-    percentile = 25
-    bands = [40, 30, 20, 10]
+    # Use a logarithmic decay function to generate weights
+    base = 5  # Change this for stronger/weaker decay
+    raw_weights = [1 / math.log(base + i) for i in range(len(sorted_analysis))]
+    normalized_weights = [w / sum(raw_weights) for w in raw_weights]
 
-    # Throw exception if invalid bad
-    if len(bands) != round(100 / 25):
-        raise ValueError(f"Band error: Band Count {len(bands)} but percentile produces {round(100/percentile)} buckets")
+    # Assign weights
+    for ticker, weight in zip(sorted_analysis, normalized_weights):
+        ticker.weight = weight * 100
 
-    # Segment Tickers
-    tickers_segmented = {}
-    start_index = 0
-    for band in bands:
-        end_index = start_index + int(percentile/100 * len(sorted_analysis))
-        tickers_segmented[band] = sorted_analysis[start_index:end_index]
-        start_index = end_index 
-
-    # Add last one
-    tickers_segmented[bands[-1]].extend(sorted_analysis[start_index:])
-
-    # Assign Weights
-    for band in bands:
-        for ticker in tickers_segmented[band]:
-            ticker.weight = band / len(tickers_segmented[band])
-        
-    # Combine all equities and sort by weight
-    all_equities = [item for sublist in tickers_segmented.values() for item in sublist]
-    sorted_by_weight = sorted(all_equities, key=lambda x: x.weight, reverse=True)
+    # Sort by weight
+    sorted_by_weight = sorted(sorted_analysis, key=lambda x: x.weight, reverse=True)
 
     return sorted_by_weight
-
 
 # Calculate portfolio Nyr return
 def calculate_weighted_portfolio_returns(portfolio: [AnalysisResultGroup], years: int):

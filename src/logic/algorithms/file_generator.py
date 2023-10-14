@@ -4,7 +4,7 @@ from src.common.enums.symbols import SymbolSet
 from src.common.utils.ticker_util import get_return
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
-from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS_STR
+from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
 from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns
 
 def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: SymbolSet, metrics: [str]):
@@ -17,15 +17,16 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
     # Ensure the directory exists
     ensure_dir(result_file_path)
 
+
     # Generate File
     with open(result_file_path, "w", encoding='utf-8') as file:
-        file.write(get_header("Stats"))
-        file.write(SECTOR_METRIC_STATISTICS_STR + "\n")
-
-        file.write(get_header("Metrics"))
-        for metric in metrics:
-            file.write(metric.value + "\n")
-
+        file.write(get_header("Metric Stats"))
+        stats = SECTOR_METRIC_STATISTICS.get("Default")
+        metrics_set = {metric.name for metric in metrics}
+        file.write(f"{'Metric':<30} | {'Avg':>10} | {'Std':>10} | {'Is Active':>5}\n")
+        for key, value in stats.items():
+            is_active = "Yes" if key in metrics_set else "No"
+            file.write(f"{key:<30} | {value[0]:>10} | {value[1]:>10} | {is_active:>5}\n")
 
         file.write(get_header("Portfolio Proposal"))
         file.write("\n")  # New line for spacing
@@ -84,7 +85,7 @@ def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str], port
 # Get Header
 def get_header(header_label: str):
     return f"""
------------------------------------------------------
-                    {header_label}                       
------------------------------------------------------
+--------------------------------------------------------------------------
+                              {header_label}                       
+--------------------------------------------------------------------------
 """

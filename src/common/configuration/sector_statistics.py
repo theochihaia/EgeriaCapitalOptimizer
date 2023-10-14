@@ -36,22 +36,22 @@ REVGROW     15          5
 
 SECTOR_METRIC_STATISTICS = {
     "Default": {
-        "PE": (24.2, 15.8),
-        "PB": (2.92, .68),
-        "PS": (1.76, .54),
+        "PRICE_TO_EARNINGS": (24.2, 15.8),
+        "PRICE_TO_BOOK": (2.92, .68),
+        "PRICE_TO_SALES": (1.76, .54),
         "BETA": (.8, .2),
         "QUICK_RATIO": (1, .5),
         "DEBT_TO_EQUITY": (100, 50),
         "RETURN_ON_EQUITY": (.15, .07),
         "RETURN_ON_ASSETS": (.05, .03),
-        "RETURN_5_YR": (50, 25),
-        "RETURN_10_YR": (150, 75),
-        "VARIANCE_5_YR": (.7, .3),
-        "VARIANCE_10_YR": (.7, .3),
+        "RETURN_FIVE_YEAR": (50, 25),
+        "RETURN_TEN_YEAR": (150, 75),
+        "VARIANCE_FIVE_YEAR": (.7, .3),
+        "VARIANCE_TEN_YEAR": (.7, .3),
         "YIELD": (0, 1),
         "EBIDTA_MARGIN": (.2, .1),
-        "EBIDTA_GROWTH_RATE": (15, 5),
-        "REVENUE_GROWTH_RATE": (15, 5)
+        "EBIDTA_AVG_GROWTH_RATE": (15, 5),
+        "REVENUE_AVG_GROWTH_RATE": (15, 5)
     },
     "Healthcare": {
 

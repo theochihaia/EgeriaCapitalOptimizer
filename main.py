@@ -48,7 +48,7 @@ symbol_set = [
 DIRECTORY = "src/storage/data"
 IS_SAVE_DATA_ACTIVE = False
 IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
-IS_GET_MONTHLY_ACTIVE = True
+IS_GET_MONTHLY_ACTIVE = False
 IS_GENERATE_CVS_ACTIVE = True
 IS_GENERATIE_PORTFOLIO_ACTIVE = True
 
@@ -65,18 +65,18 @@ metrics = [
     Metric.PRICE_TO_BOOK,
     Metric.PRICE_TO_SALES,
     Metric.BETA,
-    Metric.YIELD,
-    Metric.QUICK_RATIO,
+   # Metric.YIELD,
+    #Metric.QUICK_RATIO,
     Metric.DEBT_TO_EQUITY,
-    Metric.FIVE_YEAR_VARIANCE,
-    Metric.TEN_YEAR_VARIANCE,
+    Metric.VARIANCE_FIVE_YEAR,
+    Metric.VARIANCE_TEN_YEAR,
     Metric.EBIDTA_MARGIN,
     Metric.RETURN_ON_EQUITY,
     Metric.RETURN_ON_ASSETS,
     Metric.EBIDTA_AVG_GROWTH_RATE,
     Metric.REVENUE_AVG_GROWTH_RATE,
-    Metric.FIVE_YEAR_RETURN,
-    Metric.TEN_YEAR_RETURN,
+    Metric.RETURN_FIVE_YEAR,
+    Metric.RETURN_TEN_YEAR,
 ]
 # ------------------------------------------------------------#
 # Helpers
