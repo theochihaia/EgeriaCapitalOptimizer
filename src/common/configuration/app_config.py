@@ -56,3 +56,7 @@ ACTIVE_METRICS = [
 MIN_TRADING_DAYS = 2500
 MAX_PORTFOLIO_SIZE = 30
 LOG_BASE = 4
+
+
+# Yahoo Finance Configuration
+YF_CACHE_TIMEOUT = 60 * 60 * 24 * 7 # 1 week
