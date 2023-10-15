@@ -23,8 +23,9 @@ def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
 
     # Define a helper function for parallel execution
     def analyze_ticker(symbol, ticker):
-        if not valid_ticker(ticker):
-            print(f"Validation Error. Could not process symbol: {symbol}")
+        (is_valid, error) = valid_ticker(ticker)
+        if not is_valid:
+            print(f"Validation Error. Could not process symbol: {symbol} | {error}")
             return AnalysisResultGroup(symbol, [], 0.0, ticker, True)
         return analyze(symbol, ticker, metrics)
 
@@ -159,14 +160,14 @@ def calculate_weighted_fn(portfolio: [AnalysisResultGroup], years: int, fn: call
 
     return value
 
-def valid_ticker(ticker: yf.Ticker) -> bool:
+def valid_ticker(ticker: yf.Ticker) -> (bool, str):
     history10yr = ticker.history(period="10y").values
     if ticker is None:
-        return False
+        return (False, "Ticker is None")
     if ticker.info is None:
-        return False
+        return (False, "Ticker.info is None")
     if ticker.info.get("symbol") is None:
-        return False
+        return (False, "Ticker.info['symbol'] is None")
     if len(history10yr) < MIN_TRADING_DAYS:
-        return False
-    return True
+        return (False, f"Insufficient trading days: {len(history10yr)}")
+    return (True, "")

@@ -1,3 +1,4 @@
+from pyrate_limiter import Duration
 from src.common.enums.equity_data_category import EquityDataCategory
 from src.common.enums.metric import Metric
 from src.common.enums.portfolio import Portfolio
@@ -60,3 +61,5 @@ LOG_BASE = 4
 
 # Yahoo Finance Configuration
 YF_CACHE_TIMEOUT = 60 * 60 * 24 * 7 # 1 week
+YF_REQUEST_RATE = 10
+YF_DURATION = Duration.SECOND * 3

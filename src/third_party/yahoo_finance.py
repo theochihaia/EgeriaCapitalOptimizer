@@ -6,7 +6,7 @@ from requests_ratelimiter import LimiterMixin, MemoryQueueBucket
 from pyrate_limiter import Duration, RequestRate, Limiter
 from pandas_datareader import data as pdr
 
-from src.common.configuration.app_config import YF_CACHE_TIMEOUT
+from src.common.configuration.app_config import YF_CACHE_TIMEOUT, YF_DURATION, YF_REQUEST_RATE
 
 """
 Relevant objects for symbol:
@@ -37,10 +37,9 @@ Relevant objects for symbol:
 class CachedLimiterSession(CacheMixin, LimiterMixin, Session):
     pass
 
-
 session = CachedLimiterSession(
     limiter=Limiter(
-        RequestRate(5, Duration.SECOND * 3)
+        RequestRate(YF_REQUEST_RATE, YF_DURATION)
     ),  # max 2 requests per 5 seconds
     bucket_class=MemoryQueueBucket,
     backend=SQLiteCache("yfinance.cache", expire_after=YF_CACHE_TIMEOUT), # 5 days

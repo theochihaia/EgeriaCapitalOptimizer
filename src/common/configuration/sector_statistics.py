@@ -30,8 +30,8 @@ SECTOR_METRIC_STATISTICS = {
         "RETURN_ON_EQUITY": (.15, .07),
         "RETURN_TEN_YEAR": (150, 75),
         "REVENUE_AVG_GROWTH_RATE": (15, 5),
-        "STD_FIVE_YEAR": (8, 2),
-        "STD_TEN_YEAR": (8, 2),
+        "STD_FIVE_YEAR": (7, 1),
+        "STD_TEN_YEAR": (7, 1),
         "YIELD": (0, 1),
     }
 }
