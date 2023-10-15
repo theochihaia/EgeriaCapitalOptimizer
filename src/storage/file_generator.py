@@ -70,7 +70,7 @@ def generate_csv(analysis: [AnalysisResultGroup], result_file_path: str, metrics
     with open(csv_file_path, "w") as file:
             column_headers = " Norm,".join(metrics.value for metrics in metrics)
             column_headers += " Norm"
-            file.write(f"Index,Symbol,Name,EgeriaScore,PortfolioWeight,5YrReturn,{column_headers}\n")  # Write CSV header
+            file.write(f"Index,Symbol,Name,EgeriaScore,PortfolioWeight,YearlyReturn5YrAvg,{column_headers}\n")  # Write CSV header
             ix = 0
             for analysis_result in analysis:
                 ix += 1
