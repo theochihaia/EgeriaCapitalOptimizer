@@ -1,11 +1,11 @@
 import os
 
 from src.common.enums.portfolio import Portfolio
-from src.common.utils.ticker_util import get_return
+from src.common.utils.ticker_util import get_return, get_std
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
-from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns
+from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns, calculate_weighted_fn
 
 def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: Portfolio, metrics: [str]):
     result_file_path = (
@@ -37,15 +37,19 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
             if weight > 0:
                 file.write(f"{symbol:<10} | {name:<50} | {round(weight,2):>7.2f}%\n")
 
-        five_yr_return = calculate_weighted_portfolio_returns(portfolio_proposal,5)
-        file.write(f"\nWeighted Return (5yrs): {round(five_yr_return,2)}\n")
+        five_yr_return = calculate_weighted_fn(portfolio_proposal,5, get_return)
+        five_yr_std = calculate_weighted_fn(portfolio_proposal,5, get_std)
+        
+        file.write(f"\n\n")
+        file.write(f"Weighted Return (5yrs): {round(five_yr_return,2):>5.2f}\n")
+        file.write(f"Weighted Std    (5yrs): {round(five_yr_std,2):>5.2f}\n")
 
         file.write(get_header("Details"))
         for analysis_result in sorted_analysis:
             file.write(str(analysis_result or None) + "\n")
 
 
-        print("Results written to " + result_file_path)
+        print(f"Results written to {result_file_path}.txt")
 
         invalid_tickers = [result for result in sorted_analysis if result.is_disqualified]
         if(len(invalid_tickers) > 0):

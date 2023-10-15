@@ -41,7 +41,7 @@ def get_n_day_returns(data_close, days):
     return five_day_returns
 
 
-def get_variance(ticker: yf.Ticker, period: str):
+def get_std(ticker: yf.Ticker, period: str):
     data = ticker.history(period=period)
     day_period = 10
     data_close = data["Close"]
@@ -52,7 +52,7 @@ def get_variance(ticker: yf.Ticker, period: str):
     if len(n_day_returns) == 0:
         return None
     
-    variance = np.var(n_day_returns)
+    variance = np.std(n_day_returns)
     return variance * 100
 
 

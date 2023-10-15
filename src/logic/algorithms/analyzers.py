@@ -147,6 +147,17 @@ def calculate_weighted_portfolio_returns(portfolio: [AnalysisResultGroup], years
 
     return total_returns
 
+# Calculate portfolio Nyr return
+def calculate_weighted_fn(portfolio: [AnalysisResultGroup], years: int, fn: callable):
+    if years == 0:
+        raise ValueError("Years cannot be zero.")
+
+    value = 0.0
+    period = f"{years}y"
+    for metric_group in portfolio:
+        value += fn(metric_group.ticker, period) * (metric_group.weight/100.0)
+
+    return value
 
 def valid_ticker(ticker: yf.Ticker) -> bool:
     history10yr = ticker.history(period="10y").values

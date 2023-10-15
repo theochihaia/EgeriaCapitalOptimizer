@@ -1,7 +1,7 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.utils.ticker_util import get_return, get_income_growth, get_variance
+from src.common.utils.ticker_util import get_return, get_income_growth, get_std
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
@@ -9,7 +9,7 @@ from src.common.enums.metric import Metric
 METRIC_CONFIG = {
     Metric.BETA: MetricConfig(
         data_fetcher=lambda t: t.info.get("beta"),
-        metric_weight=5,
+        metric_weight=4,
         is_inverted=True
     ),
     Metric.DEBT_TO_EQUITY: MetricConfig(
@@ -19,7 +19,7 @@ METRIC_CONFIG = {
     ),
     Metric.EBIDTA_AVG_GROWTH_RATE: MetricConfig(
         data_fetcher=lambda t: get_income_growth(t, "NormalizedEBITDA"),
-        metric_weight=1,
+        metric_weight=2,
         is_inverted=False
     ),
     Metric.EBIDTA_MARGIN: MetricConfig(
@@ -49,22 +49,22 @@ METRIC_CONFIG = {
     ),
     Metric.RETURN_FIVE_YEAR: MetricConfig(
         data_fetcher=lambda t: get_return(t, "5y"),
-        metric_weight=5,
+        metric_weight=4,
         is_inverted=False
     ),
     Metric.RETURN_ON_ASSETS: MetricConfig(
         data_fetcher=lambda t: t.info.get("returnOnAssets"),
-        metric_weight=2,
+        metric_weight=3,
         is_inverted=False
     ),
     Metric.RETURN_ON_EQUITY: MetricConfig(
         data_fetcher=lambda t: t.info.get("returnOnEquity"),
-        metric_weight=2,
+        metric_weight=3,
         is_inverted=False
     ),
     Metric.RETURN_TEN_YEAR: MetricConfig(
         data_fetcher=lambda t: get_return(t, "10y"),
-        metric_weight=5,
+        metric_weight=4,
         is_inverted=False
     ),
     Metric.REVENUE_AVG_GROWTH_RATE: MetricConfig(
@@ -72,13 +72,13 @@ METRIC_CONFIG = {
         metric_weight=1,
         is_inverted=False
     ),
-    Metric.VARIANCE_FIVE_YEAR: MetricConfig(
-        data_fetcher=lambda t: get_variance(t, "5y"),
+    Metric.STD_FIVE_YEAR: MetricConfig(
+        data_fetcher=lambda t: get_std(t, "5y"),
         metric_weight=4,
         is_inverted=True
     ),
-    Metric.VARIANCE_TEN_YEAR: MetricConfig(
-        data_fetcher=lambda t: get_variance(t, "10y"),
+    Metric.STD_TEN_YEAR: MetricConfig(
+        data_fetcher=lambda t: get_std(t, "10y"),
         metric_weight=4,
         is_inverted=True
     ),

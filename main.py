@@ -26,10 +26,6 @@ pip install -r requirements.txt
 """
 
 # ------------------------------------------------------------#
-# Parameters
-# ------------------------------------------------------------#
-
-# ------------------------------------------------------------#
 # Helpers
 # ------------------------------------------------------------#
 # Clear Directory
@@ -53,7 +49,6 @@ def generate_analysis(data: dict):
 
     # Generate File
     generate_files(analysis, DIRECTORY + "/output", portfolio_proposal, IS_GENERATE_CVS_ACTIVE, SYMBOLS, ACTIVE_METRICS)
-
 
 
 # ------------------------------------------------------------#
