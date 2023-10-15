@@ -6,7 +6,7 @@ from src.common.configuration.app_config import *
 from src.common.utils.ticker_util import get_symbols
 from src.third_party.yahoo_finance import pull_general_data
 from src.storage.datastore import save_data, clear_directory, save_data_parallel
-from src.logic.algorithms.file_generator import generate_files
+from src.storage.file_generator import generate_files
 
 from src.logic.algorithms.analyzers import analyze_tickers_concurrent, generate_portfolio
 from src.logic.algorithms.monthly_returns import get_monthly_stats

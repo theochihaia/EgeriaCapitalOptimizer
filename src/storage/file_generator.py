@@ -67,7 +67,6 @@ def ensure_dir(dir: str):
 def generate_csv(analysis: [AnalysisResultGroup], result_file_path: str, metrics: [str], portfolio_proposal: []):
     csv_file_path = f"{result_file_path}.csv"
 
-    print("CSV written to " + csv_file_path)
     with open(csv_file_path, "w") as file:
             column_headers = " Norm,".join(metrics.value for metrics in metrics)
             column_headers += " Norm"
@@ -79,8 +78,8 @@ def generate_csv(analysis: [AnalysisResultGroup], result_file_path: str, metrics
                         str(metric_result.normalized_value) if (metric_result is not None and metric_result is not None) else ""
                         for metric_result in analysis_result.results
                     )
-                file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{analysis_result.weight},{get_return(analysis_result.ticker,'5y')/5},{metric_output}\n")
-
+                file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{round(analysis_result.weight,2)},{round(get_return(analysis_result.ticker,'5y')/5,2)},{metric_output}\n")
+    print("CSV written to " + csv_file_path)
 
 # Get Header
 def get_header(header_label: str):
