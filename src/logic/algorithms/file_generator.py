@@ -9,9 +9,9 @@ from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns
 
 def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: Portfolio, metrics: [str]):
     result_file_path = (
-        f"{dir}/results_composite.txt"
+        f"{dir}/results_composite"
         if len(generate_composite) > 1
-        else f"{dir}/results_{generate_composite[0].value}.txt"
+        else f"{dir}/results_{generate_composite[0].value}"
     )
 
     # Ensure the directory exists
@@ -19,7 +19,7 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
 
 
     # Generate File
-    with open(result_file_path, "w", encoding='utf-8') as file:
+    with open(f"{result_file_path}.txt", "w", encoding='utf-8') as file:
         file.write(get_header("Metric Stats"))
         stats = SECTOR_METRIC_STATISTICS.get("Default")
         metrics_set = {metric.name for metric in metrics}
@@ -35,7 +35,7 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
         for result in portfolio_proposal:
             symbol, name, weight = result.symbol, result.ticker.get_info().get('longName'), result.weight
             if weight > 0:
-                file.write(f"{symbol:<10} | {name:<50} | {weight:>7.2f}%\n")
+                file.write(f"{symbol:<10} | {name:<50} | {round(weight,2):>7.2f}%\n")
 
         five_yr_return = calculate_weighted_portfolio_returns(portfolio_proposal,5)
         file.write(f"\nWeighted Return (5yrs): {round(five_yr_return,2)}\n")
@@ -52,7 +52,7 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
             print("Unprocessable Tickers: " + ", ".join([result.symbol for result in invalid_tickers]))
 
         if is_generate_csv_active:
-            generate_csv(sorted_analysis, dir, metrics, portfolio_proposal)
+            generate_csv(sorted_analysis, result_file_path, metrics, portfolio_proposal)
 
 
 
@@ -64,8 +64,8 @@ def ensure_dir(dir: str):
 
 
 # Generate CSV
-def generate_csv(analysis: [AnalysisResultGroup], dir: str, metrics: [str], portfolio_proposal: []):
-    csv_file_path = f"{dir}/results_composite.csv"
+def generate_csv(analysis: [AnalysisResultGroup], result_file_path: str, metrics: [str], portfolio_proposal: []):
+    csv_file_path = f"{result_file_path}.csv"
 
     print("CSV written to " + csv_file_path)
     with open(csv_file_path, "w") as file:
