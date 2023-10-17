@@ -1,5 +1,6 @@
 import yfinance as yf
 import numpy as np
+from src.common.configuration.app_config import STD_PERIOD_DAYS
 
 from src.common.enums.portfolio import Portfolio
 
@@ -43,7 +44,7 @@ def get_n_day_returns(data_close, days):
 
 def get_std(ticker: yf.Ticker, period: str):
     data = ticker.history(period=period)
-    day_period = 10
+    day_period = STD_PERIOD_DAYS
     data_close = data["Close"]
     if data.empty:
         return

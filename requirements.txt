@@ -11,3 +11,4 @@ requests_ratelimiter
 scikit-learn
 tensorflow
 charset_normalizer
+matplotlib

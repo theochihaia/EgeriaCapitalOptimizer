@@ -6,8 +6,8 @@ from src.common.enums.portfolio import Portfolio
 # Portfolio Symbols
 SYMBOLS = [
     #Portfolio.TESTING,
-    Portfolio.FID_FOLIO,
-    #Portfolio.FID_FOLIO_V2,
+    #Portfolio.FID_FOLIO,
+    Portfolio.FID_FOLIO_V3,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
@@ -15,6 +15,8 @@ SYMBOLS = [
     #Portfolio.IYW_TECHNOLOGY,
     #Portfolio.IYK_CONSUMER_STAPLES,
     #Portfolio.IYF_FINANCIAL,
+    #Portfolio.ALEX,
+    #Portfolio.SK_ALPHA_DIV_GROWTH,
 ]
 
 # Generation Settings
@@ -54,9 +56,10 @@ ACTIVE_METRICS = [
 
 
 # Analyzer Configuration
+MAX_PORTFOLIO_SIZE = 25
 MIN_TRADING_DAYS = 2500
-MAX_PORTFOLIO_SIZE = 30
 LOG_BASE = 4
+STD_PERIOD_DAYS = 20
 
 
 # Yahoo Finance Configuration

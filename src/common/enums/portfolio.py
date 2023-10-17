@@ -3,7 +3,7 @@ from enum import Enum
 class Portfolio(Enum):
     ROBINHOOD = "robinhood"
     FID_FOLIO = "fid_folio"
-    FID_FOLIO_V2 = "fid_folio_v2"
+    FID_FOLIO_V3 = "fid_folio_v3"
     TESTING = "testing"
     SP500 = "sp500"
     NOBL = "nobl"
@@ -13,3 +13,4 @@ class Portfolio(Enum):
     IYW_TECHNOLOGY = "iyw_technology"
     IYF_FINANCIAL = "iyf_financial"
     ALEX = "alex"
+    SK_ALPHA_DIV_GROWTH = "sk_alpha_div_growth"
