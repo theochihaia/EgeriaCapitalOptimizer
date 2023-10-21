@@ -9,9 +9,9 @@ from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns,
 
 def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: Portfolio, metrics: [str]):
     result_file_path = (
-        f"{dir}/results_composite"
+        f"{dir}/portfolio_composite"
         if len(generate_composite) > 1
-        else f"{dir}/results_{generate_composite[0].value}"
+        else f"{dir}/portfolio_{generate_composite[0].value}"
     )
 
     # Ensure the directory exists

@@ -146,7 +146,7 @@ end_date = "2030-01-01"  # Target end date of the investment
 expected_return = 0.07  # Expected return of 7% per year
 
 # Input
-current_investment = 10000  # Current account balance
+current_investment = 9000  # Current account balance
 
 strategy = GoalCostAveraging(
     initial_investment,
