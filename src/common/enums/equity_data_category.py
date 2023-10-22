@@ -21,7 +21,6 @@ class EquityDataCategory(Enum):
     MAJOR_HOLDERS = "major_holders"
     INSTITUTIONAL_HOLDERS = "institutional_holders"
     MUTUALFUND_HOLDERS = "mutualfund_holders"
-    EARNINGS_DATES = "earnings_dates"
     ISIN = "isin"  # Experimental
     OPTIONS = "options"
     NEWS = "news"

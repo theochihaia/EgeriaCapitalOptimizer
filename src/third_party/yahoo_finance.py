@@ -51,17 +51,12 @@ session.headers["User-agent"] = "my-program/1.0"
 yf.pdr_override()
 
 
-# Pull data from Yahoo Finance given a symbol
-def pull_general_data(symbol: str, period: str = "1yr"):
-    return pdr.get_data_yahoo(symbol, period=period, session=session)
-
-
 # Pull data from Yahoo Finance given a list of symbols
 def pull_general_data(symbol_list: list):
     data = {}
     for symbol in symbol_list:
         try:
-            ticker = yf.Ticker(symbol)
+            ticker = yf.Ticker(symbol, session=session)
             data[symbol] = ticker
         except Exception as e:
             print(f"Failed to pull data for {symbol}. Reason: {e}")
