@@ -3,6 +3,7 @@ from enum import Enum
 
 class EquityDataCategory(Enum):
     INFO = "info"
+    FAST_INFO = "fast_info"
     HISTORY = "history"  # Requires parameter e.g., period="1mo"
     HISTORY_METADATA = "history_metadata"
     ACTIONS = "actions"

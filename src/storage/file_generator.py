@@ -33,7 +33,9 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
         file.write(f"{'Symbol':<10} | {'Name':<50} | {'Weight':>7}\n")
         file.write("-" * 72 + "\n")  # Add a separator line
         for result in portfolio_proposal:
-            symbol, name, weight = result.symbol, result.ticker.get_info().get('longName'), result.weight
+            info = result.ticker.get_info()
+            long_name = info['longName'] if info and 'longName' in info else result.symbol
+            symbol, name, weight = result.symbol, long_name, result.weight
             if weight > 0:
                 file.write(f"{symbol:<10} | {name:<50} | {round(weight,2):>7.2f}%\n")
 
@@ -82,7 +84,8 @@ def generate_csv(analysis: [AnalysisResultGroup], result_file_path: str, metrics
                         str(metric_result.normalized_value) if (metric_result is not None and metric_result is not None) else ""
                         for metric_result in analysis_result.results
                     )
-                file.write(f"{ix:03},{analysis_result.symbol},\"{analysis_result.ticker.get_info().get('longName')}\",{analysis_result.egeria_score},{round(analysis_result.weight,2)},{round(get_return(analysis_result.ticker,'5y')/5,2)},{metric_output}\n")
+                long_name = analysis_result.ticker.get_info()['longName'] if analysis_result.ticker.get_info() else "unkown"
+                file.write(f"{ix:03},{analysis_result.symbol},\"{long_name}\",{analysis_result.egeria_score},{round(analysis_result.weight,2)},{round(get_return(analysis_result.ticker,'5y')/5,2)},{metric_output}\n")
     print("CSV written to " + csv_file_path)
 
 # Get Header

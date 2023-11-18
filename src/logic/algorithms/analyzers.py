@@ -18,10 +18,10 @@ from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.logic.algorithms.range_normalizer import RangeAnalysisConfig, range_normalizer
 
 
-def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
+def analyze_tickers(data: dict, metrics: List[Metric], concurrent: bool = False):
     analysis: List[AnalysisResultGroup] = []
 
-    # Define a helper function for parallel execution
+    # Define a helper function for execution
     def analyze_ticker(symbol, ticker):
         (is_valid, error) = valid_ticker(ticker)
         if not is_valid:
@@ -29,24 +29,24 @@ def analyze_tickers_concurrent(data: dict, metrics: [Metric]):
             return AnalysisResultGroup(symbol, [], 0.0, ticker, True)
         return analyze(symbol, ticker, metrics)
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [
-            executor.submit(analyze_ticker, symbol, ticker)
-            for symbol, ticker in data.items()
-        ]
-        
-        # Collect all the results from the futures
-        analysis = [
-            future.result()
-            for future in concurrent.futures.as_completed(futures)
-            if future.result()
-        ]
+    if concurrent:
+        # Concurrent execution
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            futures = [executor.submit(analyze_ticker, symbol, ticker) for symbol, ticker in data.items()]
+            analysis = [future.result() for future in concurrent.futures.as_completed(futures) if future.result()]
+    else:
+        # Serial execution
+        for symbol, ticker in data.items():
+            result = analyze_ticker(symbol, ticker)
+            if result:
+                analysis.append(result)
 
     # Filter out None results if any
     filtered_analysis = [result for result in analysis if result and not math.isnan(result.egeria_score)]
 
     # Sort the analysis list by the egeria_score attribute in descending order
     sorted_analysis = sorted(filtered_analysis, key=lambda x: x.egeria_score, reverse=True)
+
     return sorted_analysis
 
 
@@ -164,10 +164,10 @@ def valid_ticker(ticker: yf.Ticker) -> (bool, str):
     history10yr = ticker.history(period="10y").values
     if ticker is None:
         return (False, "Ticker is None")
-    if ticker.info is None:
-        return (False, "Ticker.info is None")
-    if ticker.info.get("symbol") is None:
-        return (False, "Ticker.info['symbol'] is None")
+    #if ticker.get_info is None:
+    #    return (False, "Ticker.info is None")
+    #if ticker.get_info().get("symbol") is None:
+    #    return (False, "Ticker.info['symbol'] is None")
     if len(history10yr) < MIN_TRADING_DAYS:
         return (False, f"Insufficient trading days: {len(history10yr)}")
     return (True, "")

@@ -24,7 +24,7 @@ def range_normalizer(symbol: str, ticker: yf.Ticker, config: RangeAnalysisConfig
     if value is None:
         return None
     
-    symbol = ticker.get_info().get("symbol")
+    symbol = ticker.ticker
 
     positive_result = MetricResult.POSITIVE if not invert else MetricResult.NEGATIVE
     negative_result = MetricResult.NEGATIVE if not invert else MetricResult.POSITIVE

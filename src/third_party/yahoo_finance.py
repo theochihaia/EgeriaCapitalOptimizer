@@ -5,6 +5,8 @@ from requests_cache import CacheMixin, SQLiteCache
 from requests_ratelimiter import LimiterMixin, MemoryQueueBucket
 from pyrate_limiter import Duration, RequestRate, Limiter
 from pandas_datareader import data as pdr
+import requests
+
 
 from src.common.configuration.app_config import YF_CACHE_TIMEOUT, YF_DURATION, YF_REQUEST_RATE
 
@@ -50,13 +52,26 @@ session.headers["User-agent"] = "my-program/1.0"
 
 yf.pdr_override()
 
+'''
+import yfinance as yf
 
+tickers = yf.Tickers('msft aapl goog')
+
+# access each ticker using (example)
+tickers.tickers['MSFT'].info
+tickers.tickers['AAPL'].history(period="1mo")
+tickers.tickers['GOOG'].actions
+'''
 # Pull data from Yahoo Finance given a list of symbols
 def pull_general_data(symbol_list: list):
     data = {}
+    ticker_dict = yf.Tickers(symbol_list, session=session)
     for symbol in symbol_list:
         try:
-            ticker = yf.Ticker(symbol, session=session)
+            ticker = ticker_dict.tickers[symbol]
+            #info = ticker.get_info()
+            moredata = pdr.get_data_yahoo(symbol, period="1yr", session=session,  threads=False) 
+
             data[symbol] = ticker
         except Exception as e:
             print(f"Failed to pull data for {symbol}. Reason: {e}")
@@ -64,3 +79,4 @@ def pull_general_data(symbol_list: list):
 
 def pull_pricing_data(symbol_list: list, period: str = "1yr"):
     return {symbol: pdr.get_data_yahoo(symbol, period=period, session=session) for symbol in symbol_list}
+

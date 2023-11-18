@@ -57,7 +57,7 @@ Configuration file for parameters: STD Range
 
 ticker_string = ' '.join(symbols[:3])
 
-data = pdr.get_data_yahoo(ticker_string, period="1yr", session=session)
+data = pdr.get_data_yahoo(ticker_string, period="1yr", session=session, threads=False)
 
 #print(data)
 

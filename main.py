@@ -8,7 +8,7 @@ from src.third_party.yahoo_finance import pull_general_data
 from src.storage.file_store import save_data, clear_directory, save_data_parallel
 from src.storage.file_generator import generate_files
 
-from src.logic.algorithms.analyzers import analyze_tickers_concurrent, generate_portfolio
+from src.logic.algorithms.analyzers import analyze_tickers, generate_portfolio
 from src.logic.algorithms.monthly_returns import get_monthly_stats
 
 
@@ -43,7 +43,7 @@ def save_data(data: dict):
 
 def generate_analysis(data: dict):
     # Analyze Tickers   
-    analysis = analyze_tickers_concurrent(data, ACTIVE_METRICS)
+    analysis = analyze_tickers(data, ACTIVE_METRICS, IS_CONCURRENT)
 
     portfolio_proposal = generate_portfolio(analysis)
 

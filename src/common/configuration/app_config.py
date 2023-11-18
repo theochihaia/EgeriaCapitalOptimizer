@@ -26,10 +26,12 @@ IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
 IS_GET_MONTHLY_ACTIVE = False
 IS_GENERATE_CVS_ACTIVE = True
 IS_GENERATIE_PORTFOLIO_ACTIVE = True
+IS_CONCURRENT = False
 
 
 DATA_CATEGORIES = [
-    EquityDataCategory.INFO,
+    #EquityDataCategory.INFO,
+    EquityDataCategory.FAST_INFO,
     EquityDataCategory.INCOME_STMT,
     EquityDataCategory.BALANCE_SHEET,
     EquityDataCategory.QUARTERLY_INCOME_STMT,
@@ -63,6 +65,6 @@ STD_PERIOD_DAYS = 20
 
 
 # Yahoo Finance Configuration
-YF_CACHE_TIMEOUT = 60 * 60 * 24 * 7 # 1 week
-YF_REQUEST_RATE = 10
-YF_DURATION = Duration.SECOND * 3
+YF_CACHE_TIMEOUT = 60 * 60 * 24 * 7  # 1 week
+YF_REQUEST_RATE = 1
+YF_DURATION = Duration.SECOND * 10

@@ -66,6 +66,8 @@ def save_data_for_category(
             f.write(data.get_balance_sheet().to_json())
         elif category == EquityDataCategory.QUARTERLY_INCOME_STMT:
             f.write(data.quarterly_income_stmt.to_json())
+        elif category == EquityDataCategory.FAST_INFO:
+            f.write(data.get_fast_info().to_json())
         else:
             raise ValueError(f"No Parser for data category: {category}")
 

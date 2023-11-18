@@ -1,7 +1,7 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.utils.ticker_util import get_return, get_income_growth, get_std
+from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
@@ -43,7 +43,7 @@ METRIC_CONFIG = {
         is_inverted=True
     ),
     Metric.QUICK_RATIO: MetricConfig(
-        data_fetcher=lambda t: t.info.get("quickRatio"),
+        data_fetcher=lambda t: get_quick_ratio(t),
         metric_weight=3,
         is_inverted=False
     ),

@@ -64,3 +64,20 @@ def get_symbols(symbol_set: Portfolio):
         with open(dir) as f:
             symbols.update(f.read().splitlines())
     return list(symbols)
+
+def get_quick_ratio(ticker: yf.Ticker):
+    if(ticker.info):
+        return ticker.info.get("quickRatio")
+
+    latest_data = ticker.balance_sheet.iloc[:, 0]
+
+    cash_equivalents = latest_data.get("Cash Cash Equivalents And Short Term Investments")
+    accounts_receivable = latest_data.get("Receivables")
+    current_liabilities = latest_data.get("Current Liabilities")
+
+    quick_assets = float(cash_equivalents) + float(accounts_receivable)
+    current_liabilities = float(current_liabilities)
+
+    # Calculate the quick ratio
+    quick_ratio = quick_assets / current_liabilities
+    return quick_ratio
