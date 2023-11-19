@@ -20,10 +20,13 @@ class AnalysisResultGroup:
             sector = "Default"
             name = "Unknown"
 
-            if self.ticker and self.ticker.get_info():
+            try:
                 ticker_info = self.ticker.get_info()
                 sector = ticker_info.get("sector")
                 name = ticker_info.get("longName")
+            except Exception as e:
+                sector = "Default Sector"
+                name = "Unknown Name"
 
             output += "{symbol} - {name} ({sector})\n".format(symbol=self.symbol, name=name, sector=sector)
             output += f"Egeria Score: {self.egeria_score}\n"

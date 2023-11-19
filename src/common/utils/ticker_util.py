@@ -133,7 +133,7 @@ def get_ps_ratio(ticker: yf.Ticker):
 
 def get_ebidta_margin(ticker: yf.Ticker):
     net_sales = ticker.quarterly_income_stmt.loc["Total Revenue"][:4].sum()
-    ebidta = ticker.quarterly_income_stmt.loc["EBIT"][:4].sum()
+    ebidta = ticker.quarterly_income_stmt.loc["EBITDA"][:4].sum()
 
     ebidta_margin = float(ebidta) / float(net_sales)
     return ebidta_margin
