@@ -45,14 +45,15 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
                 file.write(f"{symbol:<10} | {name:<50} | {round(weight,2):>7.2f}%\n")
 
         five_yr_return = calculate_weighted_fn(portfolio_proposal,5, get_return)
-        five_yr_std = calculate_weighted_fn(portfolio_proposal,5, get_std)
         annualized_return = calculate_annualized_rate(five_yr_return)
+        five_yr_std = calculate_weighted_fn(portfolio_proposal,5, get_std)
+        
         
         file.write(f"\n\n")
-        file.write(f"Weighted Return (5yrs) {round(five_yr_return, 2):>7.2f}\n")
+        file.write(f"Weighted Return (5yrs) {round(five_yr_return, 2):>7.2f}%\n")
+        file.write(f"Annualized             {round(annualized_return, 2):>7.2f}%\n")
         file.write(f"Weighted Std    (5yrs) {round(five_yr_std, 2):>7.2f}\n")
-        file.write(f"Annualized             {round(annualized_return, 2):>7.2f}\n")
-
+        
         file.write(get_header("Details"))
         for analysis_result in sorted_analysis:
             file.write(str(analysis_result or None) + "\n")
