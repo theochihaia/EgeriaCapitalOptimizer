@@ -148,6 +148,21 @@ def calculate_weighted_portfolio_returns(portfolio: [AnalysisResultGroup], years
 
     return total_returns
 
+def calculate_annualized_rate(percentage_gain: float):
+    # Convert the percentage gain to a decimal and calculate the final amount
+    # A = P(1 + r)^t => A/P = (1 + r)^t => A = P + Percentage Gain
+    A_over_P = 1 + percentage_gain / 100
+    
+    # Time period in years
+    t = 5
+
+    # Calculate the annualized rate
+    annualized_rate = (A_over_P ** (1/t)) - 1
+
+    # Convert to percentage
+    return annualized_rate * 100
+
+
 # Calculate portfolio Nyr return
 def calculate_weighted_fn(portfolio: [AnalysisResultGroup], years: int, fn: callable):
     if years == 0:

@@ -6,8 +6,8 @@ from src.common.enums.portfolio import Portfolio
 # Portfolio Symbols
 SYMBOLS = [
     #Portfolio.TESTING,
-    #Portfolio.FID_FOLIO,
-    Portfolio.FID_FOLIO_V3,
+    Portfolio.FID_FOLIO,
+    #Portfolio.FID_FOLIO_V3,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
@@ -58,9 +58,9 @@ ACTIVE_METRICS = [
 
 
 # Analyzer Configuration
-MAX_PORTFOLIO_SIZE = 25
+MAX_PORTFOLIO_SIZE = 50
 MIN_TRADING_DAYS = 2500
-LOG_BASE = 4
+LOG_BASE = 3
 STD_PERIOD_DAYS = 20
 
 
