@@ -38,7 +38,7 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
             except Exception as e:
                 #print(f"An error occurred while fetching info for {result.symbol}: {e}")
                 # Handle the error (e.g., skip this iteration with 'continue' or log the error)
-                continue
+                info = None
             long_name = info['longName'] if info and 'longName' in info else result.symbol
             symbol, name, weight = result.symbol, long_name, result.weight
             if weight > 0:
