@@ -1,7 +1,7 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio
+from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
@@ -13,7 +13,7 @@ METRIC_CONFIG = {
         is_inverted=True
     ),
     Metric.DEBT_TO_EQUITY: MetricConfig(
-        data_fetcher=lambda t: t.info.get("debtToEquity"),
+        data_fetcher=lambda t: get_debt_to_equity_ratio(t),
         metric_weight=2,
         is_inverted=True
     ),
@@ -33,7 +33,7 @@ METRIC_CONFIG = {
         is_inverted=True
     ),
     Metric.PRICE_TO_EARNINGS: MetricConfig(
-        data_fetcher=lambda t: t.info.get("forwardPE") or t.info.get("trailingPE"),
+        data_fetcher=lambda t: get_pe_ratio(t),
         metric_weight=1,
         is_inverted=True
     ),

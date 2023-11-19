@@ -81,3 +81,44 @@ def get_quick_ratio(ticker: yf.Ticker):
     # Calculate the quick ratio
     quick_ratio = quick_assets / current_liabilities
     return quick_ratio
+
+def get_debt_to_equity_ratio(ticker: yf.Ticker):
+    #if ticker.info:
+    #    return ticker.info.get("debtToEquity")
+
+    latest_data = ticker.balance_sheet.iloc[:, 0]
+
+    # Fetch total liabilities and total shareholder's equity
+    total_liabilities = latest_data.get("Total Liabilities Net Minority Interest")
+    total_shareholder_equity = latest_data.get("Stockholders Equity")  # This could also be "Stockholders Equity" depending on the data
+
+    # Check for missing data
+    if total_liabilities is None or total_shareholder_equity is None:
+        print(f"Missing data for debt to equity calculation for {ticker.ticker}")
+        return None
+
+    # Convert to float and calculate Debt to Equity ratio
+    debt_to_equity_ratio = float(total_liabilities) / float(total_shareholder_equity)
+    return debt_to_equity_ratio
+
+def get_pe_ratio(ticker: yf.Ticker):
+    latest_income_data =  ticker.quarterly_income_stmt.loc["Net Income"][:4]
+    net_income = ticker.quarterly_income_stmt.loc["Net Income"][:4].sum()
+
+    # TODO: This is likely the wrong value, but it's close
+    diluted_average_shares = ticker.quarterly_income_stmt.loc["Diluted Average Shares"][0]
+
+    eps = float(net_income) / float(diluted_average_shares)
+
+    # Fetch current stock price using get_return function
+    current_price = get_latest_price(ticker)
+
+    # Calculate P/E ratio
+    pe_ratio = float(current_price) / eps
+    return pe_ratio
+
+def get_latest_price(ticker):
+    data = ticker.history(period="1d")
+    if data.empty:
+        return None
+    return data["Close"].iloc[-1]
