@@ -66,8 +66,8 @@ def get_symbols(symbol_set: Portfolio):
     return list(symbols)
 
 def get_quick_ratio(ticker: yf.Ticker):
-    if(ticker.info):
-        return ticker.info.get("quickRatio")
+    #if(ticker.info):
+    #    return ticker.info.get("quickRatio")
 
     latest_data = ticker.balance_sheet.iloc[:, 0]
 
@@ -102,11 +102,10 @@ def get_debt_to_equity_ratio(ticker: yf.Ticker):
     return debt_to_equity_ratio
 
 def get_pe_ratio(ticker: yf.Ticker):
-    latest_income_data =  ticker.quarterly_income_stmt.loc["Net Income"][:4]
     net_income = ticker.quarterly_income_stmt.loc["Net Income"][:4].sum()
 
     # TODO: This is likely the wrong value, but it's close
-    diluted_average_shares = ticker.quarterly_income_stmt.loc["Diluted Average Shares"][0]
+    diluted_average_shares = ticker.quarterly_income_stmt.loc["Diluted Average Shares"].iloc[0]
 
     eps = float(net_income) / float(diluted_average_shares)
 
@@ -116,6 +115,29 @@ def get_pe_ratio(ticker: yf.Ticker):
     # Calculate P/E ratio
     pe_ratio = float(current_price) / eps
     return pe_ratio
+
+def get_ps_ratio(ticker: yf.Ticker):
+    net_sales = ticker.quarterly_income_stmt.loc["Total Revenue"][:4].sum()
+
+    # TODO: This is likely the wrong value, but it's close
+    diluted_average_shares = ticker.quarterly_income_stmt.loc["Diluted Average Shares"].iloc[0]
+
+    ips = float(net_sales) / float(diluted_average_shares)
+
+    # Fetch current stock price using get_return function
+    current_price = get_latest_price(ticker)
+
+    # Calculate P/E ratio
+    ps_ratio = float(current_price) / ips
+    return ps_ratio
+
+def get_ebidta_margin(ticker: yf.Ticker):
+    net_sales = ticker.quarterly_income_stmt.loc["Total Revenue"][:4].sum()
+    ebidta = ticker.quarterly_income_stmt.loc["EBIT"][:4].sum()
+
+    ebidta_margin = float(ebidta) / float(net_sales)
+    return ebidta_margin
+
 
 def get_latest_price(ticker):
     data = ticker.history(period="1d")

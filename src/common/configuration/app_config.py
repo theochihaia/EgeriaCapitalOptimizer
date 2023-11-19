@@ -39,21 +39,21 @@ DATA_CATEGORIES = [
 
 ACTIVE_METRICS = [
     Metric.PRICE_TO_EARNINGS,
-    Metric.PRICE_TO_BOOK,
+    #Metric.PRICE_TO_BOOK,
     Metric.PRICE_TO_SALES,
-    Metric.BETA,
-    Metric.YIELD,
+    #Metric.BETA,
     Metric.QUICK_RATIO,
     Metric.DEBT_TO_EQUITY,
     Metric.EBIDTA_MARGIN,
-    Metric.RETURN_ON_EQUITY,
-    Metric.RETURN_ON_ASSETS,
+    #Metric.RETURN_ON_EQUITY,
+    #Metric.RETURN_ON_ASSETS,
     Metric.STD_FIVE_YEAR,
     Metric.STD_TEN_YEAR,
     Metric.EBIDTA_AVG_GROWTH_RATE,
     Metric.REVENUE_AVG_GROWTH_RATE,
     Metric.RETURN_FIVE_YEAR,
     Metric.RETURN_TEN_YEAR,
+    #Metric.YIELD,
 ]
 
 

@@ -1,7 +1,7 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio
+from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio, get_ps_ratio, get_ebidta_margin
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
@@ -23,7 +23,7 @@ METRIC_CONFIG = {
         is_inverted=False
     ),
     Metric.EBIDTA_MARGIN: MetricConfig(
-        data_fetcher=lambda t: t.info.get("ebitdaMargins"),
+        data_fetcher=lambda t: get_ebidta_margin(t),
         metric_weight=3,
         is_inverted=False
     ),
@@ -38,7 +38,7 @@ METRIC_CONFIG = {
         is_inverted=True
     ),
     Metric.PRICE_TO_SALES: MetricConfig(
-        data_fetcher=lambda t: t.info.get("priceToSalesTrailing12Months"),
+        data_fetcher=lambda t: get_ps_ratio(t),
         metric_weight=1,
         is_inverted=True
     ),
