@@ -139,7 +139,7 @@ def get_ebidta_margin(ticker: yf.Ticker):
     ebidta_margin = float(ebidta) / float(net_sales)
     return ebidta_margin
 
-def get_beta(stock_ticker, market_ticker='VOO', period='2y', interval='1d'):
+def get_beta(stock_ticker, market_ticker='VOO', period='5y', interval='1mo'):
     # Fetch historical data for the stock and the market
     stock_data = yf.download(stock_ticker, period=period, interval=interval)['Close']
     market_data = yf.download(market_ticker, period=period, interval=interval)['Close']
