@@ -9,7 +9,7 @@ from src.storage.file_store import save_data, clear_directory, save_data_paralle
 from src.storage.file_generator import generate_files
 
 from src.logic.algorithms.analyzers import analyze_tickers, generate_portfolio
-from src.logic.algorithms.monthly_returns import get_monthly_stats
+from src.logic.algorithms.equity_statistics import get_monthly_stats, get_weekly_stats
 
 
 """
@@ -65,9 +65,11 @@ if IS_GET_MONTHLY_ACTIVE:
     current_date = datetime.now().date()
     start_date = current_date - timedelta(days=10*365.25)  # Approximate, considering leap years
 
-    monthly = get_monthly_stats("VOO", start_date, current_date)
-    monthly = get_monthly_stats("BLV", start_date, current_date)
-
+    symbols = ["VOO", "BND", "CINT", "ACN"]
+    for symbol in symbols:
+        get_monthly_stats(symbol, start_date, current_date)
+        get_weekly_stats(symbol, start_date, current_date)
+    
 data_general = pull_general_data(symbols)
 
 clear_directorires()

@@ -1,15 +1,15 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio, get_ps_ratio, get_ebidta_margin
+from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio, get_ps_ratio, get_ebidta_margin, get_beta
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
 
 METRIC_CONFIG = {
     Metric.BETA: MetricConfig(
-        data_fetcher=lambda t: t.info.get("beta"),
-        metric_weight=4,
+        data_fetcher=lambda t: get_beta(t.ticker),
+        metric_weight=5,
         is_inverted=True
     ),
     Metric.DEBT_TO_EQUITY: MetricConfig(

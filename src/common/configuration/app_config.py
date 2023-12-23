@@ -8,13 +8,14 @@ SYMBOLS = [
     #Portfolio.TESTING,
     #Portfolio.FID_FOLIO,
     Portfolio.FID_FOLIO_V3,
-    #Portfolio.NOBL,
+    Portfolio.NOBL,
     #Portfolio.SP500,
-    #Portfolio.IJR_SMALL_CAP,
-    #Portfolio.IJH_MID_CAP,
-    #Portfolio.IYW_TECHNOLOGY,
-    #Portfolio.IYK_CONSUMER_STAPLES,
-    #Portfolio.IYF_FINANCIAL,
+    Portfolio.IJR_SMALL_CAP,
+    Portfolio.IJH_MID_CAP,
+    Portfolio.IYW_TECHNOLOGY,
+    Portfolio.IYK_CONSUMER_STAPLES,
+    Portfolio.IXJ_HEALTHCARE,
+    Portfolio.IYF_FINANCIAL,
     #Portfolio.ALEX,
     #Portfolio.SK_ALPHA_DIV_GROWTH,
 ]
@@ -41,7 +42,7 @@ ACTIVE_METRICS = [
     Metric.PRICE_TO_EARNINGS,
     #Metric.PRICE_TO_BOOK,
     Metric.PRICE_TO_SALES,
-    #Metric.BETA,
+    Metric.BETA,
     Metric.QUICK_RATIO,
     Metric.DEBT_TO_EQUITY,
     Metric.EBIDTA_MARGIN,
@@ -58,10 +59,10 @@ ACTIVE_METRICS = [
 
 
 # Analyzer Configuration
-MAX_PORTFOLIO_SIZE = 50
+MAX_PORTFOLIO_SIZE = 25
 MIN_TRADING_DAYS = 2500
 LOG_BASE = 4
-STD_PERIOD_DAYS = 20
+STD_PERIOD_DAYS = 30
 
 
 # Yahoo Finance Configuration

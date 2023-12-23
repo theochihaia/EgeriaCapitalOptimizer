@@ -11,6 +11,7 @@ class Portfolio(Enum):
     IJH_MID_CAP = "ijh_mid_cap"
     IYK_CONSUMER_STAPLES = "iyk_consumer_staples"
     IYW_TECHNOLOGY = "iyw_technology"
+    IXJ_HEALTHCARE = "ixj_healthcare"
     IYF_FINANCIAL = "iyf_financial"
     ALEX = "alex"
     SK_ALPHA_DIV_GROWTH = "sk_alpha_div_growth"

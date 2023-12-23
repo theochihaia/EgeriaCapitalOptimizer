@@ -1,5 +1,6 @@
 import yfinance as yf
 import numpy as np
+import pandas as pd
 from src.common.configuration.app_config import STD_PERIOD_DAYS
 
 from src.common.enums.portfolio import Portfolio
@@ -138,6 +139,24 @@ def get_ebidta_margin(ticker: yf.Ticker):
     ebidta_margin = float(ebidta) / float(net_sales)
     return ebidta_margin
 
+def get_beta(stock_ticker, market_ticker='VOO', period='2y', interval='1d'):
+    # Fetch historical data for the stock and the market
+    stock_data = yf.download(stock_ticker, period=period, interval=interval)['Close']
+    market_data = yf.download(market_ticker, period=period, interval=interval)['Close']
+
+    # Ensure both data frames have the same dates
+    data = pd.concat([stock_data, market_data], axis=1).dropna()
+    data.columns = [stock_ticker, market_ticker]
+
+    # Calculate daily returns
+    returns = data.pct_change().dropna()
+
+    # Conduct the regression to find beta
+    covariance = returns.cov().iloc[0,1]
+    market_variance = returns[market_ticker].var()
+
+    beta = covariance / market_variance
+    return beta
 
 def get_latest_price(ticker):
     data = ticker.history(period="1d")

@@ -4,7 +4,7 @@ https://www.gurufocus.com/economic_indicators/4238/sp-500-price-to-sales
     IX 1 = Std Dev
 
 Metric  Avg     Deviation
-P/E     24.2    15.8
+P/E     24.2    10.8
 P/B     2.92    0.68
 P/S     1.76    0.54
 Beta    0.8     0.4
@@ -22,7 +22,7 @@ SECTOR_METRIC_STATISTICS = {
         "EBIDTA_AVG_GROWTH_RATE": (15, 5),
         "EBIDTA_MARGIN": (.2, .1),
         "PRICE_TO_BOOK": (2.92, .68),
-        "PRICE_TO_EARNINGS": (24.2, 15.8),
+        "PRICE_TO_EARNINGS": (24.2, 10.8),
         "PRICE_TO_SALES": (1.76, .54),
         "QUICK_RATIO": (1, .5),
         "RETURN_FIVE_YEAR": (50, 25),
@@ -30,8 +30,8 @@ SECTOR_METRIC_STATISTICS = {
         "RETURN_ON_EQUITY": (.15, .07),
         "RETURN_TEN_YEAR": (150, 75),
         "REVENUE_AVG_GROWTH_RATE": (15, 5),
-        "STD_FIVE_YEAR": (7, 1),
-        "STD_TEN_YEAR": (7, 1),
+        "STD_FIVE_YEAR": (5, 1),
+        "STD_TEN_YEAR": (5, 1),
         "YIELD": (0, 1),
     }
 }
