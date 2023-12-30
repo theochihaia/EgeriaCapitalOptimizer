@@ -65,8 +65,8 @@ if IS_GET_MONTHLY_ACTIVE:
     current_date = datetime.now().date()
     start_date = current_date - timedelta(days=10*365.25)  # Approximate, considering leap years
 
-    symbols = ["VOO", "BND", "CINT", "ACN"]
-    for symbol in symbols:
+    stat_symbols = ["VOO", "BND", "CINT", "ACN"]
+    for symbol in stat_symbols:
         get_monthly_stats(symbol, start_date, current_date)
         get_weekly_stats(symbol, start_date, current_date)
     
