@@ -9,7 +9,7 @@ from src.common.enums.metric import Metric
 METRIC_CONFIG = {
     Metric.BETA: MetricConfig(
         data_fetcher=lambda t: get_beta(t.ticker),
-        metric_weight=5,
+        metric_weight=4,
         is_inverted=True
     ),
     Metric.DEBT_TO_EQUITY: MetricConfig(
@@ -74,12 +74,12 @@ METRIC_CONFIG = {
     ),
     Metric.STD_FIVE_YEAR: MetricConfig(
         data_fetcher=lambda t: get_std(t, "5y"),
-        metric_weight=4,
+        metric_weight=3,
         is_inverted=True
     ),
     Metric.STD_TEN_YEAR: MetricConfig(
         data_fetcher=lambda t: get_std(t, "10y"),
-        metric_weight=4,
+        metric_weight=3,
         is_inverted=True
     ),
     Metric.YIELD: MetricConfig(

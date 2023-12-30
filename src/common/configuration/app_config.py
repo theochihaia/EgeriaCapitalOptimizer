@@ -7,7 +7,8 @@ from src.common.enums.portfolio import Portfolio
 SYMBOLS = [
     #Portfolio.TESTING,
     #Portfolio.FID_FOLIO,
-    Portfolio.FID_FOLIO_V3,
+    #Portfolio.FID_FOLIO_V3,
+    Portfolio.FID_FOLIO_V4,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
@@ -18,13 +19,15 @@ SYMBOLS = [
     #Portfolio.IYF_FINANCIAL,
     #Portfolio.ALEX,
     #Portfolio.SK_ALPHA_DIV_GROWTH,
+    #Portfolio.VANGUARD_ETFS,
+
 ]
 
 # Generation Settings
 DIRECTORY = "src/storage/data"
 IS_SAVE_DATA_ACTIVE = False
 IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
-IS_GET_MONTHLY_ACTIVE = False
+IS_GET_MONTHLY_ACTIVE = True
 IS_GENERATE_CVS_ACTIVE = True
 IS_GENERATIE_PORTFOLIO_ACTIVE = True
 IS_CONCURRENT = False
@@ -59,10 +62,10 @@ ACTIVE_METRICS = [
 
 
 # Analyzer Configuration
-MAX_PORTFOLIO_SIZE = 25
+MAX_PORTFOLIO_SIZE = 30
 MIN_TRADING_DAYS = 2500
-LOG_BASE = 4
-STD_PERIOD_DAYS = 30
+LOG_BASE = 6
+STD_PERIOD_DAYS = 15
 
 
 # Yahoo Finance Configuration
