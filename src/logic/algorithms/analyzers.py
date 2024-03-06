@@ -51,6 +51,7 @@ def analyze_tickers(data: dict, metrics: List[Metric], concurrent: bool = False)
 
 
 def analyze(symbol: str, ticker: yf.Ticker, metrics: [Metric]) -> [AnalysisResult]:
+    print(f"Processing: {symbol}")
     results: List[AnalysisResult] = []
     for metric in metrics:
         # Check if configuration exists for metric
@@ -112,9 +113,10 @@ def generate_egeria_score(results: [AnalysisResult]) -> float:
     sum = 0.0
     for result in results:
         if result is not None:
+            normalized_value = (result.normalized_value if not math.isnan(result.normalized_value) else 0)
             metric_config = METRIC_CONFIG.get(result.metric)
             weight = metric_config.metric_weight if metric_config else 1
-            sum += result.normalized_value * weight
+            sum += normalized_value * weight
     return round(sum,3);
 
 

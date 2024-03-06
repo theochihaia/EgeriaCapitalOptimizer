@@ -5,10 +5,10 @@ from src.common.enums.portfolio import Portfolio
 
 # Portfolio Symbols
 SYMBOLS = [
-    #Portfolio.TESTING,
+    Portfolio.TESTING,
     #Portfolio.FID_FOLIO,
     #Portfolio.FID_FOLIO_V3,
-    Portfolio.FID_FOLIO_V4,
+    #Portfolio.FID_FOLIO_V4,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
