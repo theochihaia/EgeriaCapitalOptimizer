@@ -44,7 +44,7 @@ Weighted Std    (5yrs)    8.04
                               Details                       
 --------------------------------------------------------------------------
 ABBV - Unknown Name (Default Sector)
-Egeria Score: 21.474
+Egeria Score: 21.476
   ❌ P/E Ratio: 65.28
   ❌ Price/Sales: 5.84
   ✅ Beta: 0.56

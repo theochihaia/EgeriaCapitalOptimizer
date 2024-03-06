@@ -1,0 +1,551 @@
+
+
+
+--------------------------------------------------------------------------
+                              Metric Stats                       
+--------------------------------------------------------------------------
+Metric                         |        Avg |        Std | Is Active
+BETA                           |        0.8 |        0.2 |   Yes
+DEBT_TO_EQUITY                 |        100 |         50 |   Yes
+EBIDTA_AVG_GROWTH_RATE         |         15 |          5 |   Yes
+EBIDTA_MARGIN                  |        0.2 |        0.1 |   Yes
+PRICE_TO_BOOK                  |       2.92 |       0.68 |    No
+PRICE_TO_EARNINGS              |       24.2 |       10.8 |   Yes
+PRICE_TO_SALES                 |       1.76 |       0.54 |   Yes
+QUICK_RATIO                    |          1 |        0.5 |   Yes
+RETURN_FIVE_YEAR               |         50 |         25 |   Yes
+RETURN_ON_ASSETS               |       0.05 |       0.03 |    No
+RETURN_ON_EQUITY               |       0.15 |       0.07 |    No
+RETURN_TEN_YEAR                |        150 |         75 |   Yes
+REVENUE_AVG_GROWTH_RATE        |         15 |          5 |   Yes
+STD_FIVE_YEAR                  |          5 |          1 |   Yes
+STD_TEN_YEAR                   |          5 |          1 |   Yes
+YIELD                          |          0 |          1 |    No
+
+
+
+--------------------------------------------------------------------------
+                              Portfolio Proposal                       
+--------------------------------------------------------------------------
+
+Symbol     | Name                                               |  Weight
+------------------------------------------------------------------------
+NVO        | NVO                                                |    5.24%
+VRTX       | VRTX                                               |    4.82%
+MSFT       | MSFT                                               |    4.51%
+WM         | WM                                                 |    4.27%
+FCN        | FCN                                                |    4.07%
+TMUS       | TMUS                                               |    3.91%
+GGG        | GGG                                                |    3.77%
+NVDA       | NVDA                                               |    3.66%
+V          | V                                                  |    3.55%
+TSM        | TSM                                                |    3.46%
+GOOGL      | GOOGL                                              |    3.38%
+UNH        | UNH                                                |    3.31%
+DE         | DE                                                 |    3.25%
+FDS        | FDS                                                |    3.19%
+ABBV       | ABBV                                               |    3.13%
+AVGO       | AVGO                                               |    3.08%
+MNST       | MNST                                               |    3.03%
+VMC        | VMC                                                |    2.99%
+HWKN       | HWKN                                               |    2.95%
+COST       | COST                                               |    2.91%
+ADI        | ADI                                                |    2.88%
+QLYS       | QLYS                                               |    2.85%
+UFPI       | UFPI                                               |    2.81%
+GMAB       | GMAB                                               |    2.79%
+NOC        | NOC                                                |    2.76%
+MRK        | MRK                                                |    2.73%
+ATO        | ATO                                                |    2.71%
+AAPL       | AAPL                                               |    2.68%
+EXPO       | EXPO                                               |    2.66%
+HDB        | HDB                                                |    2.64%
+
+
+Weighted Return (5yrs)  248.53%
+Annualized               28.37%
+Weighted Std    (5yrs)    6.88
+
+
+
+--------------------------------------------------------------------------
+                              Details                       
+--------------------------------------------------------------------------
+NVO - Unknown Name (Default Sector)
+Egeria Score: 41.072
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  ✅ Beta: 0.42
+  🟡 Quick Ratio: 0.62
+  ✅ Debt/Equity: 1.95
+  ✅ EBIDTA Margin: 0.50
+  ❌ 5 Year STD: 6.00
+  ❌ 10 Year STD: 6.08
+  ✅ EBIDTA Avg Growth Rate: 23.97
+  ✅ Revenue Avg Growth Rate: 22.62
+  ✅ 5 Year Return: 448.93
+  ✅ 10 Year Return: 537.55
+
+
+VRTX - Unknown Name (Default Sector)
+Egeria Score: 40.465
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  ✅ Beta: 0.36
+  ✅ Quick Ratio: 3.60
+  ✅ Debt/Equity: 0.29
+  ✅ EBIDTA Margin: 0.47
+  ❌ 5 Year STD: 6.64
+  ❌ 10 Year STD: 8.21
+  🟡 EBIDTA Avg Growth Rate: 15.59
+  🟡 Revenue Avg Growth Rate: 16.82
+  ✅ 5 Year Return: 129.39
+  ✅ 10 Year Return: 419.69
+
+
+MSFT - Unknown Name (Default Sector)
+Egeria Score: 31.29
+  ❌ P/E Ratio: 36.43
+  ❌ Price/Sales: 13.21
+  🟡 Beta: 0.87
+  ✅ Quick Ratio: 1.54
+  ✅ Debt/Equity: 1.00
+  ✅ EBIDTA Margin: 0.53
+  🟡 5 Year STD: 5.94
+  🟡 10 Year STD: 5.19
+  🟡 EBIDTA Avg Growth Rate: 15.67
+  🟡 Revenue Avg Growth Rate: 14.12
+  ✅ 5 Year Return: 278.52
+  ✅ 10 Year Return: 1,146.38
+
+
+WM - Unknown Name (Default Sector)
+Egeria Score: 30.841
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  🟡 Beta: 0.72
+  🟡 Quick Ratio: 0.79
+  ✅ Debt/Equity: 3.76
+  🟡 EBIDTA Margin: 0.27
+  🟡 5 Year STD: 4.99
+  🟡 10 Year STD: 4.28
+  🟡 EBIDTA Avg Growth Rate: 12.78
+  🟡 Revenue Avg Growth Rate: 10.46
+  ✅ 5 Year Return: 126.13
+  ✅ 10 Year Return: 519.86
+
+
+FCN - Unknown Name (Default Sector)
+Egeria Score: 29.37
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  ✅ Beta: 0.11
+  ✅ Quick Ratio: 1.65
+  ✅ Debt/Equity: 0.68
+  🟡 EBIDTA Margin: 0.12
+  ❌ 5 Year STD: 6.35
+  ❌ 10 Year STD: 6.73
+  ❌ EBIDTA Avg Growth Rate: 9.04
+  🟡 Revenue Avg Growth Rate: 12.37
+  ✅ 5 Year Return: 177.65
+  ✅ 10 Year Return: 590.90
+
+
+TMUS - Unknown Name (Default Sector)
+Egeria Score: 25.932
+  🟡 P/E Ratio: 24.04
+  ❌ Price/Sales: 2.54
+  ✅ Beta: 0.49
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 2.21
+  ✅ EBIDTA Margin: 0.35
+  ❌ 5 Year STD: 6.05
+  🟡 10 Year STD: 5.70
+  ❌ EBIDTA Avg Growth Rate: 9.98
+  ❌ Revenue Avg Growth Rate: 5.06
+  ✅ 5 Year Return: 136.35
+  ✅ 10 Year Return: 434.30
+
+
+GGG - Unknown Name (Default Sector)
+Egeria Score: 25.48
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  🟡 Beta: 0.79
+  ✅ Quick Ratio: 2.26
+  ✅ Debt/Equity: 0.22
+  ✅ EBIDTA Margin: 0.31
+  🟡 5 Year STD: 5.85
+  🟡 10 Year STD: 5.65
+  🟡 EBIDTA Avg Growth Rate: 13.15
+  🟡 Revenue Avg Growth Rate: 10.24
+  ✅ 5 Year Return: 102.62
+  ✅ 10 Year Return: 303.59
+
+
+NVDA - Unknown Name (Default Sector)
+Egeria Score: 24.979
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  ❌ Beta: 1.73
+  ✅ Quick Ratio: 3.38
+  ✅ Debt/Equity: 0.53
+  ✅ EBIDTA Margin: 0.58
+  ❌ 5 Year STD: 12.30
+  ❌ 10 Year STD: 11.26
+  ✅ EBIDTA Avg Growth Rate: 149.63
+  ✅ Revenue Avg Growth Rate: 62.49
+  ✅ 5 Year Return: 2,176.93
+  ✅ 10 Year Return: 19,641.61
+
+
+V - Unknown Name (Default Sector)
+Egeria Score: 24.722
+  🟡 P/E Ratio: 31.77
+  ❌ Price/Sales: 17.13
+  🟡 Beta: 0.95
+  🟡 Quick Ratio: 1.07
+  ✅ Debt/Equity: 1.34
+  ✅ EBIDTA Margin: 0.71
+  🟡 5 Year STD: 5.51
+  🟡 10 Year STD: 4.92
+  🟡 EBIDTA Avg Growth Rate: 15.60
+  🟡 Revenue Avg Growth Rate: 14.45
+  ✅ 5 Year Return: 95.59
+  ✅ 10 Year Return: 435.37
+
+
+TSM - Unknown Name (Default Sector)
+Egeria Score: 24.603
+  ✅ P/E Ratio: 1.17
+  ✅ Price/Sales: 0.46
+  ❌ Beta: 1.14
+  ✅ Quick Ratio: 1.84
+  ✅ Debt/Equity: 0.70
+  ✅ EBIDTA Margin: 0.71
+  ❌ 5 Year STD: 8.25
+  ❌ 10 Year STD: 7.06
+  🟡 EBIDTA Avg Growth Rate: nan
+  🟡 Revenue Avg Growth Rate: nan
+  ✅ 5 Year Return: 295.78
+  ✅ 10 Year Return: 853.21
+
+
+GOOGL - Unknown Name (Default Sector)
+Egeria Score: 23.942
+  🟡 P/E Ratio: 22.66
+  ❌ Price/Sales: 5.44
+  ❌ Beta: 1.06
+  ✅ Quick Ratio: 1.94
+  ✅ Debt/Equity: 0.42
+  ✅ EBIDTA Margin: 0.32
+  ❌ 5 Year STD: 6.48
+  ❌ 10 Year STD: 6.11
+  ✅ EBIDTA Avg Growth Rate: 24.30
+  🟡 Revenue Avg Growth Rate: 19.87
+  ✅ 5 Year Return: 127.77
+  ✅ 10 Year Return: 334.69
+
+
+UNH - Unknown Name (Default Sector)
+Egeria Score: 23.651
+  🟡 P/E Ratio: 19.77
+  ✅ Price/Sales: 1.19
+  ✅ Beta: 0.56
+  🟡 Quick Ratio: 0.69
+  ✅ Debt/Equity: 1.97
+  ❌ EBIDTA Margin: 0.10
+  🟡 5 Year STD: 5.57
+  🟡 10 Year STD: 5.25
+  🟡 EBIDTA Avg Growth Rate: 12.91
+  🟡 Revenue Avg Growth Rate: 13.07
+  ✅ 5 Year Return: 113.27
+  ✅ 10 Year Return: 610.07
+
+
+DE - Unknown Name (Default Sector)
+Egeria Score: 23.617
+  ✅ P/E Ratio: 10.35
+  🟡 Price/Sales: 1.73
+  ❌ Beta: 1.02
+  ✅ Quick Ratio: 1.64
+  ✅ Debt/Equity: 3.77
+  🟡 EBIDTA Margin: 0.29
+  ❌ 5 Year STD: 8.20
+  ❌ 10 Year STD: 6.93
+  ✅ EBIDTA Avg Growth Rate: 35.87
+  ✅ Revenue Avg Growth Rate: 20.20
+  ✅ 5 Year Return: 149.07
+  ✅ 10 Year Return: 404.21
+
+
+FDS - Unknown Name (Default Sector)
+Egeria Score: 23.554
+  ❌ P/E Ratio: 37.39
+  ❌ Price/Sales: 8.45
+  🟡 Beta: 0.71
+  🟡 Quick Ratio: 1.44
+  ✅ Debt/Equity: 1.45
+  ✅ EBIDTA Margin: 0.38
+  ❌ 5 Year STD: 6.49
+  🟡 10 Year STD: 5.49
+  🟡 EBIDTA Avg Growth Rate: 13.85
+  🟡 Revenue Avg Growth Rate: 11.83
+  ✅ 5 Year Return: 107.18
+  ✅ 10 Year Return: 385.80
+
+
+ABBV - Unknown Name (Default Sector)
+Egeria Score: 21.474
+  ❌ P/E Ratio: 65.28
+  ❌ Price/Sales: 5.84
+  ✅ Beta: 0.56
+  🟡 Quick Ratio: 0.63
+  ✅ Debt/Equity: 12.00
+  ✅ EBIDTA Margin: 0.32
+  ❌ 5 Year STD: 6.05
+  🟡 10 Year STD: 5.85
+  🟡 EBIDTA Avg Growth Rate: 18.10
+  ❌ Revenue Avg Growth Rate: 6.52
+  ✅ 5 Year Return: 189.00
+  ✅ 10 Year Return: 419.42
+
+
+AVGO - Unknown Name (Default Sector)
+Egeria Score: 20.55
+  ❌ P/E Ratio: 40.72
+  ❌ Price/Sales: 16.01
+  ❌ Beta: 1.26
+  ✅ Quick Ratio: 2.34
+  ✅ Debt/Equity: 2.04
+  ✅ EBIDTA Margin: 0.57
+  ❌ 5 Year STD: 7.49
+  ❌ 10 Year STD: 7.22
+  ✅ EBIDTA Avg Growth Rate: 23.54
+  🟡 Revenue Avg Growth Rate: 14.58
+  ✅ 5 Year Return: 484.06
+  ✅ 10 Year Return: 2,674.46
+
+
+MNST - Unknown Name (Default Sector)
+Egeria Score: 20.026
+  ❌ P/E Ratio: 37.36
+  ❌ Price/Sales: 8.53
+  🟡 Beta: 0.72
+  ✅ Quick Ratio: 3.83
+  ✅ Debt/Equity: 0.18
+  🟡 EBIDTA Margin: 0.28
+  ❌ 5 Year STD: 6.05
+  ❌ 10 Year STD: 6.59
+  ❌ EBIDTA Avg Growth Rate: 7.09
+  🟡 Revenue Avg Growth Rate: 15.84
+  ✅ 5 Year Return: 87.53
+  ✅ 10 Year Return: 376.85
+
+
+VMC - Unknown Name (Default Sector)
+Egeria Score: 19.216
+  ❌ P/E Ratio: 37.91
+  ❌ Price/Sales: 4.55
+  🟡 Beta: 0.81
+  ✅ Quick Ratio: 2.28
+  ✅ Debt/Equity: 0.94
+  🟡 EBIDTA Margin: 0.26
+  ❌ 5 Year STD: 7.27
+  ❌ 10 Year STD: 6.79
+  🟡 EBIDTA Avg Growth Rate: 16.69
+  🟡 Revenue Avg Growth Rate: 17.48
+  ✅ 5 Year Return: 141.97
+  ✅ 10 Year Return: 322.27
+
+
+HWKN - Unknown Name (Default Sector)
+Egeria Score: 17.438
+  🟡 P/E Ratio: 20.01
+  🟡 Price/Sales: 1.58
+  🟡 Beta: 0.75
+  ✅ Quick Ratio: 1.51
+  ✅ Debt/Equity: 0.69
+  🟡 EBIDTA Margin: 0.14
+  ❌ 5 Year STD: 8.87
+  ❌ 10 Year STD: 7.67
+  ✅ EBIDTA Avg Growth Rate: 22.31
+  ✅ Revenue Avg Growth Rate: 20.33
+  ✅ 5 Year Return: 274.22
+  ✅ 10 Year Return: 362.81
+
+
+COST - Unknown Name (Default Sector)
+Egeria Score: 17.066
+  ❌ P/E Ratio: 51.82
+  🟡 Price/Sales: 1.37
+  🟡 Beta: 0.76
+  🟡 Quick Ratio: 0.52
+  ✅ Debt/Equity: 1.75
+  ❌ EBIDTA Margin: 0.05
+  🟡 5 Year STD: 5.81
+  🟡 10 Year STD: 4.76
+  🟡 EBIDTA Avg Growth Rate: 14.34
+  🟡 Revenue Avg Growth Rate: 13.36
+  ✅ 5 Year Return: 278.21
+  ✅ 10 Year Return: 731.76
+
+
+ADI - Unknown Name (Default Sector)
+Egeria Score: 16.568
+  🟡 P/E Ratio: 33.62
+  ❌ Price/Sales: 8.18
+  ❌ Beta: 1.15
+  🟡 Quick Ratio: 0.76
+  ✅ Debt/Equity: 0.37
+  ✅ EBIDTA Margin: 0.48
+  ❌ 5 Year STD: 7.14
+  ❌ 10 Year STD: 6.49
+  ✅ EBIDTA Avg Growth Rate: 44.34
+  ✅ Revenue Avg Growth Rate: 32.40
+  ✅ 5 Year Return: 95.35
+  ✅ 10 Year Return: 357.45
+
+
+QLYS - Unknown Name (Default Sector)
+Egeria Score: 14.087
+  ❌ P/E Ratio: 41.21
+  ❌ Price/Sales: 11.27
+  ✅ Beta: 0.51
+  🟡 Quick Ratio: 1.47
+  ✅ Debt/Equity: 1.21
+  ✅ EBIDTA Margin: 0.34
+  ❌ 5 Year STD: 9.07
+  ❌ 10 Year STD: 9.92
+  🟡 EBIDTA Avg Growth Rate: 13.68
+  🟡 Revenue Avg Growth Rate: 15.20
+  ✅ 5 Year Return: 102.31
+  ✅ 10 Year Return: 494.72
+
+
+UFPI - Unknown Name (Default Sector)
+Egeria Score: 13.303
+  🟡 P/E Ratio: 14.15
+  ✅ Price/Sales: 1.01
+  ❌ Beta: 1.45
+  ✅ Quick Ratio: 3.05
+  ✅ Debt/Equity: 0.32
+  🟡 EBIDTA Margin: 0.11
+  ❌ 5 Year STD: 9.67
+  ❌ 10 Year STD: 8.73
+  ✅ EBIDTA Avg Growth Rate: 33.91
+  🟡 Revenue Avg Growth Rate: 18.00
+  ✅ 5 Year Return: 300.78
+  ✅ 10 Year Return: 562.17
+
+
+GMAB - Unknown Name (Default Sector)
+Egeria Score: 13.002
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  🟡 Beta: 0.92
+  ✅ Quick Ratio: 13.32
+  ✅ Debt/Equity: 0.12
+  ✅ EBIDTA Margin: 0.34
+  ❌ 5 Year STD: 8.49
+  ❌ 10 Year STD: 9.03
+  🟡 EBIDTA Avg Growth Rate: 16.40
+  ✅ Revenue Avg Growth Rate: 23.05
+  🟡 5 Year Return: 62.34
+  ✅ 10 Year Return: 546.65
+
+
+NOC - Unknown Name (Default Sector)
+Egeria Score: 12.473
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  ✅ Beta: 0.34
+  🟡 Quick Ratio: 0.86
+  ✅ Debt/Equity: 2.15
+  🟡 EBIDTA Margin: 0.11
+  🟡 5 Year STD: 5.76
+  🟡 10 Year STD: 5.20
+  ❌ EBIDTA Avg Growth Rate: -0.18
+  ❌ Revenue Avg Growth Rate: 2.30
+  ✅ 5 Year Return: 77.16
+  ✅ 10 Year Return: 337.40
+
+
+MRK - Unknown Name (Default Sector)
+Egeria Score: 11.608
+  ❌ P/E Ratio: 859.53
+  ❌ Price/Sales: 5.22
+  ✅ Beta: 0.39
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 1.84
+  🟡 EBIDTA Margin: 0.11
+  🟡 5 Year STD: 4.89
+  🟡 10 Year STD: 4.67
+  🟡 EBIDTA Avg Growth Rate: 15.68
+  🟡 Revenue Avg Growth Rate: 13.48
+  ✅ 5 Year Return: 85.75
+  🟡 10 Year Return: 205.93
+
+
+ATO - Unknown Name (Default Sector)
+Egeria Score: 8.36
+  🟡 P/E Ratio: 18.53
+  ❌ Price/Sales: 4.34
+  🟡 Beta: 0.65
+  ❌ Quick Ratio: 0.26
+  ✅ Debt/Equity: 1.07
+  ✅ EBIDTA Margin: 0.46
+  🟡 5 Year STD: 4.77
+  🟡 10 Year STD: 4.68
+  🟡 EBIDTA Avg Growth Rate: 10.56
+  🟡 Revenue Avg Growth Rate: 15.28
+  🟡 5 Year Return: 30.03
+  🟡 10 Year Return: 219.78
+
+
+AAPL - Unknown Name (Default Sector)
+Egeria Score: 7.54
+  🟡 P/E Ratio: 26.26
+  ❌ Price/Sales: 6.87
+  ❌ Beta: 1.27
+  🟡 Quick Ratio: 0.84
+  ✅ Debt/Equity: 4.67
+  ✅ EBIDTA Margin: 0.34
+  ❌ 5 Year STD: 7.17
+  ❌ 10 Year STD: 6.89
+  🟡 EBIDTA Avg Growth Rate: 19.05
+  🟡 Revenue Avg Growth Rate: 12.75
+  ✅ 5 Year Return: 305.02
+  ✅ 10 Year Return: 918.92
+
+
+EXPO - Unknown Name (Default Sector)
+Egeria Score: 1.394
+  ❌ P/E Ratio: 40.43
+  ❌ Price/Sales: 7.56
+  🟡 Beta: 0.68
+  ✅ Quick Ratio: 2.19
+  ✅ Debt/Equity: 0.82
+  🟡 EBIDTA Margin: 0.22
+  ❌ 5 Year STD: 7.60
+  🟡 10 Year STD: nan
+  🟡 EBIDTA Avg Growth Rate: 16.52
+  🟡 Revenue Avg Growth Rate: 10.42
+  🟡 5 Year Return: 48.60
+  🟡 10 Year Return: nan
+
+
+HDB - Unknown Name (Default Sector)
+Egeria Score: -12.868
+  ✅ P/E Ratio: 0.24
+  ✅ Price/Sales: 0.08
+  🟡 Beta: 0.86
+  ✅ Debt/Equity: 7.84
+  ❌ 5 Year STD: 7.53
+  ❌ 10 Year STD: 6.66
+  ❌ EBIDTA Avg Growth Rate: 0.00
+  🟡 Revenue Avg Growth Rate: 15.13
+  ❌ 5 Year Return: 10.19
+  ✅ 10 Year Return: 229.79
+
+
