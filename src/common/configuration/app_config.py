@@ -24,7 +24,7 @@ SYMBOLS = [
 ]
 
 # Generation Settings
-DIRECTORY = "src/storage/data"
+DIRECTORY = "src/"
 IS_SAVE_DATA_ACTIVE = False
 IS_CLEAR_HISTORY_ACTIVE = True and IS_SAVE_DATA_ACTIVE
 IS_GET_MONTHLY_ACTIVE = True

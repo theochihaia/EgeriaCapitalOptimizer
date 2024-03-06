@@ -1,0 +1,77 @@
+
+
+
+--------------------------------------------------------------------------
+                              Metric Stats                       
+--------------------------------------------------------------------------
+Metric                         |        Avg |        Std | Is Active
+BETA                           |        0.8 |        0.2 |   Yes
+DEBT_TO_EQUITY                 |        100 |         50 |   Yes
+EBIDTA_AVG_GROWTH_RATE         |         15 |          5 |   Yes
+EBIDTA_MARGIN                  |        0.2 |        0.1 |   Yes
+PRICE_TO_BOOK                  |       2.92 |       0.68 |    No
+PRICE_TO_EARNINGS              |       24.2 |       10.8 |   Yes
+PRICE_TO_SALES                 |       1.76 |       0.54 |   Yes
+QUICK_RATIO                    |          1 |        0.5 |   Yes
+RETURN_FIVE_YEAR               |         50 |         25 |   Yes
+RETURN_ON_ASSETS               |       0.05 |       0.03 |    No
+RETURN_ON_EQUITY               |       0.15 |       0.07 |    No
+RETURN_TEN_YEAR                |        150 |         75 |   Yes
+REVENUE_AVG_GROWTH_RATE        |         15 |          5 |   Yes
+STD_FIVE_YEAR                  |          5 |          1 |   Yes
+STD_TEN_YEAR                   |          5 |          1 |   Yes
+YIELD                          |          0 |          1 |    No
+
+
+
+--------------------------------------------------------------------------
+                              Portfolio Proposal                       
+--------------------------------------------------------------------------
+
+Symbol     | Name                                               |  Weight
+------------------------------------------------------------------------
+ABBV       | ABBV                                               |   52.06%
+MAR        | MAR                                                |   47.94%
+
+
+Weighted Return (5yrs)  148.69%
+Annualized               19.99%
+Weighted Std    (5yrs)    8.04
+
+
+
+--------------------------------------------------------------------------
+                              Details                       
+--------------------------------------------------------------------------
+ABBV - Unknown Name (Default Sector)
+Egeria Score: 21.474
+  ❌ P/E Ratio: 65.28
+  ❌ Price/Sales: 5.84
+  ✅ Beta: 0.56
+  🟡 Quick Ratio: 0.63
+  ✅ Debt/Equity: 12.00
+  ✅ EBIDTA Margin: 0.32
+  ❌ 5 Year STD: 6.05
+  🟡 10 Year STD: 5.85
+  🟡 EBIDTA Avg Growth Rate: 18.10
+  ❌ Revenue Avg Growth Rate: 6.52
+  ✅ 5 Year Return: 189.00
+  ✅ 10 Year Return: 419.42
+
+
+MAR - Unknown Name (Default Sector)
+Egeria Score: 1.03
+  🟡 P/E Ratio: nan
+  🟡 Price/Sales: nan
+  ❌ Beta: 1.62
+  ❌ Quick Ratio: 0.39
+  ✅ Debt/Equity: -38.65
+  🟡 EBIDTA Margin: 0.18
+  ❌ 5 Year STD: 10.21
+  ❌ 10 Year STD: 8.67
+  ✅ EBIDTA Avg Growth Rate: 94.06
+  ✅ Revenue Avg Growth Rate: 31.72
+  ✅ 5 Year Return: 104.92
+  ✅ 10 Year Return: 401.41
+
+
