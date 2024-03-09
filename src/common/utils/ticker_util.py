@@ -12,6 +12,10 @@ def get_return(ticker: yf.Ticker, period: str):
 
     latest_price = data["Close"].iloc[-1]
     initial_price = data["Close"].iloc[0]
+    if np.isnan(initial_price):
+        initial_price = data["Close"].iloc[1]
+
+
     return (latest_price - initial_price) / initial_price * 100
 
 
@@ -51,6 +55,7 @@ def get_std(ticker: yf.Ticker, period: str):
         return
 
     n_day_returns = get_n_day_returns(data_close, day_period)
+    n_day_returns = [rt for rt in n_day_returns if not np.isnan(rt)]
     if len(n_day_returns) == 0:
         return None
     

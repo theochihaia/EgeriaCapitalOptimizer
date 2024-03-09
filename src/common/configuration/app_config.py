@@ -5,10 +5,10 @@ from src.common.enums.portfolio import Portfolio
 
 # Portfolio Symbols
 SYMBOLS = [
-    #Portfolio.TESTING,
+    Portfolio.TESTING,
     #Portfolio.FID_FOLIO,
     #Portfolio.FID_FOLIO_V3,
-    Portfolio.FID_FOLIO_V4,
+    #Portfolio.FID_FOLIO_V4,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
@@ -69,6 +69,6 @@ STD_PERIOD_DAYS = 15
 
 
 # Yahoo Finance Configuration
-YF_CACHE_TIMEOUT = 60 * 60 * 24 * 7  # 1 week
+YF_CACHE_TIMEOUT = 60 * 60 * 24 * 1  # 1 day
 YF_REQUEST_RATE = 1
 YF_DURATION = Duration.SECOND * 10
