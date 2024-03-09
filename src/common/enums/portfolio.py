@@ -16,4 +16,5 @@ class Portfolio(Enum):
     IYF_FINANCIAL = "iyf_financial"
     ALEX = "alex"
     SK_ALPHA_DIV_GROWTH = "sk_alpha_div_growth",
-    VANGUARD_ETFS = "vanguard_etfs"
+    VANGUARD_ETFS = "vanguard_etfs",
+    DGRO = "dgro"

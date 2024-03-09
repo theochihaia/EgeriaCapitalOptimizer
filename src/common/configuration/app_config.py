@@ -8,7 +8,7 @@ SYMBOLS = [
     #Portfolio.TESTING,
     #Portfolio.FID_FOLIO,
     #Portfolio.FID_FOLIO_V3,
-    Portfolio.FID_FOLIO_V4,
+    #Portfolio.FID_FOLIO_V4,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
@@ -20,6 +20,7 @@ SYMBOLS = [
     #Portfolio.ALEX,
     #Portfolio.SK_ALPHA_DIV_GROWTH,
     #Portfolio.VANGUARD_ETFS,
+    Portfolio.DGRO,
 
 ]
 
