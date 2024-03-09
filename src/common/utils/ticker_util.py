@@ -24,6 +24,9 @@ def get_income_growth(ticker: yf.Ticker, data_point: str):
     data = []
     for key, value in ticker.get_income_stmt().items():
         data.append(value.get(data_point))
+    
+    #remove bad data
+    data = [d for d in data if not np.isnan(d)]
 
     if len(data) < 2:
         return None

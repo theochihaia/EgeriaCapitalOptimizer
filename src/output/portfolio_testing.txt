@@ -30,31 +30,31 @@ YIELD                          |          0 |          1 |    No
 
 Symbol     | Name                                               |  Weight
 ------------------------------------------------------------------------
-EXPO       | EXPO                                               |  100.00%
+TSM        | TSM                                                |  100.00%
 
 
-Weighted Return (5yrs)   49.84%
-Annualized                8.42%
-Weighted Std    (5yrs)    7.51
+Weighted Return (5yrs)  330.88%
+Annualized               33.93%
+Weighted Std    (5yrs)    8.95
 
 
 
 --------------------------------------------------------------------------
                               Details                       
 --------------------------------------------------------------------------
-EXPO - Unknown Name (Default Sector)
-Egeria Score: 8.806
-  ❌ P/E Ratio: 41.34
-  ❌ Price/Sales: 7.73
-  🟡 Beta: 0.68
-  ✅ Quick Ratio: 2.19
-  ✅ Debt/Equity: 0.82
-  🟡 EBIDTA Margin: 0.22
-  ❌ 5 Year STD: 7.51
-  ❌ 10 Year STD: 6.65
-  🟡 EBIDTA Avg Growth Rate: 16.52
-  🟡 Revenue Avg Growth Rate: 10.42
-  🟡 5 Year Return: 49.84
-  ✅ 10 Year Return: 378.57
+TSM - Unknown Name (Default Sector)
+Egeria Score: 32.784
+  ✅ P/E Ratio: 1.27
+  ✅ Price/Sales: 0.49
+  ❌ Beta: 1.14
+  ✅ Quick Ratio: 1.84
+  ✅ Debt/Equity: 0.70
+  ✅ EBIDTA Margin: 0.71
+  ❌ 5 Year STD: 8.95
+  ❌ 10 Year STD: 7.29
+  ✅ EBIDTA Avg Growth Rate: 32.73
+  ✅ Revenue Avg Growth Rate: 30.57
+  ✅ 5 Year Return: 330.88
+  ✅ 10 Year Return: 928.81
 
 

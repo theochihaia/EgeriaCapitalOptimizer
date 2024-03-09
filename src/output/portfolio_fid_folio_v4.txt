@@ -32,15 +32,15 @@ Symbol     | Name                                               |  Weight
 ------------------------------------------------------------------------
 NVO        | NVO                                                |    5.24%
 VRTX       | VRTX                                               |    4.82%
-MSFT       | MSFT                                               |    4.51%
-FCN        | FCN                                                |    4.27%
-TMUS       | TMUS                                               |    4.07%
-WM         | WM                                                 |    3.91%
-FDS        | FDS                                                |    3.77%
-DE         | DE                                                 |    3.66%
-V          | V                                                  |    3.55%
-GGG        | GGG                                                |    3.46%
-TSM        | TSM                                                |    3.38%
+TSM        | TSM                                                |    4.51%
+MSFT       | MSFT                                               |    4.27%
+FCN        | FCN                                                |    4.07%
+TMUS       | TMUS                                               |    3.91%
+WM         | WM                                                 |    3.77%
+FDS        | FDS                                                |    3.66%
+DE         | DE                                                 |    3.55%
+V          | V                                                  |    3.46%
+GGG        | GGG                                                |    3.38%
 GOOGL      | GOOGL                                              |    3.31%
 VMC        | VMC                                                |    3.25%
 MNST       | MNST                                               |    3.19%
@@ -62,9 +62,9 @@ EXPO       | EXPO                                               |    2.66%
 HDB        | HDB                                                |    2.64%
 
 
-Weighted Return (5yrs)  233.33%
-Annualized               27.23%
-Weighted Std    (5yrs)    6.66
+Weighted Return (5yrs)  235.21%
+Annualized               27.37%
+Weighted Std    (5yrs)    6.70
 
 
 
@@ -101,6 +101,22 @@ Egeria Score: 39.595
   🟡 Revenue Avg Growth Rate: 16.82
   ✅ 5 Year Return: 129.11
   ✅ 10 Year Return: 419.26
+
+
+TSM - Unknown Name (Default Sector)
+Egeria Score: 32.784
+  ✅ P/E Ratio: 1.27
+  ✅ Price/Sales: 0.49
+  ❌ Beta: 1.14
+  ✅ Quick Ratio: 1.84
+  ✅ Debt/Equity: 0.70
+  ✅ EBIDTA Margin: 0.71
+  ❌ 5 Year STD: 8.95
+  ❌ 10 Year STD: 7.29
+  ✅ EBIDTA Avg Growth Rate: 32.73
+  ✅ Revenue Avg Growth Rate: 30.57
+  ✅ 5 Year Return: 330.88
+  ✅ 10 Year Return: 928.81
 
 
 MSFT - Unknown Name (Default Sector)
@@ -229,22 +245,6 @@ Egeria Score: 24.217
   🟡 Revenue Avg Growth Rate: 10.24
   ✅ 5 Year Return: 106.65
   ✅ 10 Year Return: 314.41
-
-
-TSM - Unknown Name (Default Sector)
-Egeria Score: 23.784
-  ✅ P/E Ratio: 1.27
-  ✅ Price/Sales: 0.49
-  ❌ Beta: 1.14
-  ✅ Quick Ratio: 1.84
-  ✅ Debt/Equity: 0.70
-  ✅ EBIDTA Margin: 0.71
-  ❌ 5 Year STD: 8.95
-  ❌ 10 Year STD: 7.29
-  🟡 EBIDTA Avg Growth Rate: nan
-  🟡 Revenue Avg Growth Rate: nan
-  ✅ 5 Year Return: 330.88
-  ✅ 10 Year Return: 928.81
 
 
 GOOGL - Unknown Name (Default Sector)
@@ -536,14 +536,13 @@ Egeria Score: 8.806
 
 
 HDB - Unknown Name (Default Sector)
-Egeria Score: -15.691
+Egeria Score: -9.691
   ✅ P/E Ratio: 0.24
   ✅ Price/Sales: 0.08
   🟡 Beta: 0.86
   ✅ Debt/Equity: 7.84
   ❌ 5 Year STD: 8.14
   ❌ 10 Year STD: 6.72
-  ❌ EBIDTA Avg Growth Rate: 0.00
   🟡 Revenue Avg Growth Rate: 15.13
   ❌ 5 Year Return: 8.65
   🟡 10 Year Return: 211.62
