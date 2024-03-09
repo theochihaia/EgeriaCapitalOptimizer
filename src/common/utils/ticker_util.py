@@ -107,6 +107,8 @@ def get_pe_ratio(ticker: yf.Ticker):
 
     # TODO: This is likely the wrong value, but it's close
     diluted_average_shares = ticker.quarterly_income_stmt.loc["Diluted Average Shares"].iloc[0]
+    if np.isnan(diluted_average_shares):
+        diluted_average_shares = ticker.quarterly_income_stmt.loc["Basic Average Shares"].iloc[1]
 
     eps = float(net_income) / float(diluted_average_shares)
 
@@ -122,6 +124,8 @@ def get_ps_ratio(ticker: yf.Ticker):
 
     # TODO: This is likely the wrong value, but it's close
     diluted_average_shares = ticker.quarterly_income_stmt.loc["Diluted Average Shares"].iloc[0]
+    if np.isnan(diluted_average_shares):
+        diluted_average_shares = ticker.quarterly_income_stmt.loc["Basic Average Shares"].iloc[1]
 
     ips = float(net_sales) / float(diluted_average_shares)
 

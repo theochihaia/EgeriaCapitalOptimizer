@@ -30,39 +30,107 @@ YIELD                          |          0 |          1 |    No
 
 Symbol     | Name                                               |  Weight
 ------------------------------------------------------------------------
-ABBV       | ABBV                                               |   52.06%
-MAR        | MAR                                                |   47.94%
+NVO        | NVO                                                |   19.52%
+FCN        | FCN                                                |   17.97%
+WM         | WM                                                 |   16.82%
+GGG        | GGG                                                |   15.92%
+NVDA       | NVDA                                               |   15.19%
+MAR        | MAR                                                |   14.58%
 
 
-Weighted Return (5yrs)  148.69%
-Annualized               19.99%
-Weighted Std    (5yrs)    8.04
+Weighted Return (5yrs)  503.05%
+Annualized               43.24%
+Weighted Std    (5yrs)    7.44
 
 
 
 --------------------------------------------------------------------------
                               Details                       
 --------------------------------------------------------------------------
-ABBV - Unknown Name (Default Sector)
-Egeria Score: 21.476
-  ❌ P/E Ratio: 65.28
-  ❌ Price/Sales: 5.84
-  ✅ Beta: 0.56
-  🟡 Quick Ratio: 0.63
-  ✅ Debt/Equity: 12.00
-  ✅ EBIDTA Margin: 0.32
-  ❌ 5 Year STD: 6.05
-  🟡 10 Year STD: 5.85
-  🟡 EBIDTA Avg Growth Rate: 18.10
-  ❌ Revenue Avg Growth Rate: 6.52
-  ✅ 5 Year Return: 189.00
-  ✅ 10 Year Return: 419.42
+NVO - Unknown Name (Default Sector)
+Egeria Score: 41.524
+  ✅ P/E Ratio: 6.67
+  ❌ Price/Sales: 2.40
+  ✅ Beta: 0.42
+  🟡 Quick Ratio: 0.62
+  ✅ Debt/Equity: 1.95
+  ✅ EBIDTA Margin: 0.50
+  ❌ 5 Year STD: 6.00
+  ❌ 10 Year STD: 6.08
+  ✅ EBIDTA Avg Growth Rate: 23.97
+  ✅ Revenue Avg Growth Rate: 22.62
+  ✅ 5 Year Return: 448.93
+  ✅ 10 Year Return: 537.55
+
+
+FCN - Unknown Name (Default Sector)
+Egeria Score: 28.712
+  🟡 P/E Ratio: 25.82
+  🟡 Price/Sales: 2.03
+  ✅ Beta: 0.11
+  ✅ Quick Ratio: 1.65
+  ✅ Debt/Equity: 0.68
+  🟡 EBIDTA Margin: 0.12
+  ❌ 5 Year STD: 6.35
+  ❌ 10 Year STD: 6.73
+  ❌ EBIDTA Avg Growth Rate: 9.04
+  🟡 Revenue Avg Growth Rate: 12.37
+  ✅ 5 Year Return: 177.65
+  ✅ 10 Year Return: 590.90
+
+
+WM - Unknown Name (Default Sector)
+Egeria Score: 26.72
+  ❌ P/E Ratio: 36.27
+  ❌ Price/Sales: 4.09
+  🟡 Beta: 0.72
+  🟡 Quick Ratio: 0.79
+  ✅ Debt/Equity: 3.76
+  🟡 EBIDTA Margin: 0.27
+  🟡 5 Year STD: 4.99
+  🟡 10 Year STD: 4.28
+  🟡 EBIDTA Avg Growth Rate: 12.78
+  🟡 Revenue Avg Growth Rate: 10.46
+  ✅ 5 Year Return: 126.13
+  ✅ 10 Year Return: 519.86
+
+
+GGG - Unknown Name (Default Sector)
+Egeria Score: 21.911
+  🟡 P/E Ratio: 30.34
+  ❌ Price/Sales: 7.00
+  🟡 Beta: 0.79
+  ✅ Quick Ratio: 2.26
+  ✅ Debt/Equity: 0.22
+  ✅ EBIDTA Margin: 0.31
+  🟡 5 Year STD: 5.85
+  🟡 10 Year STD: 5.65
+  🟡 EBIDTA Avg Growth Rate: 13.15
+  🟡 Revenue Avg Growth Rate: 10.24
+  ✅ 5 Year Return: 102.62
+  ✅ 10 Year Return: 303.59
+
+
+NVDA - Unknown Name (Default Sector)
+Egeria Score: 18.979
+  ❌ P/E Ratio: 71.29
+  ❌ Price/Sales: 34.82
+  ❌ Beta: 1.73
+  ✅ Quick Ratio: 3.38
+  ✅ Debt/Equity: 0.53
+  ✅ EBIDTA Margin: 0.58
+  ❌ 5 Year STD: 12.30
+  ❌ 10 Year STD: 11.26
+  ✅ EBIDTA Avg Growth Rate: 149.63
+  ✅ Revenue Avg Growth Rate: 62.49
+  ✅ 5 Year Return: 2,176.93
+  ✅ 10 Year Return: 19,641.61
 
 
 MAR - Unknown Name (Default Sector)
-Egeria Score: 1.03
-  🟡 P/E Ratio: nan
-  🟡 Price/Sales: nan
+Egeria Score: -1.473
+  🟡 P/E Ratio: 24.01
+  ❌ Price/Sales: 3.12
   ❌ Beta: 1.62
   ❌ Quick Ratio: 0.39
   ✅ Debt/Equity: -38.65
