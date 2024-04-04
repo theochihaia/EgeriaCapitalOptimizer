@@ -8,7 +8,7 @@ SYMBOLS = [
     #Portfolio.TESTING,
     #Portfolio.FID_FOLIO,
     #Portfolio.FID_FOLIO_V3,
-    #Portfolio.FID_FOLIO_V4,
+    Portfolio.FID_FOLIO_V4,
     #Portfolio.NOBL,
     #Portfolio.SP500,
     #Portfolio.IJR_SMALL_CAP,
@@ -20,8 +20,8 @@ SYMBOLS = [
     #Portfolio.ALEX,
     #Portfolio.SK_ALPHA_DIV_GROWTH,
     #Portfolio.VANGUARD_ETFS,
-    Portfolio.DGRO,
-
+    #Portfolio.DGRO,
+    #Portfolio.USRT_REIT,
 ]
 
 # Generation Settings
@@ -63,7 +63,7 @@ ACTIVE_METRICS = [
 
 
 # Analyzer Configuration
-MAX_PORTFOLIO_SIZE = 30
+MAX_PORTFOLIO_SIZE = 40
 MIN_TRADING_DAYS = 2500
 LOG_BASE = 6
 STD_PERIOD_DAYS = 15

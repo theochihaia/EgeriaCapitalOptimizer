@@ -15,6 +15,7 @@ class Portfolio(Enum):
     IXJ_HEALTHCARE = "ixj_healthcare"
     IYF_FINANCIAL = "iyf_financial"
     ALEX = "alex"
-    SK_ALPHA_DIV_GROWTH = "sk_alpha_div_growth",
-    VANGUARD_ETFS = "vanguard_etfs",
+    SK_ALPHA_DIV_GROWTH = "sk_alpha_div_growth"
+    VANGUARD_ETFS = "vanguard_etfs"
     DGRO = "dgro"
+    USRT_REIT = "usrt_reit"
