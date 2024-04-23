@@ -31,14 +31,14 @@ pip install -r requirements.txt
 # Clear Directory
 def clear_directorires():
     if IS_CLEAR_HISTORY_ACTIVE:
-        clear_directory(DIRECTORY)
+        clear_directory(DIRECTORY + "/output/rawdata")
 
 
 # Save Data
 def save_data(data: dict):
     if IS_SAVE_DATA_ACTIVE:
         for symbol, ticker in data.items():
-            save_data_parallel(symbol, ticker, DATA_CATEGORIES, DIRECTORY)
+            save_data_parallel(symbol, ticker, DATA_CATEGORIES, DIRECTORY + "/output/rawdata")
 
 
 def generate_analysis(data: dict):

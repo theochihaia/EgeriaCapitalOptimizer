@@ -30,31 +30,31 @@ YIELD                          |          0 |          1 |    No
 
 Symbol     | Name                                               |  Weight
 ------------------------------------------------------------------------
-TSM        | TSM                                                |  100.00%
+TSM        | Taiwan Semiconductor Manufacturing Company Limited |  100.00%
 
 
-Weighted Return (5yrs)  330.88%
-Annualized               33.93%
-Weighted Std    (5yrs)    8.95
+Weighted Return (5yrs)  226.26%
+Annualized               26.68%
+Weighted Std    (5yrs)    9.01
 
 
 
 --------------------------------------------------------------------------
                               Details                       
 --------------------------------------------------------------------------
-TSM - Unknown Name (Default Sector)
-Egeria Score: 32.784
-  ✅ P/E Ratio: 1.27
-  ✅ Price/Sales: 0.49
-  ❌ Beta: 1.14
-  ✅ Quick Ratio: 1.84
-  ✅ Debt/Equity: 0.70
-  ✅ EBIDTA Margin: 0.71
-  ❌ 5 Year STD: 8.95
-  ❌ 10 Year STD: 7.29
-  ✅ EBIDTA Avg Growth Rate: 32.73
-  ✅ Revenue Avg Growth Rate: 30.57
-  ✅ 5 Year Return: 330.88
-  ✅ 10 Year Return: 928.81
+TSM - Taiwan Semiconductor Manufacturing Company Limited (Technology)
+Egeria Score: 28.764
+  ✅ P/E Ratio: 0.77
+  ✅ Price/Sales: 0.30
+  ❌ Beta: 1.12
+  ✅ Quick Ratio: 2.03
+  ✅ Debt/Equity: 0.61
+  ✅ EBIDTA Margin: 0.63
+  ❌ 5 Year STD: 9.01
+  ❌ 10 Year STD: 7.28
+  ✅ EBIDTA Avg Growth Rate: 20.36
+  🟡 Revenue Avg Growth Rate: 18.88
+  ✅ 5 Year Return: 226.26
+  ✅ 10 Year Return: 750.64
 
 

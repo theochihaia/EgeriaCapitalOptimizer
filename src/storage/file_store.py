@@ -3,7 +3,6 @@ import os
 import shutil
 import yfinance as yf
 from concurrent.futures import ThreadPoolExecutor
-
 from src.common.enums.equity_data_category import EquityDataCategory
 
 
@@ -12,7 +11,7 @@ def save_data(
     symbol,
     data: yf.Ticker,
     data_categories: [],
-    directory="src/storage/data",
+    directory= "src/output/rawdata",
 ):
     for category in data_categories:
         save_data_for_category(symbol, data, category, directory + "/" + category.value)
