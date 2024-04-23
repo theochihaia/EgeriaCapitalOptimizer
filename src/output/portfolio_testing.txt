@@ -20,7 +20,8 @@ RETURN_TEN_YEAR                |        150 |         75 |   Yes
 REVENUE_AVG_GROWTH_RATE        |         15 |          5 |   Yes
 STD_FIVE_YEAR                  |          5 |          1 |   Yes
 STD_TEN_YEAR                   |          5 |          1 |   Yes
-YIELD                          |          0 |          1 |    No
+YIELD                          |          0 |          1 |   Yes
+FREE_CASHFLOW_GROWTH           |         15 |          5 |   Yes
 
 
 
@@ -43,7 +44,7 @@ Weighted Std    (5yrs)    9.01
                               Details                       
 --------------------------------------------------------------------------
 TSM - Taiwan Semiconductor Manufacturing Company Limited (Technology)
-Egeria Score: 28.764
+Egeria Score: 32.957
   ✅ P/E Ratio: 0.77
   ✅ Price/Sales: 0.30
   ❌ Beta: 1.12
@@ -56,5 +57,7 @@ Egeria Score: 28.764
   🟡 Revenue Avg Growth Rate: 18.88
   ✅ 5 Year Return: 226.26
   ✅ 10 Year Return: 750.64
+  ✅ Yield: 2.29
+  🟡 Free Cashflow Growth: 13.06
 
 

@@ -1,7 +1,7 @@
 import yfinance as yf
 import numpy as np
 
-from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio, get_ps_ratio, get_ebidta_margin, get_beta
+from src.common.utils.ticker_util import get_return, get_income_growth, get_std, get_quick_ratio, get_debt_to_equity_ratio, get_pe_ratio, get_ps_ratio, get_ebidta_margin, get_beta, get_cashflow_growth
 
 from src.common.models.MetricConfig import MetricConfig
 from src.common.enums.metric import Metric
@@ -84,6 +84,11 @@ METRIC_CONFIG = {
     ),
     Metric.YIELD: MetricConfig(
         data_fetcher=lambda t: t.info.get("fiveYearAvgDividendYield"),
+        metric_weight=2,
+        is_inverted=False
+    ),
+    Metric.FREE_CASHFLOW_GROWTH: MetricConfig(
+        data_fetcher=lambda t: get_cashflow_growth(t,"FreeCashFlow"),
         metric_weight=1,
         is_inverted=False
     ),

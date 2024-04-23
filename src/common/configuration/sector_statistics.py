@@ -33,5 +33,6 @@ SECTOR_METRIC_STATISTICS = {
         "STD_FIVE_YEAR": (5, 1),
         "STD_TEN_YEAR": (5, 1),
         "YIELD": (0, 1),
+        "FREE_CASHFLOW_GROWTH": (15, 5),
     }
 }

@@ -40,6 +40,7 @@ DATA_CATEGORIES = [
     EquityDataCategory.INCOME_STMT,
     EquityDataCategory.BALANCE_SHEET,
     EquityDataCategory.QUARTERLY_INCOME_STMT,
+    EquityDataCategory.QUARTERLY_CASHFLOW,
 ]
 
 ACTIVE_METRICS = [
@@ -58,7 +59,8 @@ ACTIVE_METRICS = [
     Metric.REVENUE_AVG_GROWTH_RATE,
     Metric.RETURN_FIVE_YEAR,
     Metric.RETURN_TEN_YEAR,
-    #Metric.YIELD,
+    Metric.YIELD,
+    Metric.FREE_CASHFLOW_GROWTH,
 ]
 
 

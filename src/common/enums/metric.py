@@ -23,6 +23,7 @@ class Metric(Enum):
     EGERIA_SCORE = "Egeria Score"
     EBIDTA_AVG_GROWTH_RATE = "EBIDTA Avg Growth Rate"
     REVENUE_AVG_GROWTH_RATE = "Revenue Avg Growth Rate"
+    FREE_CASHFLOW_GROWTH = "Free Cashflow Growth"
 
 class MetricResult(Enum):
     POSITIVE = "✅"

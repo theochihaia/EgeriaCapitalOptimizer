@@ -175,3 +175,48 @@ def get_latest_price(ticker):
     if data.empty:
         return None
     return data["Close"].iloc[-1]
+
+def free_cashflow_growth(ticker, years):
+    stock = yf.Ticker(ticker)
+    cash_flow = stock.cashflow
+    
+    # Extract operating cash flow and capital expenditure
+    if "OperatingCashFlow" in cash_flow.index and "CapitalExpenditure" in cash_flow.index:
+        operating_cash_flow = cash_flow.loc["OperatingCashFlow"]
+        capital_expenditure = cash_flow.loc["CapitalExpenditure"]
+
+        # Calculate free cash flow
+        free_cash_flow = operating_cash_flow - capital_expenditure
+
+        # Ensure there's enough data to calculate the growth over specified years
+        if len(free_cash_flow) >= years + 1:
+            # Calculate the growth rate of free cash flow over the specified period
+            growth_rate = ((free_cash_flow[0] - free_cash_flow[years]) / free_cash_flow[years]) * 100
+            return f"Free cash flow growth rate over {years} years: {growth_rate:.2f}%"
+        else:
+            return f"Insufficient data to calculate growth over {years} years"
+    else:
+        return "Required data not found"
+
+
+
+def get_cashflow_growth(ticker: yf.Ticker, data_point: str):
+
+    data = []
+    for key, value in ticker.get_cash_flow().items():
+        data.append(value.get(data_point))
+    
+    #remove bad data
+    data = [d for d in data if not np.isnan(d)]
+
+    if len(data) < 2:
+        return None
+
+    avgGrowthRate = 0
+    for i in range(len(data) - 1):
+        if data[i + 1] is None or data[i] is None:
+            continue
+        avgGrowthRate += (data[i] - data[i + 1]) / data[i + 1]
+        
+    avgGrowthRate /= len(data) - 1
+    return avgGrowthRate * 100
