@@ -19,7 +19,7 @@ METRIC_CONFIG = {
     ),
     Metric.EBIDTA_AVG_GROWTH_RATE: MetricConfig(
         data_fetcher=lambda t: get_income_growth(t, "NormalizedEBITDA"),
-        metric_weight=2,
+        metric_weight=3,
         is_inverted=False
     ),
     Metric.EBIDTA_MARGIN: MetricConfig(
@@ -59,7 +59,7 @@ METRIC_CONFIG = {
     ),
     Metric.RETURN_ON_EQUITY: MetricConfig(
         data_fetcher=lambda t: t.info.get("returnOnEquity"),
-        metric_weight=3,
+        metric_weight=4,
         is_inverted=False
     ),
     Metric.RETURN_TEN_YEAR: MetricConfig(
@@ -89,7 +89,7 @@ METRIC_CONFIG = {
     ),
     Metric.FREE_CASHFLOW_GROWTH: MetricConfig(
         data_fetcher=lambda t: get_cashflow_growth(t,"FreeCashFlow"),
-        metric_weight=1,
+        metric_weight=5,
         is_inverted=False
     ),
 }

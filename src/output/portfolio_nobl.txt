@@ -1,0 +1,1244 @@
+
+
+
+--------------------------------------------------------------------------
+                              Metric Stats                       
+--------------------------------------------------------------------------
+Metric                         |        Avg |        Std | Is Active
+BETA                           |        0.8 |        0.2 |   Yes
+DEBT_TO_EQUITY                 |        100 |         50 |   Yes
+EBIDTA_AVG_GROWTH_RATE         |         15 |          5 |   Yes
+EBIDTA_MARGIN                  |        0.2 |        0.1 |   Yes
+PRICE_TO_BOOK                  |       2.92 |       0.68 |    No
+PRICE_TO_EARNINGS              |       24.2 |       10.8 |   Yes
+PRICE_TO_SALES                 |       1.76 |       0.54 |   Yes
+QUICK_RATIO                    |          1 |        0.5 |   Yes
+RETURN_FIVE_YEAR               |         50 |         25 |   Yes
+RETURN_ON_ASSETS               |       0.05 |       0.03 |    No
+RETURN_ON_EQUITY               |       0.15 |       0.07 |    No
+RETURN_TEN_YEAR                |        150 |         75 |   Yes
+REVENUE_AVG_GROWTH_RATE        |         15 |          5 |   Yes
+STD_FIVE_YEAR                  |          5 |          1 |   Yes
+STD_TEN_YEAR                   |          5 |          1 |   Yes
+YIELD                          |          0 |          1 |   Yes
+FREE_CASHFLOW_GROWTH           |         15 |          5 |   Yes
+
+
+
+--------------------------------------------------------------------------
+                              Portfolio Proposal                       
+--------------------------------------------------------------------------
+
+Symbol     | Name                                               |  Weight
+------------------------------------------------------------------------
+BRO        | Brown & Brown, Inc.                                |    4.18%
+MCD        | McDonald's Corporation                             |    3.84%
+ABBV       | AbbVie Inc.                                        |    3.60%
+NUE        | Nucor Corporation                                  |    3.41%
+GWW        | W.W. Grainger, Inc.                                |    3.25%
+ED         | Consolidated Edison, Inc.                          |    3.12%
+NEE        | NextEra Energy, Inc.                               |    3.01%
+LIN        | Linde plc                                          |    2.92%
+CAT        | Caterpillar Inc.                                   |    2.84%
+PEP        | PepsiCo, Inc.                                      |    2.76%
+CB         | Chubb Limited                                      |    2.70%
+WST        | West Pharmaceutical Services, Inc.                 |    2.64%
+ROP        | Roper Technologies, Inc.                           |    2.59%
+PG         | The Procter & Gamble Company                       |    2.54%
+ATO        | Atmos Energy Corporation                           |    2.50%
+KO         | The Coca-Cola Company                              |    2.46%
+SPGI       | S&P Global Inc.                                    |    2.42%
+ADP        | Automatic Data Processing, Inc.                    |    2.39%
+WMT        | Walmart Inc.                                       |    2.35%
+EXPD       | Expeditors International of Washington, Inc.       |    2.32%
+O          | Realty Income Corporation                          |    2.30%
+AOS        | A. O. Smith Corporation                            |    2.27%
+GD         | General Dynamics Corporation                       |    2.25%
+ITW        | Illinois Tool Works Inc.                           |    2.22%
+CINF       | Cincinnati Financial Corporation                   |    2.20%
+JNJ        | Johnson & Johnson                                  |    2.18%
+CHD        | Church & Dwight Co., Inc.                          |    2.16%
+CVX        | Chevron Corporation                                |    2.14%
+XOM        | Exxon Mobil Corporation                            |    2.12%
+CTAS       | Cintas Corporation                                 |    2.10%
+ABT        | Abbott Laboratories                                |    2.09%
+NDSN       | Nordson Corporation                                |    2.07%
+AFL        | Aflac Incorporated                                 |    2.06%
+LOW        | Lowe's Companies, Inc.                             |    2.04%
+IBM        | International Business Machines Corporation        |    2.03%
+CL         | Colgate-Palmolive Company                          |    2.01%
+KVUE       | Kenvue Inc.                                        |    2.00%
+CAH        | Cardinal Health, Inc.                              |    1.99%
+SHW        | The Sherwin-Williams Company                       |    1.98%
+ADM        | Archer-Daniels-Midland Company                     |    1.97%
+
+
+Weighted Return (5yrs)  100.33%
+Annualized               14.91%
+Weighted Std    (5yrs)    6.16
+
+
+
+--------------------------------------------------------------------------
+                              Details                       
+--------------------------------------------------------------------------
+BRO - Brown & Brown, Inc. (Financial Services)
+Egeria Score: 27.925
+  🟡 P/E Ratio: 26.72
+  ❌ Price/Sales: 5.55
+  🟡 Beta: 0.81
+  🟡 Quick Ratio: 0.55
+  ✅ Debt/Equity: 1.67
+  ✅ EBIDTA Margin: 0.37
+  ❌ 5 Year STD: 6.30
+  🟡 10 Year STD: 4.50
+  🟡 EBIDTA Avg Growth Rate: 19.27
+  🟡 Revenue Avg Growth Rate: 17.24
+  ✅ 5 Year Return: 171.47
+  ✅ 10 Year Return: 522.75
+  🟡 Yield: 0.72
+  🟡 Free Cashflow Growth: 13.64
+
+
+MCD - McDonald's Corporation (Consumer Cyclical)
+Egeria Score: 26.244
+  🟡 P/E Ratio: 23.68
+  ❌ Price/Sales: 7.87
+  🟡 Beta: 0.72
+  🟡 Quick Ratio: 1.03
+  ✅ Debt/Equity: -12.93
+  ✅ EBIDTA Margin: 0.54
+  🟡 5 Year STD: 4.92
+  🟡 10 Year STD: 4.61
+  🟡 EBIDTA Avg Growth Rate: 16.40
+  🟡 Revenue Avg Growth Rate: 10.23
+  🟡 5 Year Return: 58.33
+  ✅ 10 Year Return: 261.07
+  ✅ Yield: 2.23
+  ✅ Free Cashflow Growth: 21.01
+
+
+ABBV - AbbVie Inc. (Healthcare)
+Egeria Score: 24.553
+  ❌ P/E Ratio: 61.18
+  ❌ Price/Sales: 5.48
+  ✅ Beta: 0.58
+  🟡 Quick Ratio: 0.63
+  ✅ Debt/Equity: 12.00
+  ✅ EBIDTA Margin: 0.32
+  ❌ 5 Year STD: 6.24
+  ❌ 10 Year STD: 6.22
+  🟡 EBIDTA Avg Growth Rate: 18.10
+  ❌ Revenue Avg Growth Rate: 6.52
+  ✅ 5 Year Return: 167.82
+  ✅ 10 Year Return: 405.39
+  ✅ Yield: 4.42
+  🟡 Free Cashflow Growth: 10.74
+
+
+NUE - Nucor Corporation (Basic Materials)
+Egeria Score: 23.219
+  ✅ P/E Ratio: 10.47
+  🟡 Price/Sales: 1.36
+  ❌ Beta: 1.59
+  ✅ Quick Ratio: 2.19
+  ✅ Debt/Equity: 0.63
+  🟡 EBIDTA Margin: 0.22
+  ❌ 5 Year STD: 9.28
+  ❌ 10 Year STD: 8.27
+  ✅ EBIDTA Avg Growth Rate: 102.55
+  ✅ Revenue Avg Growth Rate: 26.19
+  ✅ 5 Year Return: 265.19
+  ✅ 10 Year Return: 371.14
+  ✅ Yield: 2.15
+  ✅ Free Cashflow Growth: 112.02
+
+
+GWW - W.W. Grainger, Inc. (Industrials)
+Egeria Score: 23.166
+  🟡 P/E Ratio: 25.60
+  ❌ Price/Sales: 2.84
+  ❌ Beta: 1.16
+  ✅ Quick Ratio: 1.56
+  ✅ Debt/Equity: 1.51
+  🟡 EBIDTA Margin: 0.17
+  ❌ 5 Year STD: 6.21
+  🟡 10 Year STD: 5.99
+  ✅ EBIDTA Avg Growth Rate: 32.58
+  🟡 Revenue Avg Growth Rate: 11.84
+  ✅ 5 Year Return: 245.80
+  ✅ 10 Year Return: 341.13
+  ✅ Yield: 1.43
+  ✅ Free Cashflow Growth: 26.28
+
+
+ED - Consolidated Edison, Inc. (Utilities)
+Egeria Score: 20.948
+  ✅ P/E Ratio: 12.70
+  🟡 Price/Sales: 2.18
+  ✅ Beta: 0.35
+  🟡 Quick Ratio: 0.77
+  ✅ Debt/Equity: 2.14
+  ✅ EBIDTA Margin: 0.41
+  🟡 5 Year STD: 4.74
+  🟡 10 Year STD: 4.37
+  ❌ EBIDTA Avg Growth Rate: 5.36
+  ❌ Revenue Avg Growth Rate: 6.61
+  🟡 5 Year Return: 32.40
+  🟡 10 Year Return: 137.87
+  ✅ Yield: 3.66
+  ✅ Free Cashflow Growth: 264.61
+
+
+NEE - NextEra Energy, Inc. (Utilities)
+Egeria Score: 20.712
+  🟡 P/E Ratio: 18.15
+  ❌ Price/Sales: 4.72
+  ✅ Beta: 0.52
+  ❌ Quick Ratio: 0.31
+  ✅ Debt/Equity: 2.52
+  ✅ EBIDTA Margin: 0.60
+  ❌ 5 Year STD: 6.73
+  🟡 10 Year STD: 4.94
+  ✅ EBIDTA Avg Growth Rate: 29.76
+  🟡 Revenue Avg Growth Rate: 17.26
+  🟡 5 Year Return: 54.45
+  ✅ 10 Year Return: 250.51
+  ✅ Yield: 2.20
+  ❌ Free Cashflow Growth: -2.60
+
+
+LIN - Linde plc (Basic Materials)
+Egeria Score: 20.384
+  ❌ P/E Ratio: 35.20
+  ❌ Price/Sales: 6.64
+  🟡 Beta: 0.96
+  🟡 Quick Ratio: 0.62
+  ✅ Debt/Equity: 1.00
+  ✅ EBIDTA Margin: 0.37
+  🟡 5 Year STD: 5.57
+  🟡 10 Year STD: 4.68
+  🟡 EBIDTA Avg Growth Rate: 13.76
+  ❌ Revenue Avg Growth Rate: 6.62
+  ✅ 5 Year Return: 169.22
+  ✅ 10 Year Return: 311.63
+  ✅ Yield: 1.49
+  🟡 Free Cashflow Growth: 15.82
+
+
+CAT - Caterpillar Inc. (Industrials)
+Egeria Score: 18.412
+  🟡 P/E Ratio: 17.54
+  ❌ Price/Sales: 2.70
+  ❌ Beta: 1.11
+  🟡 Quick Ratio: 0.74
+  ✅ Debt/Equity: 3.49
+  🟡 EBIDTA Margin: 0.23
+  ❌ 5 Year STD: 8.21
+  ❌ 10 Year STD: 6.89
+  ✅ EBIDTA Avg Growth Rate: 31.48
+  🟡 Revenue Avg Growth Rate: 17.18
+  ✅ 5 Year Return: 183.21
+  ✅ 10 Year Return: 354.50
+  ✅ Yield: 2.32
+  ✅ Free Cashflow Growth: 37.02
+
+
+PEP - PepsiCo, Inc. (Consumer Defensive)
+Egeria Score: 15.844
+  🟡 P/E Ratio: 26.86
+  ❌ Price/Sales: 2.66
+  ✅ Beta: 0.53
+  🟡 Quick Ratio: 0.66
+  ✅ Debt/Equity: 4.42
+  🟡 EBIDTA Margin: 0.17
+  ✅ 5 Year STD: 3.95
+  ✅ 10 Year STD: 3.43
+  ❌ EBIDTA Avg Growth Rate: 8.13
+  ❌ Revenue Avg Growth Rate: 9.17
+  🟡 5 Year Return: 59.87
+  🟡 10 Year Return: 175.60
+  ✅ Yield: 2.74
+  🟡 Free Cashflow Growth: 10.42
+
+
+CB - Chubb Limited (Financial Services)
+Egeria Score: 15.81
+  ✅ P/E Ratio: 11.44
+  🟡 Price/Sales: 2.07
+  🟡 Beta: 0.65
+  ✅ Debt/Equity: 2.81
+  ❌ 5 Year STD: 6.47
+  🟡 10 Year STD: 4.93
+  🟡 Revenue Avg Growth Rate: 11.48
+  ✅ 5 Year Return: 99.34
+  🟡 10 Year Return: 204.55
+  ✅ Yield: 1.84
+  ❌ Free Cashflow Growth: 9.04
+
+
+WST - West Pharmaceutical Services, Inc. (Healthcare)
+Egeria Score: 15.338
+  ❌ P/E Ratio: 47.00
+  ❌ Price/Sales: 9.45
+  ❌ Beta: 1.01
+  ✅ Quick Ratio: 2.03
+  ✅ Debt/Equity: 0.33
+  🟡 EBIDTA Margin: 0.29
+  ❌ 5 Year STD: 8.16
+  ❌ 10 Year STD: 6.77
+  ✅ EBIDTA Avg Growth Rate: 22.02
+  🟡 Revenue Avg Growth Rate: 12.01
+  ✅ 5 Year Return: 230.02
+  ✅ 10 Year Return: 819.58
+  🟡 Yield: 0.26
+  🟡 Free Cashflow Growth: 12.72
+
+
+ROP - Roper Technologies, Inc. (Technology)
+Egeria Score: 15.054
+  ❌ P/E Ratio: 41.95
+  ❌ Price/Sales: 9.40
+  🟡 Beta: 0.99
+  ❌ Quick Ratio: 0.40
+  ✅ Debt/Equity: 0.61
+  ✅ EBIDTA Margin: 0.43
+  🟡 5 Year STD: 5.68
+  🟡 10 Year STD: 4.58
+  🟡 EBIDTA Avg Growth Rate: 19.54
+  🟡 Revenue Avg Growth Rate: 15.44
+  🟡 5 Year Return: 57.82
+  ✅ 10 Year Return: 334.22
+  🟡 Yield: 0.52
+  ✅ Free Cashflow Growth: 51.95
+
+
+PG - The Procter & Gamble Company (Consumer Defensive)
+Egeria Score: 14.565
+  🟡 P/E Ratio: 26.23
+  ❌ Price/Sales: 4.72
+  ✅ Beta: 0.41
+  ❌ Quick Ratio: 0.38
+  ✅ Debt/Equity: 1.58
+  🟡 EBIDTA Margin: 0.27
+  🟡 5 Year STD: 4.04
+  ✅ 10 Year STD: 3.62
+  ❌ EBIDTA Avg Growth Rate: 4.19
+  ❌ Revenue Avg Growth Rate: 4.97
+  ✅ 5 Year Return: 76.23
+  🟡 10 Year Return: 165.62
+  ✅ Yield: 2.43
+  ❌ Free Cashflow Growth: -0.86
+
+
+ATO - Atmos Energy Corporation (Utilities)
+Egeria Score: 14.119
+  🟡 P/E Ratio: 19.12
+  ❌ Price/Sales: 4.48
+  🟡 Beta: 0.67
+  ❌ Quick Ratio: 0.26
+  ✅ Debt/Equity: 1.07
+  ✅ EBIDTA Margin: 0.46
+  🟡 5 Year STD: 4.83
+  ✅ 10 Year STD: 4.00
+  🟡 EBIDTA Avg Growth Rate: 10.56
+  🟡 Revenue Avg Growth Rate: 15.28
+  🟡 5 Year Return: 34.03
+  🟡 10 Year Return: 199.71
+  ✅ Yield: 2.38
+  🟡 Free Cashflow Growth: 14.55
+
+
+KO - The Coca-Cola Company (Consumer Defensive)
+Egeria Score: 10.531
+  🟡 P/E Ratio: 24.47
+  ❌ Price/Sales: 5.73
+  ✅ Beta: 0.60
+  🟡 Quick Ratio: 0.72
+  ✅ Debt/Equity: 2.71
+  ✅ EBIDTA Margin: 0.34
+  🟡 5 Year STD: 4.61
+  ✅ 10 Year STD: 3.60
+  ❌ EBIDTA Avg Growth Rate: 7.90
+  🟡 Revenue Avg Growth Rate: 11.58
+  🟡 5 Year Return: 46.71
+  🟡 10 Year Return: 104.21
+  ✅ Yield: 3.04
+  ❌ Free Cashflow Growth: 5.61
+
+
+SPGI - S&P Global Inc. (Financial Services)
+Egeria Score: 10.279
+  ❌ P/E Ratio: 50.39
+  ❌ Price/Sales: 10.59
+  ❌ Beta: 1.15
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 0.66
+  ✅ EBIDTA Margin: 0.41
+  ❌ 5 Year STD: 6.16
+  🟡 10 Year STD: 5.51
+  🟡 EBIDTA Avg Growth Rate: 11.95
+  🟡 Revenue Avg Growth Rate: 19.34
+  ✅ 5 Year Return: 99.84
+  ✅ 10 Year Return: 504.05
+  🟡 Yield: 0.84
+  ❌ Free Cashflow Growth: 4.84
+
+
+ADP - Automatic Data Processing, Inc. (Industrials)
+Egeria Score: 9.949
+  🟡 P/E Ratio: 28.56
+  ❌ Price/Sales: 5.75
+  🟡 Beta: 0.79
+  ❌ Quick Ratio: 0.12
+  ✅ Debt/Equity: 13.53
+  ✅ EBIDTA Margin: 0.31
+  🟡 5 Year STD: 5.85
+  🟡 10 Year STD: 5.28
+  🟡 EBIDTA Avg Growth Rate: 11.78
+  ❌ Revenue Avg Growth Rate: 7.02
+  🟡 5 Year Return: 65.78
+  ✅ 10 Year Return: 357.78
+  ✅ Yield: 1.99
+  🟡 Free Cashflow Growth: 16.19
+
+
+WMT - Walmart Inc. (Consumer Defensive)
+Egeria Score: 9.781
+  ✅ P/E Ratio: 10.47
+  ✅ Price/Sales: 0.25
+  ✅ Beta: 0.49
+  ❌ Quick Ratio: 0.20
+  ✅ Debt/Equity: 1.93
+  ❌ EBIDTA Margin: 0.06
+  🟡 5 Year STD: 4.73
+  🟡 10 Year STD: 4.30
+  ❌ EBIDTA Avg Growth Rate: 3.08
+  ❌ Revenue Avg Growth Rate: 5.06
+  ✅ 5 Year Return: 89.84
+  🟡 10 Year Return: 185.17
+  ✅ Yield: 1.61
+  ❌ Free Cashflow Growth: -7.57
+
+
+EXPD - Expeditors International of Washington, Inc. (Industrials)
+Egeria Score: 9.228
+  🟡 P/E Ratio: 22.11
+  🟡 Price/Sales: 1.79
+  🟡 Beta: 0.95
+  ✅ Quick Ratio: 1.79
+  ✅ Debt/Equity: 0.89
+  🟡 EBIDTA Margin: 0.12
+  🟡 5 Year STD: 5.95
+  🟡 10 Year STD: 5.04
+  🟡 EBIDTA Avg Growth Rate: 16.23
+  🟡 Revenue Avg Growth Rate: 10.06
+  🟡 5 Year Return: 51.40
+  🟡 10 Year Return: 221.82
+  ✅ Yield: 1.17
+  ✅ Free Cashflow Growth: 44.03
+
+
+O - Realty Income Corporation (Real Estate)
+Egeria Score: 8.353
+  ❌ P/E Ratio: 43.36
+  ❌ Price/Sales: 9.27
+  🟡 Beta: 0.95
+  🟡 Quick Ratio: 1.49
+  ✅ Debt/Equity: 0.75
+  ✅ EBIDTA Margin: 0.88
+  ❌ 5 Year STD: 7.03
+  🟡 10 Year STD: 5.43
+  ✅ EBIDTA Avg Growth Rate: 36.59
+  ✅ Revenue Avg Growth Rate: 36.34
+  ❌ 5 Year Return: 0.09
+  🟡 10 Year Return: 104.57
+  ✅ Yield: 4.52
+  ✅ Free Cashflow Growth: 42.61
+
+
+AOS - A. O. Smith Corporation (Industrials)
+Egeria Score: 7.983
+  🟡 P/E Ratio: 23.44
+  ❌ Price/Sales: 3.39
+  ❌ Beta: 1.16
+  🟡 Quick Ratio: 1.01
+  ✅ Debt/Equity: 0.74
+  🟡 EBIDTA Margin: 0.21
+  ❌ 5 Year STD: 6.63
+  ❌ 10 Year STD: 6.11
+  ✅ EBIDTA Avg Growth Rate: 48.98
+  🟡 Revenue Avg Growth Rate: 10.31
+  🟡 5 Year Return: 69.31
+  ✅ 10 Year Return: 328.55
+  ✅ Yield: 1.77
+  🟡 Free Cashflow Growth: 18.30
+
+
+GD - General Dynamics Corporation (Industrials)
+Egeria Score: 7.776
+  🟡 P/E Ratio: 23.95
+  🟡 Price/Sales: 1.88
+  🟡 Beta: 0.62
+  🟡 Quick Ratio: 0.79
+  ✅ Debt/Equity: 1.57
+  🟡 EBIDTA Margin: 0.12
+  🟡 5 Year STD: 5.44
+  🟡 10 Year STD: 4.77
+  ❌ EBIDTA Avg Growth Rate: 0.92
+  ❌ Revenue Avg Growth Rate: 3.71
+  ✅ 5 Year Return: 80.45
+  ✅ 10 Year Return: 225.35
+  ✅ Yield: 2.36
+  ❌ Free Cashflow Growth: 9.76
+
+
+ITW - Illinois Tool Works Inc. (Industrials)
+Egeria Score: 7.655
+  🟡 P/E Ratio: 25.52
+  ❌ Price/Sales: 4.69
+  ❌ Beta: 1.12
+  🟡 Quick Ratio: 0.92
+  ✅ Debt/Equity: 4.15
+  🟡 EBIDTA Margin: 0.28
+  🟡 5 Year STD: 5.34
+  🟡 10 Year STD: 4.70
+  🟡 EBIDTA Avg Growth Rate: 10.78
+  ❌ Revenue Avg Growth Rate: 8.76
+  ✅ 5 Year Return: 78.17
+  ✅ 10 Year Return: 268.57
+  ✅ Yield: 2.27
+  🟡 Free Cashflow Growth: 10.96
+
+
+CINF - Cincinnati Financial Corporation (Financial Services)
+Egeria Score: 6.659
+  ✅ P/E Ratio: 10.36
+  🟡 Price/Sales: 1.91
+  🟡 Beta: 0.65
+  ✅ Debt/Equity: 1.71
+  ❌ 5 Year STD: 8.93
+  🟡 10 Year STD: 5.86
+  🟡 Revenue Avg Growth Rate: 16.16
+  🟡 5 Year Return: 58.48
+  ✅ 10 Year Return: 229.05
+  ✅ Yield: 2.52
+  🟡 Free Cashflow Growth: 12.37
+
+
+JNJ - Johnson & Johnson (Healthcare)
+Egeria Score: 6.388
+  ✅ P/E Ratio: 10.31
+  ❌ Price/Sales: 3.90
+  ✅ Beta: 0.51
+  🟡 Quick Ratio: 0.91
+  ✅ Debt/Equity: 1.44
+  🟡 EBIDTA Margin: 0.26
+  🟡 5 Year STD: 4.15
+  ✅ 10 Year STD: 3.62
+  🟡 EBIDTA Avg Growth Rate: 10.22
+  ❌ Revenue Avg Growth Rate: 1.13
+  ❌ 5 Year Return: 22.15
+  🟡 10 Year Return: 95.42
+  ✅ Yield: 2.67
+  ❌ Free Cashflow Growth: -3.90
+
+
+CHD - Church & Dwight Co., Inc. (Consumer Defensive)
+Egeria Score: 6.269
+  🟡 P/E Ratio: 34.49
+  ❌ Price/Sales: 4.44
+  ✅ Beta: 0.52
+  🟡 Quick Ratio: 0.61
+  ✅ Debt/Equity: 1.22
+  🟡 EBIDTA Margin: 0.22
+  🟡 5 Year STD: 5.30
+  🟡 10 Year STD: 4.36
+  ❌ EBIDTA Avg Growth Rate: 9.02
+  ❌ Revenue Avg Growth Rate: 6.25
+  🟡 5 Year Return: 53.14
+  ✅ 10 Year Return: 256.15
+  ✅ Yield: 1.17
+  ❌ Free Cashflow Growth: -2.28
+
+
+CVX - Chevron Corporation (Energy)
+Egeria Score: 6.182
+  🟡 P/E Ratio: 14.16
+  🟡 Price/Sales: 1.54
+  ❌ Beta: 1.11
+  🟡 Quick Ratio: 0.87
+  ✅ Debt/Equity: 0.62
+  🟡 EBIDTA Margin: 0.24
+  ❌ 5 Year STD: 7.36
+  ❌ 10 Year STD: 6.39
+  ✅ EBIDTA Avg Growth Rate: 76.73
+  ✅ Revenue Avg Growth Rate: 33.24
+  🟡 5 Year Return: 65.49
+  🟡 10 Year Return: 97.98
+  ✅ Yield: 4.42
+  ✅ Free Cashflow Growth: 402.48
+
+
+XOM - Exxon Mobil Corporation (Energy)
+Egeria Score: 6.057
+  🟡 P/E Ratio: 13.43
+  🟡 Price/Sales: 1.44
+  🟡 Beta: 0.90
+  🟡 Quick Ratio: 1.06
+  ✅ Debt/Equity: 0.80
+  🟡 EBIDTA Margin: 0.22
+  ❌ 5 Year STD: 8.27
+  ❌ 10 Year STD: 6.15
+  ✅ EBIDTA Avg Growth Rate: 85.15
+  ✅ Revenue Avg Growth Rate: 27.66
+  ✅ 5 Year Return: 86.40
+  🟡 10 Year Return: 84.84
+  ✅ Yield: 5.19
+  ❌ Free Cashflow Growth: -486.66
+
+
+CTAS - Cintas Corporation (Industrials)
+Egeria Score: 5.786
+  ❌ P/E Ratio: 45.64
+  ❌ Price/Sales: 7.29
+  ❌ Beta: 1.29
+  🟡 Quick Ratio: 1.04
+  ✅ Debt/Equity: 1.21
+  🟡 EBIDTA Margin: 0.26
+  ❌ 5 Year STD: 7.23
+  🟡 10 Year STD: 5.17
+  🟡 EBIDTA Avg Growth Rate: 12.80
+  ❌ Revenue Avg Growth Rate: 7.68
+  ✅ 5 Year Return: 228.25
+  ✅ 10 Year Return: 1,199.67
+  🟡 Yield: 0.99
+  ❌ Free Cashflow Growth: 6.31
+
+
+ABT - Abbott Laboratories (Healthcare)
+Egeria Score: 5.342
+  🟡 P/E Ratio: 32.70
+  ❌ Price/Sales: 4.67
+  🟡 Beta: 0.74
+  🟡 Quick Ratio: 1.16
+  ✅ Debt/Equity: 0.89
+  🟡 EBIDTA Margin: 0.26
+  🟡 5 Year STD: 5.39
+  🟡 10 Year STD: 4.62
+  ❌ EBIDTA Avg Growth Rate: 8.36
+  ❌ Revenue Avg Growth Rate: 5.90
+  🟡 5 Year Return: 53.17
+  ✅ 10 Year Return: 235.84
+  ✅ Yield: 1.59
+  ❌ Free Cashflow Growth: 2.05
+
+
+NDSN - Nordson Corporation (Industrials)
+Egeria Score: 4.509
+  🟡 P/E Ratio: 30.43
+  ❌ Price/Sales: 5.66
+  🟡 Beta: 0.95
+  🟡 Quick Ratio: 1.21
+  ✅ Debt/Equity: 1.02
+  ✅ EBIDTA Margin: 0.31
+  ❌ 5 Year STD: 6.57
+  ❌ 10 Year STD: 6.69
+  🟡 EBIDTA Avg Growth Rate: 14.44
+  ❌ Revenue Avg Growth Rate: 7.50
+  ✅ 5 Year Return: 84.67
+  ✅ 10 Year Return: 290.83
+  🟡 Yield: 0.92
+  🟡 Free Cashflow Growth: 11.56
+
+
+AFL - Aflac Incorporated (Financial Services)
+Egeria Score: 4.31
+  ✅ P/E Ratio: 10.48
+  ❌ Price/Sales: 2.59
+  🟡 Beta: 0.94
+  ✅ Debt/Equity: 4.76
+  ❌ 5 Year STD: 6.87
+  🟡 10 Year STD: 5.39
+  ❌ Revenue Avg Growth Rate: -5.32
+  ✅ 5 Year Return: 92.97
+  ✅ 10 Year Return: 239.32
+  ✅ Yield: 2.37
+  ❌ Free Cashflow Growth: -18.73
+
+
+LOW - Lowe's Companies, Inc. (Consumer Cyclical)
+Egeria Score: 3.966
+  🟡 P/E Ratio: 17.24
+  🟡 Price/Sales: 1.54
+  ❌ Beta: 1.08
+  ✅ Debt/Equity: -3.78
+  🟡 EBIDTA Margin: 0.16
+  ❌ 5 Year STD: 7.22
+  ❌ 10 Year STD: 6.86
+  ❌ EBIDTA Avg Growth Rate: 7.58
+  ❌ Revenue Avg Growth Rate: -0.91
+  ✅ 5 Year Return: 121.99
+  ✅ 10 Year Return: 495.58
+  ✅ Yield: 1.69
+  ❌ Free Cashflow Growth: -12.53
+
+
+IBM - International Business Machines Corporation (Technology)
+Egeria Score: 3.115
+  🟡 P/E Ratio: 22.48
+  ❌ Price/Sales: 2.73
+  🟡 Beta: 0.68
+  🟡 Quick Ratio: 0.80
+  ✅ Debt/Equity: 5.00
+  🟡 EBIDTA Margin: 0.24
+  ❌ 5 Year STD: 6.54
+  🟡 10 Year STD: 5.34
+  ✅ EBIDTA Avg Growth Rate: 27.90
+  ❌ Revenue Avg Growth Rate: 3.89
+  🟡 5 Year Return: 72.47
+  ❌ 10 Year Return: 51.54
+  ✅ Yield: 4.85
+  ❌ Free Cashflow Growth: -1.79
+
+
+CL - Colgate-Palmolive Company (Consumer Defensive)
+Egeria Score: 1.276
+  🟡 P/E Ratio: 31.71
+  ❌ Price/Sales: 3.75
+  ✅ Beta: 0.39
+  🟡 Quick Ratio: 0.54
+  ✅ Debt/Equity: 25.35
+  🟡 EBIDTA Margin: 0.22
+  🟡 5 Year STD: 4.12
+  ✅ 10 Year STD: 3.73
+  ❌ EBIDTA Avg Growth Rate: -0.51
+  ❌ Revenue Avg Growth Rate: 5.73
+  🟡 5 Year Return: 44.22
+  ❌ 10 Year Return: 69.41
+  ✅ Yield: 2.36
+  ❌ Free Cashflow Growth: 4.74
+
+
+
+CAH - Cardinal Health, Inc. (Healthcare)
+Egeria Score: -0.084
+  ❌ P/E Ratio: 39.59
+  ✅ Price/Sales: 0.12
+  🟡 Beta: 0.67
+  ❌ Quick Ratio: 0.46
+  ✅ Debt/Equity: -16.22
+  ❌ EBIDTA Margin: 0.01
+  ❌ 5 Year STD: 6.75
+  ❌ 10 Year STD: 6.07
+  ❌ EBIDTA Avg Growth Rate: -2.58
+  🟡 Revenue Avg Growth Rate: 10.30
+  ✅ 5 Year Return: 162.72
+  🟡 10 Year Return: 99.20
+  ✅ Yield: 3.28
+  🟡 Free Cashflow Growth: 16.34
+
+
+SHW - The Sherwin-Williams Company (Basic Materials)
+Egeria Score: -0.294
+  🟡 P/E Ratio: 33.03
+  ❌ Price/Sales: 3.42
+  ❌ Beta: 1.17
+  ❌ Quick Ratio: 0.41
+  ✅ Debt/Equity: 5.18
+  🟡 EBIDTA Margin: 0.18
+  ❌ 5 Year STD: 6.62
+  🟡 10 Year STD: 5.80
+  ❌ EBIDTA Avg Growth Rate: 7.82
+  ❌ Revenue Avg Growth Rate: 7.92
+  ✅ 5 Year Return: 110.78
+  ✅ 10 Year Return: 405.49
+  🟡 Yield: 0.85
+  🟡 Free Cashflow Growth: 11.64
+
+
+ADM - Archer-Daniels-Midland Company (Consumer Defensive)
+Egeria Score: -1.0
+  ✅ P/E Ratio: 9.69
+  ✅ Price/Sales: 0.36
+  🟡 Beta: 0.71
+  ❌ Quick Ratio: 0.42
+  ✅ Debt/Equity: 1.25
+  ❌ EBIDTA Margin: 0.06
+  ❌ 5 Year STD: 6.86
+  🟡 10 Year STD: 5.74
+  ✅ EBIDTA Avg Growth Rate: 22.91
+  🟡 Revenue Avg Growth Rate: 14.70
+  🟡 5 Year Return: 67.44
+  🟡 10 Year Return: 83.67
+  ✅ Yield: 2.62
+  ❌ Free Cashflow Growth: -97.31
+
+
+SJM - The J. M. Smucker Company (Consumer Defensive)
+Egeria Score: -1.342
+  ✅ P/E Ratio: -122.19
+  🟡 Price/Sales: 1.52
+  ✅ Beta: 0.22
+  🟡 Quick Ratio: 0.88
+  ✅ Debt/Equity: 1.06
+  ❌ EBIDTA Margin: 0.07
+  🟡 5 Year STD: 5.06
+  🟡 10 Year STD: 4.79
+  ❌ EBIDTA Avg Growth Rate: -2.47
+  ❌ Revenue Avg Growth Rate: 3.06
+  ❌ 5 Year Return: 12.23
+  ❌ 10 Year Return: 60.45
+  ✅ Yield: 3.00
+  ❌ Free Cashflow Growth: -5.15
+
+
+KMB - Kimberly-Clark Corporation (Consumer Defensive)
+Egeria Score: -2.935
+  🟡 P/E Ratio: 24.71
+  🟡 Price/Sales: 2.13
+  ✅ Beta: 0.41
+  ❌ Quick Ratio: 0.47
+  ✅ Debt/Equity: 17.79
+  🟡 EBIDTA Margin: 0.15
+  🟡 5 Year STD: 4.43
+  🟡 10 Year STD: 4.23
+  ❌ EBIDTA Avg Growth Rate: -1.36
+  ❌ Revenue Avg Growth Rate: 2.21
+  ❌ 5 Year Return: 21.50
+  ❌ 10 Year Return: 71.87
+  ✅ Yield: 3.34
+  ❌ Free Cashflow Growth: 8.62
+
+
+APD - Air Products and Chemicals, Inc. (Basic Materials)
+Egeria Score: -3.298
+  🟡 P/E Ratio: 22.34
+  ❌ Price/Sales: 4.20
+  🟡 Beta: 0.82
+  🟡 Quick Ratio: 1.06
+  ✅ Debt/Equity: 1.14
+  ✅ EBIDTA Margin: 0.36
+  ❌ 5 Year STD: 6.58
+  🟡 10 Year STD: 5.36
+  ❌ EBIDTA Avg Growth Rate: 7.84
+  🟡 Revenue Avg Growth Rate: 12.93
+  🟡 5 Year Return: 33.79
+  🟡 10 Year Return: 171.83
+  ✅ Yield: 2.20
+  ❌ Free Cashflow Growth: -205.62
+
+
+BDX - Becton, Dickinson and Company (Healthcare)
+Egeria Score: -4.113
+  ❌ P/E Ratio: 54.26
+  ❌ Price/Sales: 3.50
+  ✅ Beta: 0.45
+  🟡 Quick Ratio: 0.60
+  ✅ Debt/Equity: 1.05
+  🟡 EBIDTA Margin: 0.22
+  🟡 5 Year STD: 5.08
+  🟡 10 Year STD: 4.47
+  🟡 EBIDTA Avg Growth Rate: 13.58
+  ❌ Revenue Avg Growth Rate: 6.77
+  ❌ 5 Year Return: 12.64
+  🟡 10 Year Return: 144.21
+  ✅ Yield: 1.34
+  ❌ Free Cashflow Growth: 0.04
+
+
+PNR - Pentair plc (Industrials)
+Egeria Score: -4.595
+  🟡 P/E Ratio: 21.01
+  ❌ Price/Sales: 3.19
+  ❌ Beta: 1.21
+  🟡 Quick Ratio: 0.85
+  ✅ Debt/Equity: 1.04
+  🟡 EBIDTA Margin: 0.21
+  ❌ 5 Year STD: 7.16
+  ❌ 10 Year STD: 6.17
+  🟡 EBIDTA Avg Growth Rate: 17.89
+  🟡 Revenue Avg Growth Rate: 11.27
+  ✅ 5 Year Return: 124.99
+  🟡 10 Year Return: 88.09
+  ✅ Yield: 1.54
+  🟡 Free Cashflow Growth: 17.92
+
+
+GPC - Genuine Parts Company (Consumer Cyclical)
+Egeria Score: -4.608
+  🟡 P/E Ratio: 18.11
+  ✅ Price/Sales: 0.99
+  🟡 Beta: 0.93
+  ❌ Quick Ratio: 0.42
+  ✅ Debt/Equity: 3.08
+  ❌ EBIDTA Margin: 0.09
+  ❌ 5 Year STD: 7.59
+  🟡 10 Year STD: 5.39
+  🟡 EBIDTA Avg Growth Rate: 18.68
+  🟡 Revenue Avg Growth Rate: 11.90
+  ✅ 5 Year Return: 78.37
+  🟡 10 Year Return: 149.29
+  ✅ Yield: 2.76
+  ❌ Free Cashflow Growth: -17.11
+
+
+DOV - Dover Corporation (Industrials)
+Egeria Score: -5.214
+  🟡 P/E Ratio: 22.54
+  ❌ Price/Sales: 2.82
+  ❌ Beta: 1.25
+  🟡 Quick Ratio: 0.73
+  ✅ Debt/Equity: 1.22
+  🟡 EBIDTA Margin: 0.20
+  ❌ 5 Year STD: 6.65
+  🟡 10 Year STD: 5.72
+  🟡 EBIDTA Avg Growth Rate: 12.54
+  ❌ Revenue Avg Growth Rate: 8.36
+  ✅ 5 Year Return: 88.67
+  🟡 10 Year Return: 195.18
+  ✅ Yield: 1.56
+  🟡 Free Cashflow Growth: 19.36
+
+
+HRL - Hormel Foods Corporation (Consumer Defensive)
+Egeria Score: -6.036
+  🟡 P/E Ratio: 24.23
+  🟡 Price/Sales: 1.59
+  ✅ Beta: 0.27
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 0.74
+  🟡 EBIDTA Margin: 0.11
+  🟡 5 Year STD: 5.09
+  🟡 10 Year STD: 4.79
+  ❌ EBIDTA Avg Growth Rate: 1.31
+  ❌ Revenue Avg Growth Rate: 8.37
+  ❌ 5 Year Return: 0.77
+  🟡 10 Year Return: 80.83
+  ✅ Yield: 2.25
+  ❌ Free Cashflow Growth: 1.09
+
+
+SYY - Sysco Corporation (Consumer Defensive)
+Egeria Score: -10.478
+  🟡 P/E Ratio: 18.79
+  ✅ Price/Sales: 0.50
+  ❌ Beta: 1.16
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 10.35
+  ❌ EBIDTA Margin: 0.05
+  ❌ 5 Year STD: 8.32
+  ❌ 10 Year STD: 6.85
+  ✅ EBIDTA Avg Growth Rate: 32.52
+  🟡 Revenue Avg Growth Rate: 13.99
+  🟡 5 Year Return: 25.02
+  🟡 10 Year Return: 175.95
+  ✅ Yield: 2.47
+  ✅ Free Cashflow Growth: 39.81
+
+
+ESS - Essex Property Trust, Inc. (Real Estate)
+Egeria Score: -11.461
+  ❌ P/E Ratio: 37.94
+  ❌ Price/Sales: 9.22
+  🟡 Beta: 0.85
+  ✅ Quick Ratio: 1.85
+  ✅ Debt/Equity: 1.24
+  ✅ EBIDTA Margin: 0.71
+  ❌ 5 Year STD: 7.63
+  🟡 10 Year STD: 5.55
+  ❌ EBIDTA Avg Growth Rate: -4.16
+  ❌ Revenue Avg Growth Rate: 3.92
+  ❌ 5 Year Return: 2.61
+  🟡 10 Year Return: 93.83
+  ✅ Yield: 3.25
+  ❌ Free Cashflow Growth: 5.65
+
+
+EMR - Emerson Electric Co. (Industrials)
+Egeria Score: -11.753
+  ✅ P/E Ratio: 5.65
+  ❌ Price/Sales: 3.91
+  ❌ Beta: 1.31
+  ✅ Quick Ratio: 2.10
+  ✅ Debt/Equity: 0.78
+  🟡 EBIDTA Margin: 0.25
+  ❌ 5 Year STD: 7.12
+  🟡 10 Year STD: 5.89
+  ❌ EBIDTA Avg Growth Rate: 7.53
+  ❌ Revenue Avg Growth Rate: -2.12
+  🟡 5 Year Return: 68.47
+  🟡 10 Year Return: 108.41
+  ✅ Yield: 2.53
+  ❌ Free Cashflow Growth: -27.41
+
+
+TGT - Target Corporation (Consumer Defensive)
+Egeria Score: -12.119
+  🟡 P/E Ratio: 18.64
+  ✅ Price/Sales: 0.72
+  ❌ Beta: 1.20
+  ❌ Quick Ratio: 0.27
+  ✅ Debt/Equity: 3.12
+  ❌ EBIDTA Margin: 0.08
+  ❌ 5 Year STD: 9.18
+  ❌ 10 Year STD: 7.51
+  ❌ EBIDTA Avg Growth Rate: 6.12
+  ❌ Revenue Avg Growth Rate: 4.89
+  ✅ 5 Year Return: 128.49
+  ✅ 10 Year Return: 265.53
+  ✅ Yield: 2.25
+  ❌ Free Cashflow Growth: -172.62
+
+
+MDT - Medtronic plc (Healthcare)
+Egeria Score: -12.524
+  🟡 P/E Ratio: 25.54
+  ❌ Price/Sales: 3.32
+  🟡 Beta: 0.84
+  ✅ Quick Ratio: 1.54
+  ✅ Debt/Equity: 0.76
+  🟡 EBIDTA Margin: 0.28
+  🟡 5 Year STD: 5.78
+  🟡 10 Year STD: 5.00
+  ❌ EBIDTA Avg Growth Rate: 3.36
+  ❌ Revenue Avg Growth Rate: 2.64
+  ❌ 5 Year Return: 8.02
+  ❌ 10 Year Return: 73.85
+  ✅ Yield: 2.50
+  ❌ Free Cashflow Growth: -6.63
+
+
+MKC - McCormick & Company, Incorporated (Consumer Defensive)
+Egeria Score: -13.1
+  🟡 P/E Ratio: 28.46
+  ❌ Price/Sales: 3.01
+  🟡 Beta: 0.75
+  ❌ Quick Ratio: 0.24
+  ✅ Debt/Equity: 1.54
+  🟡 EBIDTA Margin: 0.18
+  🟡 5 Year STD: 5.82
+  🟡 10 Year STD: 5.12
+  ❌ EBIDTA Avg Growth Rate: 2.20
+  ❌ Revenue Avg Growth Rate: 6.07
+  ❌ 5 Year Return: 7.56
+  🟡 10 Year Return: 149.83
+  ✅ Yield: 1.63
+  ✅ Free Cashflow Growth: 29.38
+
+
+TROW - T. Rowe Price Group, Inc. (Financial Services)
+Egeria Score: -15.042
+  🟡 P/E Ratio: 13.97
+  ❌ Price/Sales: 3.87
+  ❌ Beta: 1.42
+  ✅ Quick Ratio: 6.04
+  ✅ Debt/Equity: 0.21
+  ✅ EBIDTA Margin: 0.39
+  ❌ 5 Year STD: 7.00
+  🟡 10 Year STD: 5.66
+  ❌ EBIDTA Avg Growth Rate: 1.97
+  ❌ Revenue Avg Growth Rate: 2.58
+  ❌ 5 Year Return: 24.79
+  🟡 10 Year Return: 93.79
+  ✅ Yield: 3.17
+  ❌ Free Cashflow Growth: -0.83
+
+
+CHRW - C.H. Robinson Worldwide, Inc. (Industrials)
+Egeria Score: -15.43
+  🟡 P/E Ratio: 25.78
+  ✅ Price/Sales: 0.48
+  🟡 Beta: 0.77
+  🟡 Quick Ratio: 1.32
+  ✅ Debt/Equity: 2.68
+  ❌ EBIDTA Margin: 0.03
+  ❌ 5 Year STD: 6.73
+  🟡 10 Year STD: 5.32
+  ❌ EBIDTA Avg Growth Rate: 4.13
+  ❌ Revenue Avg Growth Rate: 6.90
+  ❌ 5 Year Return: -11.51
+  ❌ 10 Year Return: 56.13
+  ✅ Yield: 2.39
+  ✅ Free Cashflow Growth: 2,026.52
+
+
+FRT - Federal Realty Investment Trust (Real Estate)
+Egeria Score: -16.062
+  🟡 P/E Ratio: 34.69
+  ❌ Price/Sales: 7.26
+  ❌ Beta: 1.25
+  ✅ Quick Ratio: 1.55
+  ✅ Debt/Equity: 1.76
+  ✅ EBIDTA Margin: 0.65
+  ❌ 5 Year STD: 8.30
+  🟡 10 Year STD: 5.78
+  🟡 EBIDTA Avg Growth Rate: 13.55
+  🟡 Revenue Avg Growth Rate: 10.73
+  ❌ 5 Year Return: -5.67
+  ❌ 10 Year Return: 23.90
+  ✅ Yield: 4.11
+  ✅ Free Cashflow Growth: 81.89
+
+
+ALB - Albemarle Corporation (Basic Materials)
+Egeria Score: -17.307
+  ✅ P/E Ratio: 8.37
+  🟡 Price/Sales: 1.37
+  ❌ Beta: 1.65
+  🟡 Quick Ratio: 0.77
+  ✅ Debt/Equity: 0.91
+  ❌ EBIDTA Margin: 0.08
+  ❌ 5 Year STD: 11.97
+  ❌ 10 Year STD: 9.65
+  ✅ EBIDTA Avg Growth Rate: 539.74
+  ✅ Revenue Avg Growth Rate: 52.57
+  🟡 5 Year Return: 50.72
+  🟡 10 Year Return: 92.66
+  ✅ Yield: 1.21
+  ✅ Free Cashflow Growth: 216.11
+
+
+CLX - The Clorox Company (Consumer Defensive)
+Egeria Score: -18.476
+  ❌ P/E Ratio: 226.09
+  ❌ Price/Sales: 2.47
+  ✅ Beta: 0.42
+  🟡 Quick Ratio: 0.55
+  ✅ Debt/Equity: 25.26
+  ❌ EBIDTA Margin: 0.07
+  ❌ 5 Year STD: 6.02
+  🟡 10 Year STD: 5.27
+  ❌ EBIDTA Avg Growth Rate: -7.74
+  ❌ Revenue Avg Growth Rate: 3.34
+  ❌ 5 Year Return: 7.90
+  🟡 10 Year Return: 112.64
+  ✅ Yield: 2.77
+  ❌ Free Cashflow Growth: 1.20
+
+
+BEN - Franklin Resources, Inc. (Financial Services)
+Egeria Score: -18.688
+  ✅ P/E Ratio: 12.89
+  🟡 Price/Sales: 1.59
+  ❌ Beta: 1.42
+  ✅ Quick Ratio: 4.13
+  ✅ Debt/Equity: 1.39
+  🟡 EBIDTA Margin: 0.26
+  ❌ 5 Year STD: 9.23
+  ❌ 10 Year STD: 6.74
+  ✅ EBIDTA Avg Growth Rate: 28.36
+  🟡 Revenue Avg Growth Rate: 14.81
+  ❌ 5 Year Return: -10.15
+  ❌ 10 Year Return: -28.58
+  ✅ Yield: 4.27
+  🟡 Free Cashflow Growth: 10.71
+
+
+ECL - Ecolab Inc. (Basic Materials)
+Egeria Score: -19.411
+  ❌ P/E Ratio: 45.88
+  ❌ Price/Sales: 4.11
+  ❌ Beta: 1.13
+  🟡 Quick Ratio: 0.91
+  ✅ Debt/Equity: 1.71
+  🟡 EBIDTA Margin: 0.20
+  ❌ 5 Year STD: 6.54
+  🟡 10 Year STD: 4.68
+  ❌ EBIDTA Avg Growth Rate: 8.66
+  ❌ Revenue Avg Growth Rate: 9.13
+  🟡 5 Year Return: 25.51
+  🟡 10 Year Return: 129.36
+  ✅ Yield: 1.05
+  🟡 Free Cashflow Growth: 10.49
+
+
+PPG - PPG Industries, Inc. (Basic Materials)
+Egeria Score: -23.536
+  🟡 P/E Ratio: 22.10
+  🟡 Price/Sales: 1.71
+  ❌ Beta: 1.27
+  🟡 Quick Ratio: 0.96
+  ✅ Debt/Equity: 1.74
+  🟡 EBIDTA Margin: 0.15
+  ❌ 5 Year STD: 7.36
+  🟡 10 Year STD: 5.77
+  ❌ EBIDTA Avg Growth Rate: 6.98
+  ❌ Revenue Avg Growth Rate: 9.96
+  ❌ 5 Year Return: 21.72
+  ❌ 10 Year Return: 57.32
+  ✅ Yield: 1.71
+  ✅ Free Cashflow Growth: 73.67
+
+
+AMCR - Amcor plc (Consumer Cyclical)
+Egeria Score: -27.878
+  🟡 P/E Ratio: 20.22
+  ✅ Price/Sales: 0.93
+  🟡 Beta: 0.83
+  🟡 Quick Ratio: 0.57
+  ✅ Debt/Equity: 3.21
+  🟡 EBIDTA Margin: 0.12
+  ❌ 5 Year STD: 6.06
+  🟡 10 Year STD: 5.81
+  ❌ EBIDTA Avg Growth Rate: 4.23
+  ❌ Revenue Avg Growth Rate: 5.76
+  ❌ 5 Year Return: 1.47
+  ❌ 10 Year Return: 42.82
+  ❌ Free Cashflow Growth: -8.30
+
+
+MMM - 3M Company (Industrials)
+Egeria Score: -36.428
+  ✅ P/E Ratio: -7.34
+  🟡 Price/Sales: 1.57
+  🟡 Beta: 0.95
+  🟡 Quick Ratio: 0.71
+  ✅ Debt/Equity: 9.51
+  ❌ EBIDTA Margin: -0.21
+  ❌ 5 Year STD: 6.41
+  🟡 10 Year STD: 5.19
+  ❌ EBIDTA Avg Growth Rate: -78.52
+  ❌ Revenue Avg Growth Rate: 0.72
+  ❌ 5 Year Return: -35.05
+  ❌ 10 Year Return: 20.15
+  ✅ Yield: 4.23
+  ❌ Free Cashflow Growth: -4.67
+
+
+WBA - Walgreens Boots Alliance, Inc. (Healthcare)
+Egeria Score: -41.551
+  ✅ P/E Ratio: -2.60
+  ✅ Price/Sales: 0.11
+  🟡 Beta: 0.77
+  ❌ Quick Ratio: 0.25
+  ✅ Debt/Equity: 3.40
+  ❌ EBIDTA Margin: -0.08
+  ❌ 5 Year STD: 7.00
+  ❌ 10 Year STD: 6.44
+  ❌ EBIDTA Avg Growth Rate: -15.49
+  ❌ Revenue Avg Growth Rate: 4.53
+  ❌ 5 Year Return: -56.84
+  ❌ 10 Year Return: -62.35
+  ✅ Yield: 4.88
+  ❌ Free Cashflow Growth: -46.68
+
+
+SWK - Stanley Black & Decker, Inc. (Industrials)
+Egeria Score: -46.706
+  ✅ P/E Ratio: -43.14
+  ✅ Price/Sales: 0.85
+  ❌ Beta: 1.30
+  ❌ Quick Ratio: 0.30
+  ✅ Debt/Equity: 1.61
+  ❌ EBIDTA Margin: 0.05
+  ❌ 5 Year STD: 7.76
+  ❌ 10 Year STD: 6.52
+  ❌ EBIDTA Avg Growth Rate: -15.72
+  ❌ Revenue Avg Growth Rate: 7.02
+  ❌ 5 Year Return: -31.28
+  ❌ 10 Year Return: 35.62
+  ✅ Yield: 2.47
+  ❌ Free Cashflow Growth: -572.04
+
+
