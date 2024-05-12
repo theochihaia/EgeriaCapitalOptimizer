@@ -166,7 +166,7 @@ def calculate_annualized_rate(percentage_gain: float):
 
 
 # Calculate portfolio Nyr return
-def calculate_weighted_fn(portfolio: [AnalysisResultGroup], years: int, fn: callable):
+def calculate_weighted_return(portfolio: [AnalysisResultGroup], years: int, fn: callable):
     if years == 0:
         raise ValueError("Years cannot be zero.")
 
@@ -175,6 +175,15 @@ def calculate_weighted_fn(portfolio: [AnalysisResultGroup], years: int, fn: call
     for metric_group in portfolio:
         value += fn(metric_group.ticker, period) * (metric_group.weight/100.0)
 
+    return value
+
+def calculate_weighted_metric(portfolio: [AnalysisResultGroup], metric: Metric):
+    value = 0.0
+    for ticker in portfolio:
+        # Check if the metric exists in the results
+        metric_result = next((result for result in ticker.results if result and result.metric == metric), None)
+        if metric_result:
+            value += metric_result.metric_value * (ticker.weight/100.0)
     return value
 
 def valid_ticker(ticker: yf.Ticker) -> (bool, str):

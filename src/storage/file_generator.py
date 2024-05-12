@@ -1,11 +1,12 @@
 import os
 
+from src.common.enums.metric import Metric
 from src.common.enums.portfolio import Portfolio
 from src.common.utils.ticker_util import get_return, get_std
 from src.common.models.AnalysisResult import AnalysisResult
 from src.common.models.AnalysisResultGroup import AnalysisResultGroup
 from src.common.configuration.sector_statistics import SECTOR_METRIC_STATISTICS
-from src.logic.algorithms.analyzers import calculate_weighted_portfolio_returns, calculate_weighted_fn, calculate_annualized_rate
+from src.logic.algorithms.analyzers import calculate_weighted_metric, calculate_weighted_portfolio_returns, calculate_weighted_return, calculate_annualized_rate
 
 def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_proposal: [], is_generate_csv_active: bool, generate_composite: Portfolio, metrics: [str]):
     result_file_path = (
@@ -44,15 +45,26 @@ def generate_files(sorted_analysis: [AnalysisResultGroup], dir: str, portfolio_p
             if weight > 0:
                 file.write(f"{symbol:<10} | {name:<50} | {round(weight,2):>7.2f}%\n")
 
-        five_yr_return = calculate_weighted_fn(portfolio_proposal,5, get_return)
+        five_yr_return = calculate_weighted_return(portfolio_proposal,5, get_return)
         annualized_return = calculate_annualized_rate(five_yr_return)
-        five_yr_std = calculate_weighted_fn(portfolio_proposal,5, get_std)
+        five_yr_std = calculate_weighted_return(portfolio_proposal,5, get_std)
+        p_e = calculate_weighted_metric(portfolio_proposal, Metric.PRICE_TO_EARNINGS);
+        p_s = calculate_weighted_metric(portfolio_proposal, Metric.PRICE_TO_SALES);
+        beta = calculate_weighted_metric(portfolio_proposal, Metric.BETA);
+        ebidta_avg_growth = calculate_weighted_metric(portfolio_proposal, Metric.EBIDTA_AVG_GROWTH_RATE);
+        free_cash_flow_growth = calculate_weighted_metric(portfolio_proposal, Metric.FREE_CASHFLOW_GROWTH);
+
         
         
         file.write(f"\n\n")
         file.write(f"Weighted Return (5yrs) {round(five_yr_return, 2):>7.2f}%\n")
         file.write(f"Annualized             {round(annualized_return, 2):>7.2f}%\n")
         file.write(f"Weighted Std    (5yrs) {round(five_yr_std, 2):>7.2f}\n")
+        file.write(f"Weighted P/E           {round(p_e, 2):>7.2f}\n")
+        file.write(f"Weighted P/S           {round(p_s, 2):>7.2f}\n")
+        file.write(f"Weighted Beta          {round(beta, 2):>7.2f}\n")
+        file.write(f"Weighted EBITDA Growth {round(ebidta_avg_growth, 2):>7.2f}\n")
+        file.write(f"Weighted FCF Frowth    {round(free_cash_flow_growth, 2):>7.2f}\n")
         
         file.write(get_header("Details"))
         for analysis_result in sorted_analysis:

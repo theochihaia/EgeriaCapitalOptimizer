@@ -8,6 +8,7 @@ class AnalysisResult:
     metric: Metric
     message: str
     metric_result: MetricResult
+    metric_value: float = 0.0
     normalized_value: float = 0.0
     is_inverted: bool = False
 

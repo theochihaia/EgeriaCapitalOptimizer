@@ -31,43 +31,53 @@ FREE_CASHFLOW_GROWTH           |         15 |          5 |   Yes
 
 Symbol     | Name                                               |  Weight
 ------------------------------------------------------------------------
-NVO        | Novo Nordisk A/S                                   |    4.98%
-VRTX       | Vertex Pharmaceuticals Incorporated                |    4.58%
-DE         | Deere & Company                                    |    4.29%
-MSFT       | Microsoft Corporation                              |    4.06%
-TSM        | Taiwan Semiconductor Manufacturing Company Limited |    3.87%
-V          | Visa Inc.                                          |    3.72%
-WM         | Waste Management, Inc.                             |    3.59%
-GOOGL      | Alphabet Inc.                                      |    3.48%
-GGG        | Graco Inc.                                         |    3.38%
-UNH        | UnitedHealth Group Incorporated                    |    3.29%
-FCN        | FTI Consulting, Inc.                               |    3.22%
-TMUS       | T-Mobile US, Inc.                                  |    3.15%
-AVGO       | Broadcom Inc.                                      |    3.08%
-ABBV       | AbbVie Inc.                                        |    3.03%
-HWKN       | Hawkins, Inc.                                      |    2.98%
-MNST       | Monster Beverage Corporation                       |    2.93%
-MRK        | Merck & Co., Inc.                                  |    2.88%
-MA         | Mastercard Incorporated                            |    2.84%
-FDS        | FactSet Research Systems Inc.                      |    2.81%
-NVDA       | NVIDIA Corporation                                 |    2.77%
-COST       | Costco Wholesale Corporation                       |    2.74%
-ADI        | Analog Devices, Inc.                               |    2.70%
-VMC        | Vulcan Materials Company                           |    2.68%
-GMAB       | Genmab A/S                                         |    2.65%
-UFPI       | UFP Industries, Inc.                               |    2.62%
-ATO        | Atmos Energy Corporation                           |    2.60%
-QLYS       | Qualys, Inc.                                       |    2.57%
-NOC        | Northrop Grumman Corporation                       |    2.55%
-AAPL       | Apple Inc.                                         |    2.53%
-EXPO       | Exponent, Inc.                                     |    2.51%
-MAR        | Marriott International, Inc.                       |    2.49%
-HDB        | HDFC Bank Limited                                  |    2.47%
+NVO        | Novo Nordisk A/S                                   |    4.44%
+REGN       | Regeneron Pharmaceuticals, Inc.                    |    4.09%
+PCAR       | PACCAR Inc                                         |    3.82%
+DE         | Deere & Company                                    |    3.62%
+ADI        | Analog Devices, Inc.                               |    3.45%
+NVDA       | NVIDIA Corporation                                 |    3.32%
+V          | Visa Inc.                                          |    3.20%
+GMAB       | Genmab A/S                                         |    3.10%
+VRTX       | Vertex Pharmaceuticals Incorporated                |    3.01%
+TSM        | Taiwan Semiconductor Manufacturing Company Limited |    2.94%
+HWKN       | Hawkins, Inc.                                      |    2.87%
+UFPI       | UFP Industries, Inc.                               |    2.81%
+GOOGL      | Alphabet Inc.                                      |    2.75%
+CAT        | Caterpillar Inc.                                   |    2.70%
+GGG        | Graco Inc.                                         |    2.65%
+RSG        | Republic Services, Inc.                            |    2.61%
+MRK        | Merck & Co., Inc.                                  |    2.57%
+MSFT       | Microsoft Corporation                              |    2.54%
+AVGO       | Broadcom Inc.                                      |    2.50%
+MA         | Mastercard Incorporated                            |    2.47%
+MNST       | Monster Beverage Corporation                       |    2.44%
+ABBV       | AbbVie Inc.                                        |    2.41%
+MAR        | Marriott International, Inc.                       |    2.39%
+FDS        | FactSet Research Systems Inc.                      |    2.36%
+ATO        | Atmos Energy Corporation                           |    2.34%
+COST       | Costco Wholesale Corporation                       |    2.32%
+WM         | Waste Management, Inc.                             |    2.29%
+QLYS       | Qualys, Inc.                                       |    2.27%
+UNH        | UnitedHealth Group Incorporated                    |    2.26%
+FAST       | Fastenal Company                                   |    2.24%
+TMUS       | T-Mobile US, Inc.                                  |    2.22%
+FCN        | FTI Consulting, Inc.                               |    2.20%
+VMC        | Vulcan Materials Company                           |    2.19%
+EXPO       | Exponent, Inc.                                     |    2.17%
+AAPL       | Apple Inc.                                         |    2.16%
+NOC        | Northrop Grumman Corporation                       |    2.14%
+HDB        | HDFC Bank Limited                                  |    2.13%
 
 
-Weighted Return (5yrs)  196.30%
-Annualized               24.26%
-Weighted Std    (5yrs)    6.79
+Weighted Return (5yrs)  243.49%
+Annualized               27.99%
+Weighted Std    (5yrs)    7.15
+Weighted P/E             30.98
+Weighted P/S              6.68
+Weighted Beta             0.82
+Weighted EBITDA Growth   25.53
+Weighted FCF Frowth      19.40
 
 
 
@@ -75,567 +85,656 @@ Weighted Std    (5yrs)    6.79
                               Details                       
 --------------------------------------------------------------------------
 NVO - Novo Nordisk A/S (Healthcare)
-Egeria Score: 49.939
-  ✅ P/E Ratio: 6.70
-  ❌ Price/Sales: 2.41
-  ✅ Beta: 0.42
+Egeria Score: 43.865
+  ✅ P/E Ratio: 6.43
+  ❌ Price/Sales: 2.35
+  ✅ Beta: 0.39
   🟡 Quick Ratio: 0.62
   ✅ Debt/Equity: 1.95
-  ✅ EBIDTA Margin: 0.50
-  🟡 5 Year STD: 5.62
-  🟡 10 Year STD: 5.73
+  ✅ EBIDTA Margin: 0.51
+  ❌ 5 Year STD: 6.09
+  🟡 10 Year STD: 5.75
   ✅ EBIDTA Avg Growth Rate: 23.97
   ✅ Revenue Avg Growth Rate: 22.62
-  ✅ 5 Year Return: 452.82
-  ✅ 10 Year Return: 568.81
-  ✅ Yield: 1.63
+  ✅ 5 Year Return: 482.20
+  ✅ 10 Year Return: 602.24
+  ✅ Yield: 1.60
   ✅ Free Cashflow Growth: 34.42
 
 
-VRTX - Vertex Pharmaceuticals Incorporated (Healthcare)
-Egeria Score: 38.776
-  🟡 P/E Ratio: 28.51
-  ❌ Price/Sales: 10.45
-  ✅ Beta: 0.36
-  ✅ Quick Ratio: 3.60
-  ✅ Debt/Equity: 0.29
-  ✅ EBIDTA Margin: 0.47
-  ❌ 5 Year STD: 6.23
-  ❌ 10 Year STD: 7.41
-  🟡 EBIDTA Avg Growth Rate: 15.59
-  🟡 Revenue Avg Growth Rate: 16.82
-  ✅ 5 Year Return: 128.04
-  ✅ 10 Year Return: 497.61
-  ❌ Free Cashflow Growth: 8.99
+REGN - Regeneron Pharmaceuticals, Inc. (Healthcare)
+Egeria Score: 38.603
+  🟡 P/E Ratio: 29.05
+  ❌ Price/Sales: 8.56
+  ✅ Beta: 0.12
+  ✅ Quick Ratio: 4.82
+  ✅ Debt/Equity: 0.27
+  ✅ EBIDTA Margin: 0.35
+  ❌ 5 Year STD: 6.65
+  ❌ 10 Year STD: 7.03
+  ✅ EBIDTA Avg Growth Rate: 26.53
+  ✅ Revenue Avg Growth Rate: 24.21
+  ✅ 5 Year Return: 219.12
+  ✅ 10 Year Return: 234.19
+  ✅ Free Cashflow Growth: 61.96
+
+
+PCAR - PACCAR Inc (Industrials)
+Egeria Score: 34.187
+  ✅ P/E Ratio: 11.35
+  🟡 Price/Sales: 1.62
+  🟡 Beta: 0.92
+  ✅ Quick Ratio: 2.25
+  ✅ Debt/Equity: 1.57
+  🟡 EBIDTA Margin: 0.19
+  ❌ 5 Year STD: 6.39
+  🟡 10 Year STD: 5.90
+  ✅ EBIDTA Avg Growth Rate: 36.86
+  ✅ Revenue Avg Growth Rate: 23.33
+  ✅ 5 Year Return: 191.23
+  ✅ 10 Year Return: 273.09
+  ✅ Yield: 1.47
+  ✅ Free Cashflow Growth: 71.80
 
 
 DE - Deere & Company (Industrials)
-Egeria Score: 34.305
-  ✅ P/E Ratio: 11.28
-  🟡 Price/Sales: 1.88
-  🟡 Beta: 0.98
+Egeria Score: 31.333
+  ✅ P/E Ratio: 11.51
+  🟡 Price/Sales: 1.92
+  🟡 Beta: 0.96
   ✅ Quick Ratio: 1.64
   ✅ Debt/Equity: 3.77
   🟡 EBIDTA Margin: 0.29
-  ❌ 5 Year STD: 7.32
-  ❌ 10 Year STD: 6.08
+  ❌ 5 Year STD: 8.23
+  ❌ 10 Year STD: 6.40
   ✅ EBIDTA Avg Growth Rate: 35.87
   ✅ Revenue Avg Growth Rate: 20.20
-  ✅ 5 Year Return: 155.72
-  ✅ 10 Year Return: 416.98
-  ✅ Yield: 1.35
+  ✅ 5 Year Return: 199.35
+  ✅ 10 Year Return: 427.24
+  ✅ Yield: 1.34
   ✅ Free Cashflow Growth: 92.22
 
 
-MSFT - Microsoft Corporation (Technology)
-Egeria Score: 33.519
-  ❌ P/E Ratio: 36.28
-  ❌ Price/Sales: 13.16
-  🟡 Beta: 0.87
-  ✅ Quick Ratio: 1.54
-  ✅ Debt/Equity: 1.00
-  ✅ EBIDTA Margin: 0.53
-  🟡 5 Year STD: 5.45
-  🟡 10 Year STD: 5.29
-  🟡 EBIDTA Avg Growth Rate: 15.67
-  🟡 Revenue Avg Growth Rate: 14.12
-  ✅ 5 Year Return: 235.80
-  ✅ 10 Year Return: 1,092.99
-  🟡 Yield: 0.95
-  🟡 Free Cashflow Growth: 10.48
-
-
-TSM - Taiwan Semiconductor Manufacturing Company Limited (Technology)
-Egeria Score: 32.957
-  ✅ P/E Ratio: 0.77
-  ✅ Price/Sales: 0.30
-  ❌ Beta: 1.12
-  ✅ Quick Ratio: 2.03
-  ✅ Debt/Equity: 0.61
-  ✅ EBIDTA Margin: 0.63
-  ❌ 5 Year STD: 9.01
-  ❌ 10 Year STD: 7.28
-  ✅ EBIDTA Avg Growth Rate: 20.36
-  🟡 Revenue Avg Growth Rate: 18.88
-  ✅ 5 Year Return: 226.26
-  ✅ 10 Year Return: 750.64
-  ✅ Yield: 2.29
-  🟡 Free Cashflow Growth: 13.06
-
-
-V - Visa Inc. (Financial Services)
-Egeria Score: 27.903
-  🟡 P/E Ratio: 30.97
-  ❌ Price/Sales: 16.70
-  🟡 Beta: 0.96
-  🟡 Quick Ratio: 1.07
-  ✅ Debt/Equity: 1.34
-  ✅ EBIDTA Margin: 0.71
-  🟡 5 Year STD: 5.19
-  🟡 10 Year STD: 4.29
-  🟡 EBIDTA Avg Growth Rate: 15.60
-  🟡 Revenue Avg Growth Rate: 14.45
-  🟡 5 Year Return: 74.32
-  ✅ 10 Year Return: 459.45
-  🟡 Yield: 0.64
-  ✅ Free Cashflow Growth: 27.64
-
-
-WM - Waste Management, Inc. (Industrials)
-Egeria Score: 26.756
-  ❌ P/E Ratio: 36.39
-  ❌ Price/Sales: 4.10
-  🟡 Beta: 0.74
-  🟡 Quick Ratio: 0.79
-  ✅ Debt/Equity: 3.76
-  🟡 EBIDTA Margin: 0.27
-  🟡 5 Year STD: 4.86
-  ✅ 10 Year STD: 3.92
-  🟡 EBIDTA Avg Growth Rate: 12.78
-  🟡 Revenue Avg Growth Rate: 10.46
-  ✅ 5 Year Return: 112.83
-  ✅ 10 Year Return: 512.31
-  ✅ Yield: 1.67
-  ❌ Free Cashflow Growth: 3.70
-
-
-GOOGL - Alphabet Inc. (Communication Services)
-Egeria Score: 26.163
-  🟡 P/E Ratio: 26.69
-  ❌ Price/Sales: 6.41
-  ❌ Beta: 1.03
-  ✅ Quick Ratio: 1.94
-  ✅ Debt/Equity: 0.42
-  ✅ EBIDTA Margin: 0.32
-  ❌ 5 Year STD: 7.21
-  🟡 10 Year STD: 5.81
-  ✅ EBIDTA Avg Growth Rate: 24.30
-  🟡 Revenue Avg Growth Rate: 19.87
-  ✅ 5 Year Return: 146.00
-  ✅ 10 Year Return: 481.50
-  ✅ Free Cashflow Growth: 20.59
-
-
-GGG - Graco Inc. (Industrials)
-Egeria Score: 25.732
-  🟡 P/E Ratio: 29.43
-  ❌ Price/Sales: 6.79
-  🟡 Beta: 0.79
-  ✅ Quick Ratio: 2.26
-  ✅ Debt/Equity: 0.22
-  ✅ EBIDTA Margin: 0.31
-  🟡 5 Year STD: 5.44
-  🟡 10 Year STD: 5.31
-  🟡 EBIDTA Avg Growth Rate: 13.15
-  🟡 Revenue Avg Growth Rate: 10.24
-  ✅ 5 Year Return: 75.79
-  ✅ 10 Year Return: 308.86
-  ✅ Yield: 1.17
-  ✅ Free Cashflow Growth: 39.75
-
-
-UNH - UnitedHealth Group Incorporated (Healthcare)
-Egeria Score: 25.183
-  🟡 P/E Ratio: 20.52
-  🟡 Price/Sales: 1.24
-  ✅ Beta: 0.58
-  🟡 Quick Ratio: 0.69
-  ✅ Debt/Equity: 1.97
-  ❌ EBIDTA Margin: 0.10
-  ❌ 5 Year STD: 6.41
-  🟡 10 Year STD: 4.83
-  🟡 EBIDTA Avg Growth Rate: 12.91
-  🟡 Revenue Avg Growth Rate: 13.07
-  ✅ 5 Year Return: 129.60
-  ✅ 10 Year Return: 660.05
-  ✅ Yield: 1.37
-  ❌ Free Cashflow Growth: 8.75
-
-
-FCN - FTI Consulting, Inc. (Industrials)
-Egeria Score: 25.03
-  🟡 P/E Ratio: 26.29
-  🟡 Price/Sales: 2.07
-  ✅ Beta: 0.10
-  ✅ Quick Ratio: 1.65
-  ✅ Debt/Equity: 0.68
-  🟡 EBIDTA Margin: 0.12
-  ❌ 5 Year STD: 6.20
-  ❌ 10 Year STD: 7.07
-  ❌ EBIDTA Avg Growth Rate: 9.04
-  🟡 Revenue Avg Growth Rate: 12.37
-  ✅ 5 Year Return: 168.01
-  ✅ 10 Year Return: 530.34
-  ❌ Free Cashflow Growth: -8.48
-
-
-TMUS - T-Mobile US, Inc. (Communication Services)
-Egeria Score: 24.983
-  🟡 P/E Ratio: 23.52
-  ❌ Price/Sales: 2.49
-  ✅ Beta: 0.50
-  🟡 Quick Ratio: 0.68
-  ✅ Debt/Equity: 2.21
-  ✅ EBIDTA Margin: 0.35
-  🟡 5 Year STD: 5.39
-  🟡 10 Year STD: 5.52
-  ❌ EBIDTA Avg Growth Rate: 9.98
-  ❌ Revenue Avg Growth Rate: 5.06
-  ✅ 5 Year Return: 121.99
-  ✅ 10 Year Return: 449.21
-  ❌ Free Cashflow Growth: -524.90
-
-
-AVGO - Broadcom Inc. (Technology)
-Egeria Score: 24.881
-  ❌ P/E Ratio: 49.16
-  ❌ Price/Sales: 14.71
-  ❌ Beta: 1.20
-  ✅ Quick Ratio: 2.34
-  ✅ Debt/Equity: 2.04
-  ✅ EBIDTA Margin: 0.51
-  ❌ 5 Year STD: 7.37
-  ❌ 10 Year STD: 8.01
-  ✅ EBIDTA Avg Growth Rate: 23.54
-  🟡 Revenue Avg Growth Rate: 14.58
-  ✅ 5 Year Return: 355.75
-  ✅ 10 Year Return: 2,392.40
-  ✅ Yield: 2.97
-  🟡 Free Cashflow Growth: 15.14
-
-
-ABBV - AbbVie Inc. (Healthcare)
-Egeria Score: 24.553
-  ❌ P/E Ratio: 61.18
-  ❌ Price/Sales: 5.48
-  ✅ Beta: 0.58
-  🟡 Quick Ratio: 0.63
-  ✅ Debt/Equity: 12.00
-  ✅ EBIDTA Margin: 0.32
-  ❌ 5 Year STD: 6.24
-  ❌ 10 Year STD: 6.22
-  🟡 EBIDTA Avg Growth Rate: 18.10
-  ❌ Revenue Avg Growth Rate: 6.52
-  ✅ 5 Year Return: 167.82
-  ✅ 10 Year Return: 405.39
-  ✅ Yield: 4.42
-  🟡 Free Cashflow Growth: 10.74
-
-
-HWKN - Hawkins, Inc. (Basic Materials)
-Egeria Score: 23.978
-  🟡 P/E Ratio: 21.71
-  🟡 Price/Sales: 1.72
-  🟡 Beta: 0.75
-  ✅ Quick Ratio: 1.51
-  ✅ Debt/Equity: 0.69
-  🟡 EBIDTA Margin: 0.14
-  ❌ 5 Year STD: 8.46
-  ❌ 10 Year STD: 7.64
-  ✅ EBIDTA Avg Growth Rate: 20.04
-  ✅ Revenue Avg Growth Rate: 25.25
-  ✅ 5 Year Return: 325.03
-  ✅ 10 Year Return: 402.66
-  ✅ Yield: 1.57
-  ✅ Free Cashflow Growth: 32.64
-
-
-MNST - Monster Beverage Corporation (Consumer Defensive)
-Egeria Score: 23.768
-  🟡 P/E Ratio: 34.59
-  ❌ Price/Sales: 7.90
-  🟡 Beta: 0.77
-  ✅ Quick Ratio: 3.83
-  ✅ Debt/Equity: 0.18
-  🟡 EBIDTA Margin: 0.28
-  🟡 5 Year STD: 5.64
-  ❌ 10 Year STD: 6.10
-  ❌ EBIDTA Avg Growth Rate: 7.09
-  🟡 Revenue Avg Growth Rate: 15.84
-  ✅ 5 Year Return: 90.65
-  ✅ 10 Year Return: 379.43
-  ✅ Free Cashflow Growth: 21.91
-
-
-MRK - Merck & Co., Inc. (Healthcare)
-Egeria Score: 23.6
-  ❌ P/E Ratio: 888.29
-  ❌ Price/Sales: 5.39
-  ✅ Beta: 0.41
-  🟡 Quick Ratio: 0.68
-  ✅ Debt/Equity: 1.84
-  🟡 EBIDTA Margin: 0.11
-  🟡 5 Year STD: 4.83
-  🟡 10 Year STD: 4.63
-  🟡 EBIDTA Avg Growth Rate: 15.68
-  🟡 Revenue Avg Growth Rate: 13.48
-  ✅ 5 Year Return: 107.73
-  🟡 10 Year Return: 214.39
-  ✅ Yield: 2.89
-  ✅ Free Cashflow Growth: 26.76
-
-
-MA - Mastercard Incorporated (Financial Services)
-Egeria Score: 23.066
-  ❌ P/E Ratio: 38.31
-  ❌ Price/Sales: 17.09
-  ❌ Beta: 1.09
-  🟡 Quick Ratio: 0.81
-  ✅ Debt/Equity: 5.12
-  ✅ EBIDTA Margin: 0.60
-  🟡 5 Year STD: 5.74
-  🟡 10 Year STD: 4.98
-  ✅ EBIDTA Avg Growth Rate: 20.90
-  🟡 Revenue Avg Growth Rate: 18.01
-  ✅ 5 Year Return: 92.83
-  ✅ 10 Year Return: 562.20
-  🟡 Yield: 0.51
-  🟡 Free Cashflow Growth: 19.12
-
-
-FDS - FactSet Research Systems Inc. (Financial Services)
-Egeria Score: 22.505
-  ❌ P/E Ratio: 35.30
-  ❌ Price/Sales: 7.98
-  🟡 Beta: 0.73
-  🟡 Quick Ratio: 1.44
-  ✅ Debt/Equity: 1.45
-  ✅ EBIDTA Margin: 0.38
-  🟡 5 Year STD: 5.49
-  🟡 10 Year STD: 5.08
-  🟡 EBIDTA Avg Growth Rate: 13.85
-  🟡 Revenue Avg Growth Rate: 11.83
-  🟡 5 Year Return: 72.09
-  ✅ 10 Year Return: 365.46
-  🟡 Yield: 0.89
-  🟡 Free Cashflow Growth: 11.34
-
-
-NVDA - NVIDIA Corporation (Technology)
-Egeria Score: 22.239
-  ❌ P/E Ratio: 65.95
-  ❌ Price/Sales: 32.21
-  ❌ Beta: 1.69
-  ✅ Quick Ratio: 3.38
-  ✅ Debt/Equity: 0.53
-  ✅ EBIDTA Margin: 0.58
-  ❌ 5 Year STD: 12.62
-  ❌ 10 Year STD: 11.61
-  ✅ EBIDTA Avg Growth Rate: 149.63
-  ✅ Revenue Avg Growth Rate: 62.49
-  ✅ 5 Year Return: 1,579.59
-  ✅ 10 Year Return: 17,482.10
-  🟡 Yield: 0.13
-  ✅ Free Cashflow Growth: 209.88
-
-
-COST - Costco Wholesale Corporation (Consumer Defensive)
-Egeria Score: 21.746
-  ❌ P/E Ratio: 46.84
-  🟡 Price/Sales: 1.28
-  🟡 Beta: 0.76
-  🟡 Quick Ratio: 0.52
-  ✅ Debt/Equity: 1.75
-  ❌ EBIDTA Margin: 0.05
-  🟡 5 Year STD: 5.17
-  🟡 10 Year STD: 4.57
-  🟡 EBIDTA Avg Growth Rate: 14.34
-  🟡 Revenue Avg Growth Rate: 13.36
-  ✅ 5 Year Return: 217.87
-  ✅ 10 Year Return: 672.63
-  🟡 Yield: 0.73
-  🟡 Free Cashflow Growth: 15.53
-
-
 ADI - Analog Devices, Inc. (Technology)
-Egeria Score: 21.283
-  🟡 P/E Ratio: 33.00
-  ❌ Price/Sales: 8.03
-  ❌ Beta: 1.11
+Egeria Score: 29.417
+  ❌ P/E Ratio: 36.70
+  ❌ Price/Sales: 8.93
+  ❌ Beta: 1.05
   🟡 Quick Ratio: 0.76
   ✅ Debt/Equity: 0.37
   ✅ EBIDTA Margin: 0.48
-  ❌ 5 Year STD: 6.88
-  ❌ 10 Year STD: 6.25
+  ❌ 5 Year STD: 6.96
+  ❌ 10 Year STD: 6.42
   ✅ EBIDTA Avg Growth Rate: 44.34
   ✅ Revenue Avg Growth Rate: 32.40
-  ✅ 5 Year Return: 79.46
-  ✅ 10 Year Return: 334.55
+  ✅ 5 Year Return: 118.49
+  ✅ 10 Year Return: 393.06
   ✅ Yield: 1.81
   ✅ Free Cashflow Growth: 27.28
 
 
-VMC - Vulcan Materials Company (Basic Materials)
-Egeria Score: 19.748
-  ❌ P/E Ratio: 36.40
-  ❌ Price/Sales: 4.37
-  🟡 Beta: 0.84
-  ✅ Quick Ratio: 2.28
-  ✅ Debt/Equity: 0.94
-  🟡 EBIDTA Margin: 0.26
-  ❌ 5 Year STD: 6.26
-  ❌ 10 Year STD: 6.70
-  🟡 EBIDTA Avg Growth Rate: 16.69
-  🟡 Revenue Avg Growth Rate: 17.48
-  ✅ 5 Year Return: 116.28
-  ✅ 10 Year Return: 328.08
-  🟡 Yield: 0.88
-  ❌ Free Cashflow Growth: -0.43
+NVDA - NVIDIA Corporation (Technology)
+Egeria Score: 25.109
+  ❌ P/E Ratio: 74.54
+  ❌ Price/Sales: 36.41
+  ❌ Beta: 1.63
+  ✅ Quick Ratio: 3.38
+  ✅ Debt/Equity: 0.53
+  ✅ EBIDTA Margin: 0.58
+  ❌ 5 Year STD: 12.61
+  ❌ 10 Year STD: 11.37
+  ✅ EBIDTA Avg Growth Rate: 149.63
+  ✅ Revenue Avg Growth Rate: 62.49
+  ✅ 5 Year Return: 2,184.45
+  ✅ 10 Year Return: 20,318.28
+  🟡 Yield: 0.13
+  ✅ Free Cashflow Growth: 209.88
+
+
+V - Visa Inc. (Financial Services)
+Egeria Score: 23.961
+  🟡 P/E Ratio: 31.13
+  ❌ Price/Sales: 16.77
+  🟡 Beta: 0.96
+  🟡 Quick Ratio: 1.07
+  ✅ Debt/Equity: 1.34
+  ✅ EBIDTA Margin: 0.70
+  🟡 5 Year STD: 5.58
+  🟡 10 Year STD: 4.63
+  🟡 EBIDTA Avg Growth Rate: 15.60
+  🟡 Revenue Avg Growth Rate: 14.45
+  ✅ 5 Year Return: 84.65
+  ✅ 10 Year Return: 468.88
+  🟡 Yield: 0.65
+  ✅ Free Cashflow Growth: 27.64
 
 
 GMAB - Genmab A/S (Healthcare)
-Egeria Score: 19.259
-  ✅ P/E Ratio: 4.35
-  ✅ Price/Sales: 1.15
-  🟡 Beta: 0.97
+Egeria Score: 23.904
+  ✅ P/E Ratio: 3.47
+  ✅ Price/Sales: 1.07
+  🟡 Beta: 0.99
   ✅ Quick Ratio: 13.32
   ✅ Debt/Equity: 0.12
-  ✅ EBIDTA Margin: 0.34
-  ❌ 5 Year STD: 8.36
-  ❌ 10 Year STD: 8.59
+  ✅ EBIDTA Margin: 0.40
+  ❌ 5 Year STD: 8.74
+  ❌ 10 Year STD: 8.50
   🟡 EBIDTA Avg Growth Rate: 16.40
   ✅ Revenue Avg Growth Rate: 23.05
-  🟡 5 Year Return: 70.21
-  ✅ 10 Year Return: 664.38
+  ✅ 5 Year Return: 76.18
+  ✅ 10 Year Return: 614.57
   ✅ Free Cashflow Growth: 36.34
 
 
+VRTX - Vertex Pharmaceuticals Incorporated (Healthcare)
+Egeria Score: 23.334
+  🟡 P/E Ratio: 27.46
+  ❌ Price/Sales: 10.84
+  ✅ Beta: 0.36
+  ✅ Quick Ratio: 3.60
+  ✅ Debt/Equity: 0.29
+  ✅ EBIDTA Margin: 0.49
+  ❌ 5 Year STD: 6.65
+  ❌ 10 Year STD: 7.29
+  🟡 EBIDTA Avg Growth Rate: 15.59
+  🟡 Revenue Avg Growth Rate: 16.82
+  ✅ 5 Year Return: 156.84
+  ✅ 10 Year Return: 524.12
+  ❌ Free Cashflow Growth: 8.99
+
+
+TSM - Taiwan Semiconductor Manufacturing Company Limited (Technology)
+Egeria Score: 23.12
+  ✅ P/E Ratio: 0.89
+  ✅ Price/Sales: 0.34
+  ❌ Beta: 1.13
+  ✅ Quick Ratio: 2.03
+  ✅ Debt/Equity: 0.61
+  ✅ EBIDTA Margin: 0.63
+  ❌ 5 Year STD: 8.36
+  ❌ 10 Year STD: 7.46
+  ✅ EBIDTA Avg Growth Rate: 20.36
+  🟡 Revenue Avg Growth Rate: 18.88
+  ✅ 5 Year Return: 315.88
+  ✅ 10 Year Return: 870.00
+  ✅ Yield: 2.26
+  🟡 Free Cashflow Growth: 13.06
+
+
+HWKN - Hawkins, Inc. (Basic Materials)
+Egeria Score: 22.539
+  🟡 P/E Ratio: 22.32
+  🟡 Price/Sales: 1.77
+  🟡 Beta: 0.70
+  ✅ Quick Ratio: 1.51
+  ✅ Debt/Equity: 0.69
+  🟡 EBIDTA Margin: 0.14
+  ❌ 5 Year STD: 8.50
+  ❌ 10 Year STD: 7.57
+  ✅ EBIDTA Avg Growth Rate: 20.04
+  ✅ Revenue Avg Growth Rate: 25.25
+  ✅ 5 Year Return: 360.14
+  ✅ 10 Year Return: 426.04
+  ✅ Yield: 1.55
+  ✅ Free Cashflow Growth: 32.64
+
+
 UFPI - UFP Industries, Inc. (Basic Materials)
-Egeria Score: 18.301
-  🟡 P/E Ratio: 13.98
-  ✅ Price/Sales: 1.00
-  ❌ Beta: 1.44
+Egeria Score: 20.378
+  🟡 P/E Ratio: 13.75
+  ✅ Price/Sales: 0.99
+  ❌ Beta: 1.41
   ✅ Quick Ratio: 3.05
   ✅ Debt/Equity: 0.32
   🟡 EBIDTA Margin: 0.11
-  ❌ 5 Year STD: 10.02
-  ❌ 10 Year STD: 8.27
+  ❌ 5 Year STD: 10.01
+  ❌ 10 Year STD: 8.80
   ✅ EBIDTA Avg Growth Rate: 33.91
   🟡 Revenue Avg Growth Rate: 18.00
-  ✅ 5 Year Return: 283.51
-  ✅ 10 Year Return: 616.38
+  ✅ 5 Year Return: 243.99
+  ✅ 10 Year Return: 659.03
   🟡 Yield: 0.98
   ✅ Free Cashflow Growth: 48.88
 
 
-ATO - Atmos Energy Corporation (Utilities)
-Egeria Score: 14.119
-  🟡 P/E Ratio: 19.12
-  ❌ Price/Sales: 4.48
-  🟡 Beta: 0.67
-  ❌ Quick Ratio: 0.26
-  ✅ Debt/Equity: 1.07
-  ✅ EBIDTA Margin: 0.46
-  🟡 5 Year STD: 4.83
-  ✅ 10 Year STD: 4.00
-  🟡 EBIDTA Avg Growth Rate: 10.56
-  🟡 Revenue Avg Growth Rate: 15.28
-  🟡 5 Year Return: 34.03
-  🟡 10 Year Return: 199.71
-  ✅ Yield: 2.38
-  🟡 Free Cashflow Growth: 14.55
-
-
-QLYS - Qualys, Inc. (Technology)
-Egeria Score: 14.094
-  ❌ P/E Ratio: 41.94
-  ❌ Price/Sales: 11.47
-  ✅ Beta: 0.50
-  🟡 Quick Ratio: 1.47
-  ✅ Debt/Equity: 1.21
+GOOGL - Alphabet Inc. (Communication Services)
+Egeria Score: 20.355
+  🟡 P/E Ratio: 25.64
+  ❌ Price/Sales: 6.64
+  ❌ Beta: 1.05
+  ✅ Quick Ratio: 1.94
+  ✅ Debt/Equity: 0.42
   ✅ EBIDTA Margin: 0.34
-  ❌ 5 Year STD: 9.27
-  ❌ 10 Year STD: 8.99
-  🟡 EBIDTA Avg Growth Rate: 13.68
-  🟡 Revenue Avg Growth Rate: 15.20
-  ✅ 5 Year Return: 97.86
-  ✅ 10 Year Return: 689.69
-  🟡 Free Cashflow Growth: 17.53
-
-
-NOC - Northrop Grumman Corporation (Industrials)
-Egeria Score: 12.693
-  🟡 P/E Ratio: 34.64
-  🟡 Price/Sales: 1.81
-  ✅ Beta: 0.37
-  🟡 Quick Ratio: 0.86
-  ✅ Debt/Equity: 2.15
-  🟡 EBIDTA Margin: 0.11
-  🟡 5 Year STD: 5.69
-  🟡 10 Year STD: 4.88
-  ❌ EBIDTA Avg Growth Rate: -0.18
-  ❌ Revenue Avg Growth Rate: 2.30
-  🟡 5 Year Return: 74.52
-  ✅ 10 Year Return: 357.04
-  ✅ Yield: 1.57
-  ❌ Free Cashflow Growth: -4.68
-
-
-AAPL - Apple Inc. (Technology)
-Egeria Score: 10.692
-  🟡 P/E Ratio: 25.60
-  ❌ Price/Sales: 6.70
-  ❌ Beta: 1.23
-  🟡 Quick Ratio: 0.84
-  ✅ Debt/Equity: 4.67
-  ✅ EBIDTA Margin: 0.34
-  ❌ 5 Year STD: 7.23
-  ❌ 10 Year STD: 6.40
-  🟡 EBIDTA Avg Growth Rate: 19.05
-  🟡 Revenue Avg Growth Rate: 12.75
-  ✅ 5 Year Return: 232.11
-  ✅ 10 Year Return: 904.64
-  🟡 Yield: 0.74
-  🟡 Free Cashflow Growth: 11.98
-
-
-EXPO - Exponent, Inc. (Industrials)
-Egeria Score: 10.114
-  ❌ P/E Ratio: 40.84
-  ❌ Price/Sales: 7.63
-  🟡 Beta: 0.70
-  ✅ Quick Ratio: 2.19
-  ✅ Debt/Equity: 0.82
-  🟡 EBIDTA Margin: 0.22
-  ❌ 5 Year STD: 7.50
+  ❌ 5 Year STD: 7.07
   ❌ 10 Year STD: 6.29
-  🟡 EBIDTA Avg Growth Rate: 16.52
-  🟡 Revenue Avg Growth Rate: 10.42
-  🟡 5 Year Return: 49.42
-  ✅ 10 Year Return: 393.06
+  ✅ EBIDTA Avg Growth Rate: 24.30
+  🟡 Revenue Avg Growth Rate: 19.87
+  ✅ 5 Year Return: 196.76
+  ✅ 10 Year Return: 526.45
+  ✅ Free Cashflow Growth: 20.59
+
+
+CAT - Caterpillar Inc. (Industrials)
+Egeria Score: 19.835
+  🟡 P/E Ratio: 15.67
+  ❌ Price/Sales: 2.63
+  ❌ Beta: 1.11
+  🟡 Quick Ratio: 0.74
+  ✅ Debt/Equity: 3.49
+  🟡 EBIDTA Margin: 0.25
+  ❌ 5 Year STD: 9.22
+  ❌ 10 Year STD: 7.37
+  ✅ EBIDTA Avg Growth Rate: 31.48
+  🟡 Revenue Avg Growth Rate: 17.18
+  ✅ 5 Year Return: 218.49
+  ✅ 10 Year Return: 338.94
+  ✅ Yield: 2.30
+  ✅ Free Cashflow Growth: 37.02
+
+
+GGG - Graco Inc. (Industrials)
+Egeria Score: 19.492
+  🟡 P/E Ratio: 28.85
+  ❌ Price/Sales: 6.68
+  🟡 Beta: 0.81
+  ✅ Quick Ratio: 2.26
+  ✅ Debt/Equity: 0.22
+  ✅ EBIDTA Margin: 0.31
+  ❌ 5 Year STD: 6.34
+  🟡 10 Year STD: 5.27
+  🟡 EBIDTA Avg Growth Rate: 13.15
+  🟡 Revenue Avg Growth Rate: 10.24
+  ✅ 5 Year Return: 78.16
+  ✅ 10 Year Return: 285.84
+  ✅ Yield: 1.17
+  ✅ Free Cashflow Growth: 39.75
+
+
+RSG - Republic Services, Inc. (Industrials)
+Egeria Score: 19.09
+  🟡 P/E Ratio: 33.17
+  ❌ Price/Sales: 3.92
+  🟡 Beta: 0.70
+  🟡 Quick Ratio: 0.50
+  ✅ Debt/Equity: 1.98
+  🟡 EBIDTA Margin: 0.29
+  🟡 5 Year STD: 4.62
+  ✅ 10 Year STD: 3.82
+  🟡 EBIDTA Avg Growth Rate: 14.79
+  🟡 Revenue Avg Growth Rate: 13.87
+  ✅ 5 Year Return: 144.71
+  ✅ 10 Year Return: 555.40
+  ✅ Yield: 1.52
+  🟡 Free Cashflow Growth: 15.88
+
+
+MRK - Merck & Co., Inc. (Healthcare)
+Egeria Score: 18.809
+  ❌ P/E Ratio: 143.48
+  ❌ Price/Sales: 5.39
+  ✅ Beta: 0.40
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 1.84
+  🟡 EBIDTA Margin: 0.15
+  🟡 5 Year STD: 4.91
+  🟡 10 Year STD: 4.62
+  🟡 EBIDTA Avg Growth Rate: 15.68
+  🟡 Revenue Avg Growth Rate: 13.48
+  ✅ 5 Year Return: 105.75
+  ✅ 10 Year Return: 235.00
+  ✅ Yield: 2.89
+  ✅ Free Cashflow Growth: 26.76
+
+
+MSFT - Microsoft Corporation (Technology)
+Egeria Score: 18.157
+  ❌ P/E Ratio: 35.96
+  ❌ Price/Sales: 13.10
+  🟡 Beta: 0.88
+  ✅ Quick Ratio: 1.54
+  ✅ Debt/Equity: 1.00
+  ✅ EBIDTA Margin: 0.54
+  🟡 5 Year STD: 5.91
+  🟡 10 Year STD: 5.16
+  🟡 EBIDTA Avg Growth Rate: 15.67
+  🟡 Revenue Avg Growth Rate: 14.12
+  ✅ 5 Year Return: 253.22
+  ✅ 10 Year Return: 1,125.35
   🟡 Yield: 0.94
-  ❌ Free Cashflow Growth: 8.31
+  🟡 Free Cashflow Growth: 10.48
+
+
+AVGO - Broadcom Inc. (Technology)
+Egeria Score: 17.619
+  ❌ P/E Ratio: 53.50
+  ❌ Price/Sales: 16.01
+  ❌ Beta: 1.16
+  ✅ Quick Ratio: 2.34
+  ✅ Debt/Equity: 2.04
+  ✅ EBIDTA Margin: 0.51
+  ❌ 5 Year STD: 7.65
+  ❌ 10 Year STD: 7.17
+  ✅ EBIDTA Avg Growth Rate: 23.54
+  🟡 Revenue Avg Growth Rate: 14.58
+  ✅ 5 Year Return: 433.71
+  ✅ 10 Year Return: 2,435.16
+  ✅ Yield: 2.95
+  🟡 Free Cashflow Growth: 15.14
+
+
+MA - Mastercard Incorporated (Financial Services)
+Egeria Score: 16.582
+  ❌ P/E Ratio: 36.07
+  ❌ Price/Sales: 16.63
+  ❌ Beta: 1.10
+  🟡 Quick Ratio: 0.81
+  ✅ Debt/Equity: 5.12
+  ✅ EBIDTA Margin: 0.61
+  ❌ 5 Year STD: 6.61
+  🟡 10 Year STD: 5.19
+  ✅ EBIDTA Avg Growth Rate: 20.90
+  🟡 Revenue Avg Growth Rate: 18.01
+  ✅ 5 Year Return: 94.61
+  ✅ 10 Year Return: 547.88
+  🟡 Yield: 0.51
+  🟡 Free Cashflow Growth: 19.12
+
+
+MNST - Monster Beverage Corporation (Consumer Defensive)
+Egeria Score: 11.989
+  🟡 P/E Ratio: 34.80
+  ❌ Price/Sales: 7.94
+  🟡 Beta: 0.78
+  ✅ Quick Ratio: 3.83
+  ✅ Debt/Equity: 0.18
+  🟡 EBIDTA Margin: 0.28
+  🟡 5 Year STD: 5.82
+  ❌ 10 Year STD: 6.50
+  ❌ EBIDTA Avg Growth Rate: 7.09
+  🟡 Revenue Avg Growth Rate: 15.84
+  ✅ 5 Year Return: 77.93
+  ✅ 10 Year Return: 374.69
+  ✅ Free Cashflow Growth: 21.91
+
+
+ABBV - AbbVie Inc. (Healthcare)
+Egeria Score: 11.8
+  ❌ P/E Ratio: 47.56
+  ❌ Price/Sales: 5.24
+  🟡 Beta: 0.61
+  🟡 Quick Ratio: 0.63
+  ✅ Debt/Equity: 12.00
+  ✅ EBIDTA Margin: 0.34
+  ❌ 5 Year STD: 6.05
+  ❌ 10 Year STD: 6.16
+  🟡 EBIDTA Avg Growth Rate: 18.10
+  ❌ Revenue Avg Growth Rate: 6.52
+  ✅ 5 Year Return: 162.40
+  ✅ 10 Year Return: 363.29
+  ✅ Yield: 4.40
+  🟡 Free Cashflow Growth: 10.74
 
 
 MAR - Marriott International, Inc. (Consumer Cyclical)
-Egeria Score: 1.231
-  🟡 P/E Ratio: 22.99
-  ❌ Price/Sales: 2.99
-  ❌ Beta: 1.62
+Egeria Score: 10.514
+  🟡 P/E Ratio: 24.26
+  ❌ Price/Sales: 2.91
+  ❌ Beta: 1.61
   ❌ Quick Ratio: 0.39
   ✅ Debt/Equity: -38.65
-  🟡 EBIDTA Margin: 0.18
-  ❌ 5 Year STD: 10.46
-  ❌ 10 Year STD: 7.46
+  🟡 EBIDTA Margin: 0.17
+  ❌ 5 Year STD: 11.23
+  ❌ 10 Year STD: 8.36
   ✅ EBIDTA Avg Growth Rate: 94.06
   ✅ Revenue Avg Growth Rate: 31.72
-  ✅ 5 Year Return: 80.19
-  ✅ 10 Year Return: 358.32
+  ✅ 5 Year Return: 97.38
+  ✅ 10 Year Return: 348.45
   ✅ Yield: 1.29
   ✅ Free Cashflow Growth: 34.75
 
 
+FDS - FactSet Research Systems Inc. (Financial Services)
+Egeria Score: 9.082
+  ❌ P/E Ratio: 35.36
+  ❌ Price/Sales: 7.99
+  🟡 Beta: 0.76
+  🟡 Quick Ratio: 1.44
+  ✅ Debt/Equity: 1.45
+  ✅ EBIDTA Margin: 0.38
+  ❌ 5 Year STD: 6.17
+  🟡 10 Year STD: 5.29
+  🟡 EBIDTA Avg Growth Rate: 13.85
+  🟡 Revenue Avg Growth Rate: 11.83
+  🟡 5 Year Return: 68.94
+  ✅ 10 Year Return: 355.01
+  🟡 Yield: 0.89
+  🟡 Free Cashflow Growth: 11.34
+
+
+ATO - Atmos Energy Corporation (Utilities)
+Egeria Score: 9.079
+  🟡 P/E Ratio: 17.74
+  ❌ Price/Sales: 4.37
+  🟡 Beta: 0.67
+  ❌ Quick Ratio: 0.26
+  ✅ Debt/Equity: 1.07
+  ✅ EBIDTA Margin: 0.49
+  🟡 5 Year STD: 5.34
+  🟡 10 Year STD: 4.32
+  🟡 EBIDTA Avg Growth Rate: 10.56
+  🟡 Revenue Avg Growth Rate: 15.28
+  🟡 5 Year Return: 29.21
+  🟡 10 Year Return: 199.62
+  ✅ Yield: 2.39
+  🟡 Free Cashflow Growth: 14.55
+
+
+COST - Costco Wholesale Corporation (Consumer Defensive)
+Egeria Score: 8.676
+  ❌ P/E Ratio: 51.53
+  🟡 Price/Sales: 1.41
+  🟡 Beta: 0.75
+  🟡 Quick Ratio: 0.52
+  ✅ Debt/Equity: 1.75
+  ❌ EBIDTA Margin: 0.05
+  🟡 5 Year STD: 5.13
+  🟡 10 Year STD: 4.80
+  🟡 EBIDTA Avg Growth Rate: 14.34
+  🟡 Revenue Avg Growth Rate: 13.36
+  ✅ 5 Year Return: 254.64
+  ✅ 10 Year Return: 738.88
+  🟡 Yield: 0.73
+  🟡 Free Cashflow Growth: 15.53
+
+
+WM - Waste Management, Inc. (Industrials)
+Egeria Score: 7.825
+  🟡 P/E Ratio: 34.42
+  ❌ Price/Sales: 4.12
+  🟡 Beta: 0.74
+  🟡 Quick Ratio: 0.79
+  ✅ Debt/Equity: 3.76
+  🟡 EBIDTA Margin: 0.28
+  🟡 5 Year STD: 5.03
+  🟡 10 Year STD: 4.19
+  🟡 EBIDTA Avg Growth Rate: 12.78
+  🟡 Revenue Avg Growth Rate: 10.46
+  ✅ 5 Year Return: 116.32
+  ✅ 10 Year Return: 497.12
+  ✅ Yield: 1.67
+  ❌ Free Cashflow Growth: 3.70
+
+
+QLYS - Qualys, Inc. (Technology)
+Egeria Score: 7.613
+  🟡 P/E Ratio: 34.95
+  ❌ Price/Sales: 9.95
+  ✅ Beta: 0.51
+  🟡 Quick Ratio: 1.47
+  ✅ Debt/Equity: 1.21
+  ✅ EBIDTA Margin: 0.35
+  ❌ 5 Year STD: 9.85
+  ❌ 10 Year STD: 9.41
+  🟡 EBIDTA Avg Growth Rate: 13.68
+  🟡 Revenue Avg Growth Rate: 15.20
+  ✅ 5 Year Return: 78.52
+  ✅ 10 Year Return: 594.91
+  🟡 Free Cashflow Growth: 17.53
+
+
+UNH - UnitedHealth Group Incorporated (Healthcare)
+Egeria Score: 6.992
+  🟡 P/E Ratio: 30.78
+  🟡 Price/Sales: 1.25
+  🟡 Beta: 0.61
+  🟡 Quick Ratio: 0.69
+  ✅ Debt/Equity: 1.97
+  ❌ EBIDTA Margin: 0.08
+  ❌ 5 Year STD: 6.05
+  🟡 10 Year STD: 5.57
+  🟡 EBIDTA Avg Growth Rate: 12.91
+  🟡 Revenue Avg Growth Rate: 13.07
+  ✅ 5 Year Return: 130.71
+  ✅ 10 Year Return: 668.85
+  ✅ Yield: 1.37
+  ❌ Free Cashflow Growth: 8.75
+
+
+FAST - Fastenal Company (Industrials)
+Egeria Score: 6.705
+  🟡 P/E Ratio: 33.66
+  ❌ Price/Sales: 5.28
+  ❌ Beta: 1.01
+  ✅ Quick Ratio: 1.98
+  ✅ Debt/Equity: 0.33
+  🟡 EBIDTA Margin: 0.23
+  ❌ 5 Year STD: 6.11
+  🟡 10 Year STD: 5.87
+  ❌ EBIDTA Avg Growth Rate: 9.58
+  ❌ Revenue Avg Growth Rate: 9.27
+  ✅ 5 Year Return: 143.58
+  ✅ 10 Year Return: 262.44
+  ✅ Yield: 2.28
+  🟡 Free Cashflow Growth: 18.33
+
+
+TMUS - T-Mobile US, Inc. (Communication Services)
+Egeria Score: 6.31
+  🟡 P/E Ratio: 22.31
+  ❌ Price/Sales: 2.49
+  ✅ Beta: 0.50
+  🟡 Quick Ratio: 0.68
+  ✅ Debt/Equity: 2.21
+  ✅ EBIDTA Margin: 0.36
+  🟡 5 Year STD: 5.99
+  🟡 10 Year STD: 5.19
+  ❌ EBIDTA Avg Growth Rate: 9.98
+  ❌ Revenue Avg Growth Rate: 5.06
+  ✅ 5 Year Return: 125.52
+  ✅ 10 Year Return: 412.61
+  ❌ Free Cashflow Growth: -524.90
+
+
+FCN - FTI Consulting, Inc. (Industrials)
+Egeria Score: 4.699
+  🟡 P/E Ratio: 25.83
+  🟡 Price/Sales: 2.20
+  ✅ Beta: 0.10
+  ✅ Quick Ratio: 1.65
+  ✅ Debt/Equity: 0.68
+  🟡 EBIDTA Margin: 0.13
+  ❌ 5 Year STD: 6.57
+  ❌ 10 Year STD: 6.73
+  ❌ EBIDTA Avg Growth Rate: 9.04
+  🟡 Revenue Avg Growth Rate: 12.37
+  ✅ 5 Year Return: 175.54
+  ✅ 10 Year Return: 606.53
+  ❌ Free Cashflow Growth: -8.48
+
+
+VMC - Vulcan Materials Company (Basic Materials)
+Egeria Score: 4.051
+  ❌ P/E Ratio: 39.57
+  ❌ Price/Sales: 4.72
+  🟡 Beta: 0.83
+  ✅ Quick Ratio: 2.28
+  ✅ Debt/Equity: 0.94
+  🟡 EBIDTA Margin: 0.26
+  ❌ 5 Year STD: 7.31
+  ❌ 10 Year STD: 6.27
+  🟡 EBIDTA Avg Growth Rate: 16.45
+  🟡 Revenue Avg Growth Rate: 17.48
+  ✅ 5 Year Return: 122.89
+  ✅ 10 Year Return: 374.39
+  🟡 Yield: 0.88
+  ❌ Free Cashflow Growth: -0.43
+
+
+EXPO - Exponent, Inc. (Industrials)
+Egeria Score: 3.128
+  ❌ P/E Ratio: 47.85
+  ❌ Price/Sales: 8.96
+  🟡 Beta: 0.65
+  ✅ Quick Ratio: 2.19
+  ✅ Debt/Equity: 0.82
+  🟡 EBIDTA Margin: 0.23
+  ❌ 5 Year STD: 7.95
+  ❌ 10 Year STD: 6.43
+  🟡 EBIDTA Avg Growth Rate: 16.52
+  🟡 Revenue Avg Growth Rate: 10.42
+  ✅ 5 Year Return: 80.34
+  ✅ 10 Year Return: 491.20
+  🟡 Yield: 0.94
+  ❌ Free Cashflow Growth: 8.31
+
+
+AAPL - Apple Inc. (Technology)
+Egeria Score: 3.058
+  🟡 P/E Ratio: 28.20
+  ❌ Price/Sales: 7.42
+  ❌ Beta: 1.21
+  🟡 Quick Ratio: 0.84
+  ✅ Debt/Equity: 4.67
+  ✅ EBIDTA Margin: 0.34
+  ❌ 5 Year STD: 7.14
+  ❌ 10 Year STD: 6.77
+  🟡 EBIDTA Avg Growth Rate: 19.05
+  🟡 Revenue Avg Growth Rate: 12.75
+  ✅ 5 Year Return: 308.51
+  ✅ 10 Year Return: 877.42
+  🟡 Yield: 0.73
+  🟡 Free Cashflow Growth: 11.98
+
+
+NOC - Northrop Grumman Corporation (Industrials)
+Egeria Score: -7.222
+  🟡 P/E Ratio: 32.85
+  🟡 Price/Sales: 1.77
+  ✅ Beta: 0.34
+  🟡 Quick Ratio: 0.86
+  ✅ Debt/Equity: 2.15
+  🟡 EBIDTA Margin: 0.11
+  ❌ 5 Year STD: 6.06
+  🟡 10 Year STD: 5.14
+  ❌ EBIDTA Avg Growth Rate: -0.18
+  ❌ Revenue Avg Growth Rate: 2.30
+  🟡 5 Year Return: 74.23
+  ✅ 10 Year Return: 357.81
+  ✅ Yield: 1.57
+  ❌ Free Cashflow Growth: -4.68
+
+
 HDB - HDFC Bank Limited (Financial Services)
-Egeria Score: -13.657
-  ✅ P/E Ratio: 0.32
-  ✅ Price/Sales: 0.11
+Egeria Score: -14.202
+  ✅ P/E Ratio: 0.31
+  ✅ Price/Sales: 0.10
   🟡 Beta: 0.90
   ✅ Debt/Equity: 7.84
-  ❌ 5 Year STD: 8.10
-  ❌ 10 Year STD: 6.87
+  ❌ 5 Year STD: 7.78
+  ❌ 10 Year STD: 6.84
   🟡 Revenue Avg Growth Rate: 13.54
-  ❌ 5 Year Return: 5.49
-  🟡 10 Year Return: 210.81
+  ❌ 5 Year Return: -0.70
+  🟡 10 Year Return: 163.29
   🟡 Yield: 0.58
   ❌ Free Cashflow Growth: -30.24
 

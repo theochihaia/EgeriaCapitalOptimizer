@@ -48,9 +48,10 @@ def range_normalizer(symbol: str, ticker: yf.Ticker, config: RangeAnalysisConfig
         message = f"{display_value}"
         result = MetricResult.NEUTRAL
 
+
     normalized_value = (value - config.avg) / config.std * multiplier
     normalized_value = 3 if normalized_value > 3 else normalized_value
     normalized_value = -3 if normalized_value < -3 else normalized_value
     
-    return AnalysisResult(symbol, config.metric, message, result, normalized_value ,invert)
+    return AnalysisResult(symbol, config.metric, message, result, value, normalized_value ,invert)
 

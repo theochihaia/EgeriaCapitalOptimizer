@@ -31,33 +31,75 @@ FREE_CASHFLOW_GROWTH           |         15 |          5 |   Yes
 
 Symbol     | Name                                               |  Weight
 ------------------------------------------------------------------------
-TSM        | Taiwan Semiconductor Manufacturing Company Limited |  100.00%
+DE         | Deere & Company                                    |   35.94%
+CMG        | Chipotle Mexican Grill, Inc.                       |   33.09%
+AAPL       | Apple Inc.                                         |   30.97%
 
 
-Weighted Return (5yrs)  226.26%
-Annualized               26.68%
-Weighted Std    (5yrs)    9.01
+Weighted Return (5yrs)  290.06%
+Annualized               31.29%
+Weighted Std    (5yrs)    8.17
+Weighted P/E             35.71
+Weighted P/S              5.89
+Weighted Beta             1.13
+Weighted EBITDA Growth   35.38
+Weighted FCF Frowth      62.71
 
 
 
 --------------------------------------------------------------------------
                               Details                       
 --------------------------------------------------------------------------
-TSM - Taiwan Semiconductor Manufacturing Company Limited (Technology)
-Egeria Score: 32.957
-  ✅ P/E Ratio: 0.77
-  ✅ Price/Sales: 0.30
-  ❌ Beta: 1.12
-  ✅ Quick Ratio: 2.03
-  ✅ Debt/Equity: 0.61
-  ✅ EBIDTA Margin: 0.63
-  ❌ 5 Year STD: 9.01
-  ❌ 10 Year STD: 7.28
-  ✅ EBIDTA Avg Growth Rate: 20.36
-  🟡 Revenue Avg Growth Rate: 18.88
-  ✅ 5 Year Return: 226.26
-  ✅ 10 Year Return: 750.64
-  ✅ Yield: 2.29
-  🟡 Free Cashflow Growth: 13.06
+DE - Deere & Company (Industrials)
+Egeria Score: 31.333
+  ✅ P/E Ratio: 11.51
+  🟡 Price/Sales: 1.92
+  🟡 Beta: 0.96
+  ✅ Quick Ratio: 1.64
+  ✅ Debt/Equity: 3.77
+  🟡 EBIDTA Margin: 0.29
+  ❌ 5 Year STD: 8.23
+  ❌ 10 Year STD: 6.40
+  ✅ EBIDTA Avg Growth Rate: 35.87
+  ✅ Revenue Avg Growth Rate: 20.20
+  ✅ 5 Year Return: 199.35
+  ✅ 10 Year Return: 427.24
+  ✅ Yield: 1.34
+  ✅ Free Cashflow Growth: 92.22
+
+
+CMG - Chipotle Mexican Grill, Inc. (Consumer Cyclical)
+Egeria Score: 11.423
+  ❌ P/E Ratio: 69.02
+  ❌ Price/Sales: 8.77
+  ❌ Beta: 1.25
+  🟡 Quick Ratio: 1.42
+  ✅ Debt/Equity: 1.63
+  🟡 EBIDTA Margin: 0.20
+  ❌ 5 Year STD: 9.08
+  ❌ 10 Year STD: 9.36
+  ✅ EBIDTA Avg Growth Rate: 50.14
+  🟡 Revenue Avg Growth Rate: 18.28
+  ✅ 5 Year Return: 371.32
+  ✅ 10 Year Return: 534.88
+  ✅ Free Cashflow Growth: 78.14
+
+
+AAPL - Apple Inc. (Technology)
+Egeria Score: 3.058
+  🟡 P/E Ratio: 28.20
+  ❌ Price/Sales: 7.42
+  ❌ Beta: 1.21
+  🟡 Quick Ratio: 0.84
+  ✅ Debt/Equity: 4.67
+  ✅ EBIDTA Margin: 0.34
+  ❌ 5 Year STD: 7.14
+  ❌ 10 Year STD: 6.77
+  🟡 EBIDTA Avg Growth Rate: 19.05
+  🟡 Revenue Avg Growth Rate: 12.75
+  ✅ 5 Year Return: 308.51
+  ✅ 10 Year Return: 877.42
+  🟡 Yield: 0.73
+  🟡 Free Cashflow Growth: 11.98
 
 

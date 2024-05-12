@@ -9,7 +9,7 @@ from src.common.enums.metric import Metric
 METRIC_CONFIG = {
     Metric.BETA: MetricConfig(
         data_fetcher=lambda t: get_beta(t.ticker),
-        metric_weight=4,
+        metric_weight=3,
         is_inverted=True
     ),
     Metric.DEBT_TO_EQUITY: MetricConfig(
@@ -44,12 +44,12 @@ METRIC_CONFIG = {
     ),
     Metric.QUICK_RATIO: MetricConfig(
         data_fetcher=lambda t: get_quick_ratio(t),
-        metric_weight=3,
+        metric_weight=2,
         is_inverted=False
     ),
     Metric.RETURN_FIVE_YEAR: MetricConfig(
         data_fetcher=lambda t: get_return(t, "5y"),
-        metric_weight=4,
+        metric_weight=2,
         is_inverted=False
     ),
     Metric.RETURN_ON_ASSETS: MetricConfig(
@@ -59,12 +59,12 @@ METRIC_CONFIG = {
     ),
     Metric.RETURN_ON_EQUITY: MetricConfig(
         data_fetcher=lambda t: t.info.get("returnOnEquity"),
-        metric_weight=4,
+        metric_weight=3,
         is_inverted=False
     ),
     Metric.RETURN_TEN_YEAR: MetricConfig(
         data_fetcher=lambda t: get_return(t, "10y"),
-        metric_weight=4,
+        metric_weight=2,
         is_inverted=False
     ),
     Metric.REVENUE_AVG_GROWTH_RATE: MetricConfig(
@@ -74,22 +74,22 @@ METRIC_CONFIG = {
     ),
     Metric.STD_FIVE_YEAR: MetricConfig(
         data_fetcher=lambda t: get_std(t, "5y"),
-        metric_weight=3,
+        metric_weight=2,
         is_inverted=True
     ),
     Metric.STD_TEN_YEAR: MetricConfig(
         data_fetcher=lambda t: get_std(t, "10y"),
-        metric_weight=3,
+        metric_weight=2,
         is_inverted=True
     ),
     Metric.YIELD: MetricConfig(
         data_fetcher=lambda t: t.info.get("fiveYearAvgDividendYield"),
-        metric_weight=2,
+        metric_weight=1,
         is_inverted=False
     ),
     Metric.FREE_CASHFLOW_GROWTH: MetricConfig(
         data_fetcher=lambda t: get_cashflow_growth(t,"FreeCashFlow"),
-        metric_weight=5,
+        metric_weight=3,
         is_inverted=False
     ),
 }

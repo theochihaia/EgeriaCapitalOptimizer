@@ -2619,24 +2619,6 @@ Egeria Score: -2.22
   🟡 Free Cashflow Growth: 19.36
 
 
-ALB - Albemarle Corporation (Basic Materials)
-Egeria Score: -2.307
-  ✅ P/E Ratio: 8.37
-  🟡 Price/Sales: 1.37
-  ❌ Beta: 1.65
-  🟡 Quick Ratio: 0.77
-  ✅ Debt/Equity: 0.91
-  ❌ EBIDTA Margin: 0.08
-  ❌ 5 Year STD: 11.97
-  ❌ 10 Year STD: 9.65
-  ✅ EBIDTA Avg Growth Rate: 539.74
-  ✅ Revenue Avg Growth Rate: 52.57
-  🟡 5 Year Return: 50.72
-  🟡 10 Year Return: 92.66
-  ✅ Yield: 1.21
-  ✅ Free Cashflow Growth: 216.11
-
-
 NOC - Northrop Grumman Corporation (Industrials)
 Egeria Score: -2.307
   🟡 P/E Ratio: 34.64
@@ -2653,6 +2635,24 @@ Egeria Score: -2.307
   ✅ 10 Year Return: 357.04
   ✅ Yield: 1.57
   ❌ Free Cashflow Growth: -4.68
+
+
+ALB - Albemarle Corporation (Basic Materials)
+Egeria Score: -2.307
+  ✅ P/E Ratio: 8.37
+  🟡 Price/Sales: 1.37
+  ❌ Beta: 1.65
+  🟡 Quick Ratio: 0.77
+  ✅ Debt/Equity: 0.91
+  ❌ EBIDTA Margin: 0.08
+  ❌ 5 Year STD: 11.97
+  ❌ 10 Year STD: 9.65
+  ✅ EBIDTA Avg Growth Rate: 539.74
+  ✅ Revenue Avg Growth Rate: 52.57
+  🟡 5 Year Return: 50.72
+  🟡 10 Year Return: 92.66
+  ✅ Yield: 1.21
+  ✅ Free Cashflow Growth: 216.11
 
 
 XOM - Exxon Mobil Corporation (Energy)
